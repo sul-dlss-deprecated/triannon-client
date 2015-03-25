@@ -81,13 +81,11 @@ tc.post_annotation(open_annotation_jsonld)
 
 ## Development
 
-### Install
+Clone and install:
 
 ```console
 ./bin/setup.sh
 ```
-
-### Tests
 
 Run tests:
 
