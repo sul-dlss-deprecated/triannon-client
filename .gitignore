@@ -9,6 +9,13 @@
 /test/version_tmp/
 /tmp/
 
+## Specific to dotenv:
+.env
+
+## Specific to Ctags:
+.tags
+.gemtags
+
 ## Specific to RubyMotion:
 .dat*
 .repl_history
@@ -22,6 +29,7 @@ build/
 
 ## Environment normalisation:
 /.bundle/
+/.binstubs/
 /lib/bundler/man/
 
 # for a library or gem, you might want to ignore these files since the code is

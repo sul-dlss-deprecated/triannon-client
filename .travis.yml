@@ -1,0 +1,15 @@
+language: ruby
+
+install: ./bin/setup.sh
+
+script: ./bin/test.sh
+
+notifications:
+  email: false
+
+rvm:
+  - 1.9.3
+  - 2.0.0
+  - 2.1.5
+  - 2.2.0
+
