@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'triannon-client'
-  s.version     = '0.0.0'
+  s.version     = '0.1.0'
   s.licenses    = ['Apache-2.0']
   s.platform    = Gem::Platform::RUBY
 
@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   # Use ENV for config
   s.add_dependency 'dotenv'
   # HTTP and RDF clients
-  s.add_dependency 'rest-client', '~> 1.0'
+  s.add_dependency 'rest-client', '~> 1.7'
   s.add_dependency 'linkeddata', '~> 1.0'
   # Use pry for console and debugging
   s.add_dependency 'pry'
@@ -33,11 +33,11 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec'
 
   s.files   = `git ls-files`.split($/)
-  dev_files = %w(.gitignore bin/console bin/setup.sh bin/test.sh)
-  dev_files.each {|f| s.files.delete f }
-
   s.executables = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files  = s.files.grep(%r{^(test|spec|features)/})
+
+  dev_files = %w(.gitignore bin/console bin/ctags.rb bin/setup.sh bin/test.sh)
+  dev_files.each {|f| s.files.delete f; s.executables.delete f; }
 
 end
 
