@@ -19,6 +19,15 @@ module TriannonClient
       )
     end
 
+    # Delete an annotation
+    # @param iri [String] HTTP URL for a triannon annotation
+    # @response [true|false] true when successful
+    def delete_annotation(iri)
+      uri = RDF::URI.parse(iri)
+      response = @site[uri.path].delete
+      [200, 202, 204].include? response.code
+    end
+
     # @param oa [JSON-LD] a json-ld object with an open annotation context
     # @return response [RestClient::Response|nil]
     def post_annotation(oa)

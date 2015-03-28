@@ -4,6 +4,12 @@ require 'spec_helper'
 
 describe TriannonClient do
 
+  describe "#delete_annotation" do
+    it 'should DELETE an open annotation' do
+      #TODO
+    end
+  end
+
   describe "#get_annotations" do
     it 'should get a list of open annotations' do
       #TODO
