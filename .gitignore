@@ -21,6 +21,10 @@
 .repl_history
 build/
 
+## Specific to SublimeText:
+*.sublime-project
+*.sublime-workspace
+
 ## Documentation cache and generated files:
 /.yardoc/
 /_yardoc/
