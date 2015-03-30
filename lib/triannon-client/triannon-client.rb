@@ -25,6 +25,11 @@ module TriannonClient
     def delete_annotation(iri)
       uri = RDF::URI.parse(iri)
       response = @site[uri.path].delete
+      # HTTP DELETE response codes:
+      # A successful response SHOULD be 200 (OK) if the response includes an
+      # entity describing the status, 202 (Accepted) if the action has not yet
+      # been enacted, or 204 (No Content) if the action has been enacted but the
+      # response does not include an entity.
       [200, 202, 204].include? response.code
     end
 
