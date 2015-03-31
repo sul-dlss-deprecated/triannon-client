@@ -7,7 +7,7 @@ if [ -s .env ]; then
 fi
 
 cp .env_example .env
-.binstubs/rspec
+.binstubs/rspec --color
 #.binstubs/cucumber --strict
 
 if [ -s .env_bak ]; then
