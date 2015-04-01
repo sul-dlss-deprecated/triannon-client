@@ -65,10 +65,10 @@ describe TriannonClient, :vcr do
   describe "#get_annotation" do
     context 'with no content_type' do
       it 'raises an internal server error with a nil ID' do
-        expect{@tc.get_annotation(nil)}.to raise_exception(RestClient::InternalServerError)
+        expect{@tc.get_annotation(nil)}.to raise_error(ArgumentError)
       end
       it 'raises an internal server error with an empty string ID' do
-        expect{@tc.get_annotation('')}.to raise_exception(RestClient::InternalServerError)
+        expect{@tc.get_annotation('')}.to raise_error(ArgumentError)
       end
       it 'returns an RDF graph with a valid ID for an annotation on the server' do
         graph = @tc.get_annotation(@anno[:id])
@@ -101,7 +101,7 @@ describe TriannonClient, :vcr do
 
   describe "#post_annotation" do
     it 'should POST an open annotation' do
-      expect{@tc.post_annotation(@oa_jsonld)}.not_to raise_exception
+      expect{@tc.post_annotation(@oa_jsonld)}.not_to raise_error
     end
     it 'returns a RestClient::Response object' do
       # The response behaves primarily as a String, so it can not be tested
