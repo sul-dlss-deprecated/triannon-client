@@ -1,9 +1,13 @@
 require 'dotenv'
 Dotenv.load
+# The pry dependency must be available when the client is configured to
+# run in debug mode, where it will fall into a pry console for rescue blocks.
 require 'pry'
 require 'pry-doc'
 # require rest client prior to linkeddata, so the latter can use it.
 require 'rest-client'
+# If a proxy is present, RestClient needs explicit configuration to use it.
+# (The ruby stdlib http client will use a proxy automatically.)
 RestClient.proxy = ENV['http_proxy'] unless ENV['http_proxy'].nil?
 RestClient.proxy = ENV['HTTP_PROXY'] unless ENV['HTTP_PROXY'].nil?
 require 'linkeddata'
