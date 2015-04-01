@@ -2,15 +2,14 @@
 
 set -e
 
-if [ -s .env ]; then
-  mv .env .env_bak
-fi
-
+[[ -s .env ]] && mv .env .env_bak
 cp .env_example .env
-.binstubs/rspec --color
-#.binstubs/cucumber --strict
 
-if [ -s .env_bak ]; then
-  mv .env_bak .env
-fi
+# The `|| echo ''` enables the bash script to continue after rspec failure
+EXIT=0
+.binstubs/rspec --color || EXIT=1
+#.binstubs/cucumber --strict || EXIT=1
+
+[[ -s .env_bak ]] && mv .env_bak .env
+exit $EXIT
 
