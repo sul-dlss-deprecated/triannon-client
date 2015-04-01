@@ -73,7 +73,7 @@ module TriannonClient
 
     # Get annotations
     # @param content_type [String] HTTP mime type (defaults to 'application/ld+json')
-    # @response [RDF::Graph] RDF::Graph of open annotations
+    # @response [RDF::Graph] RDF::Graph of open annotations (can be empty on failure)
     def get_annotations(content_type='application/ld+json')
 
       # TODO: triannon is responding with HTML, not json-ld
@@ -94,7 +94,7 @@ module TriannonClient
     # Get an annotation (with a default annotation context)
     # @param id [String] String representation of an annotation ID
     # @param content_type [String] HTTP mime type (defaults to 'application/ld+json')
-    # @response [RDF::Graph|nil] RDF::Graph of the annotation
+    # @response [RDF::Graph] RDF::Graph of the annotation (can be empty on failure)
     def get_annotation(id, content_type='application/ld+json')
       check_id(id)
       check_content_type(content_type)
@@ -113,14 +113,14 @@ module TriannonClient
 
     # Get an annotation using a IIIF context
     # @param id [String] String representation of an annotation ID
-    # @response [RDF::Graph|nil] RDF::Graph of the annotation
+    # @response [RDF::Graph] RDF::Graph of the annotation (can be empty on failure)
     def get_iiif_annotation(id)
       get_annotation(id, CONTENT_TYPE_IIIF)
     end
 
     # Get an annotation using an open annotation context
     # @param id [String] String representation of an annotation ID
-    # @response [RDF::Graph|nil] RDF::Graph of the annotation
+    # @response [RDF::Graph] RDF::Graph of the annotation (can be empty on failure)
     def get_oa_annotation(id)
       get_annotation(id, CONTENT_TYPE_OA)
     end
