@@ -7,6 +7,7 @@ require 'rest-client'
 RestClient.proxy = ENV['http_proxy'] unless ENV['http_proxy'].nil?
 RestClient.proxy = ENV['HTTP_PROXY'] unless ENV['HTTP_PROXY'].nil?
 require 'linkeddata'
+require 'rdf-vocab'
 require_relative 'triannon-client/configuration'
 require_relative 'triannon-client/triannon-client'
 

@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   # HTTP and RDF clients
   s.add_dependency 'rest-client', '~> 1.7'
   s.add_dependency 'linkeddata', '~> 1.0'
+  s.add_dependency 'rdf-vocab', '~> 0.5'
   # Use pry for console and debugging
   s.add_dependency 'pry'
   s.add_dependency 'pry-doc'
