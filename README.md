@@ -1,5 +1,11 @@
 [![Build Status](https://travis-ci.org/sul-dlss/triannon-client.svg?branch=master)](https://travis-ci.org/sul-dlss/triannon-client) [![Coverage Status](https://coveralls.io/repos/sul-dlss/triannon-client/badge.png)](https://coveralls.io/r/sul-dlss/triannon-client) [![Dependency Status](https://gemnasium.com/sul-dlss/triannon-client.svg)](https://gemnasium.com/sul-dlss/triannon-client) [![Gem Version](https://badge.fury.io/rb/triannon-client.svg)](http://badge.fury.io/rb/triannon-client)
 
+
+# Under construction!
+
+Use at your own risk!
+
+
 # Triannon Client
 
 A client for the triannon service, see also
