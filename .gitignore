@@ -9,6 +9,9 @@
 /test/version_tmp/
 /tmp/
 
+## Specific to rbenv:
+.ruby-version
+
 ## Specific to dotenv:
 .env
 
