@@ -87,6 +87,7 @@ module TriannonClient
       rescue => e
         binding.pry if @@config.debug
         @@config.logger.error("Failed to GET annotations: #{e.message}")
+        RDF::Graph.new # return an empty graph
       end
     end
 
@@ -106,6 +107,7 @@ module TriannonClient
         # response = e.response
         binding.pry if @@config.debug
         @@config.logger.error("Failed to GET annotation: #{id}, #{e.message}")
+        RDF::Graph.new # return an empty graph
       end
     end
 
