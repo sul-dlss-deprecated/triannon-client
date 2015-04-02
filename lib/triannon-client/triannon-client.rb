@@ -170,7 +170,8 @@ module TriannonClient
     end
 
     def check_id(id)
-      raise ArgumentError, 'invalid ID' if id.nil? || id.empty?
+      raise ArgumentError, 'ID must be a String' unless id.instance_of? String
+      raise ArgumentError, 'Invalid ID' if id.nil? || id.empty?
     end
 
   end
