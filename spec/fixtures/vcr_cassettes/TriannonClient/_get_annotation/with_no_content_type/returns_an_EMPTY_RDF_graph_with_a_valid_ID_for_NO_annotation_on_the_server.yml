@@ -4981,4 +4981,51 @@ http_interactions:
       string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
     http_version: 
   recorded_at: Thu, 02 Apr 2015 00:19:34 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/annotations/16943bca-9ae0-4b1d-9f0f-33f5721cf0f8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/ld+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/ld+json; charset=utf-8
+      Etag:
+      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bc62cbf0-18de-434d-b912-baed60c2a3e1
+      X-Runtime:
+      - '0.039606'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Thu, 02 Apr 2015 00:24:33 GMT
+      Content-Length:
+      - '60'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
+    http_version: 
+  recorded_at: Thu, 02 Apr 2015 00:24:33 GMT
 recorded_with: VCR 2.9.3
