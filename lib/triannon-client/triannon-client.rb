@@ -12,6 +12,9 @@ module TriannonClient
     CONTENT_TYPE_IIIF = 'application/ld+json; profile="http://iiif.io/api/presentation/2/context.json"'
     CONTENT_TYPE_OA   = 'application/ld+json; profile="http://www.w3.org/ns/oa-context-20130208.json"'
 
+    JSONLD_TYPE = 'application/ld+json'
+
+
     @@config = nil
 
     attr_accessor :site
@@ -60,7 +63,8 @@ module TriannonClient
       tries = 0
       begin
         tries += 1
-        response = @site["/annotations/"].post post_data, :content_type => 'application/ld+json'
+        # TODO: add Accept content type, somehow?
+        response = @site["/annotations/"].post post_data, :content_type => JSONLD_TYPE, :accept => JSONLD_TYPE
       rescue => e
         sleep 1*tries
         retry if tries < 3
@@ -74,16 +78,12 @@ module TriannonClient
     # Get annotations
     # @param content_type [String] HTTP mime type (defaults to 'application/ld+json')
     # @response [RDF::Graph] RDF::Graph of open annotations (can be empty on failure)
-    def get_annotations(content_type='application/ld+json')
-
-      # TODO: triannon is responding with HTML, not json-ld
-      # see https://github.com/sul-dlss/triannon/issues/117
-
+    def get_annotations(content_type=JSONLD_TYPE)
       check_content_type(content_type)
       begin
         response = @site['/annotations'].get({:accept => content_type})
         # TODO: switch yard for different response.code?
-        response2graph(response, content_type)
+        response2graph(response)
       rescue => e
         binding.pry if @@config.debug
         @@config.logger.error("Failed to GET annotations: #{e.message}")
@@ -95,14 +95,14 @@ module TriannonClient
     # @param id [String] String representation of an annotation ID
     # @param content_type [String] HTTP mime type (defaults to 'application/ld+json')
     # @response [RDF::Graph] RDF::Graph of the annotation (can be empty on failure)
-    def get_annotation(id, content_type='application/ld+json')
+    def get_annotation(id, content_type=JSONLD_TYPE)
       check_id(id)
       check_content_type(content_type)
       uri = "/annotations/#{id}"
       begin
         response = @site[uri].get({:accept => content_type})
         # TODO: switch yard for different response.code?
-        response2graph(response, content_type)
+        response2graph(response)
       rescue => e
         # response = e.response
         binding.pry if @@config.debug
@@ -125,22 +125,21 @@ module TriannonClient
       get_annotation(id, CONTENT_TYPE_OA)
     end
 
-    # Parse an open annotation response into an RDF::Graph
-    # @param data [String] An open annotation in 'content_type' serialization
-    # @param content_type [String] An RDF::Format content type (defaults to 'application/rdf+xml')
+    # Parse a Triannon response into an RDF::Graph
+    # @param response [RestClient::Response] A RestClient::Response from Triannon
     # @response graph [RDF::Graph] An RDF::Graph instance
-    def response2graph(data, content_type='application/rdf+xml')
+    def response2graph(response)
+      content_type = response.headers[:content_type]
       check_content_type(content_type)
       g = RDF::Graph.new
       begin
-        # TODO: will RDF::Format work with the 'profile' parameter?
         format = RDF::Format.for(:content_type => content_type)
-        format.reader.new(data) do |reader|
+        format.reader.new(response) do |reader|
           reader.each_statement {|s| g << s }
         end
       rescue
         binding.pry if @@config.debug
-        @@config.logger.error("Failed parse data into RDF::Graph: #{e.message}")
+        @@config.logger.error("Failed parse response into RDF::Graph: #{e.message}")
       end
       g
     end
