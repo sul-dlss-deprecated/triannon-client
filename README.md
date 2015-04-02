@@ -53,7 +53,7 @@ tc = TriannonClient::TriannonClient.new
 
 ```ruby
 # return an RDF::Graph
-graph = tc.get_annoations
+graph = tc.get_annotations
 ```
 
 ### Get a particular annotation
@@ -82,8 +82,11 @@ tc.post_annotation(open_annotation_jsonld)
 
 ### Delete an annotation
 
-#### TODO
-
+```ruby
+uri = RDF::URI.parse('http://your.triannon-server.com/annotations/5314746b-f1eb-473a-a273-46c1afe5f530')
+id = tc.annotation_id(uri)  #=> 5314746b-f1eb-473a-a273-46c1afe5f530
+tc.delete_annotation(id)
+```
 
 ## Development
 
