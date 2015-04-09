@@ -27,7 +27,7 @@ module TriannonClient
         :user => @@config.user,
         :password => @@config.pass,
         :open_timeout => 5,  #seconds
-        :read_timeout => 20, #seconds
+        :read_timeout => 30, #seconds
       )
     end
 
