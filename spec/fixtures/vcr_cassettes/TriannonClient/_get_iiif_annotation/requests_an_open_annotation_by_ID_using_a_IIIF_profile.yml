@@ -31,31 +31,31 @@ http_interactions:
       Content-Type:
       - application/ld+json; charset=utf-8
       Etag:
-      - W/"5807a291a6842942b18ea4a5dd3c0426"
+      - W/"1cb6c9e5d68d729777db7d1d8ed4bb4c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 8e31a7eb-1d95-496c-b3bd-5a7e2507c873
+      - 727b54ac-3aac-4e42-9518-822a4d8a76f4
       X-Runtime:
-      - '0.317683'
+      - '1.627912'
       Server:
       - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
       Date:
-      - Thu, 02 Apr 2015 00:18:50 GMT
+      - Thu, 09 Apr 2015 19:10:13 GMT
       Content-Length:
       - '431'
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=eWlMZmVUcERFWlpXdmlQUU5HTkhyZ1JCRHAwSW0wWlFwWkwvbGVRZDA2Kys1SkxRVWRyWWhyT1NMbEpROWdKMjRUeFhiaS9NTXYvYjlIUDc4eUx6Y2VCZjUwczkvM0t1OXNPai8vSE0zK0xYL0ZWTTNTMDNLUjEvaWVaZ2pZdHl3UU14NHpWRGEzejhrTGF6dDc0QjVwN0NHR0JrRmJ2cnpHM216REhnYWdxNFRNaWhKdWZlUGZIT2diYjdjUlZXUk96a08wMFdFTUhhWUdTb1NTbVNaQ1ZUUnc5WVNLdTBEWUhscTllcExyUT0tLXlPY09xOURLL0pZbzc0T25rUTZyT3c9PQ%3D%3D--30e5c484b902314dd624bf6d6b26265983e57661;
+      - _internal_session=MkYzdXRTN0pjSG1rRlZUeWdSanNyVE1YUndTbExQb2s2cThINXplMEVweUhSd3NZalNQbUJHYWR4MkxYSDhGWGd6YmoydHQ3QXA4Y29zSXNqcDh0dHo0em9HWWYvSEVTMWRPMHROSndoWWgybUhBWStGUUhUUEV6TlBUR2QrNGVFVU5sOEhsTi9qWXJDUzVra1VYK2FQVlRnVUxwMGEycllESzArenh3S09VOUJuYk1uZDE5N1dRa3RFTWVCSlRtczN2QXRFOXpuZU9rSnpaR0JGTWRDR0t1dkNlMmxOajVzbTZxNXJxTXRjST0tLVV2bTl0bnRIOEc4KzAvRWk4K2gvRXc9PQ%3D%3D--a308e301a62ff172139ba9fb00c013a6713a4edc;
         path=/; HttpOnly
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g70316722236400","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
-        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/2d028a09-4495-447b-99f3-e67a41443eaa","@type":"oa:Annotation","hasBody":"_:g70316722236400","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
+      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g70361749889580","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
+        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/02af37ed-28fb-4a0e-8ff0-cd4a49d6b6ed","@type":"oa:Annotation","hasBody":"_:g70361749889580","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
     http_version: 
-  recorded_at: Thu, 02 Apr 2015 00:18:50 GMT
+  recorded_at: Thu, 09 Apr 2015 19:10:13 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -75,7 +75,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Thu, 02 Apr 2015 00:18:50 GMT
+      - Thu, 09 Apr 2015 19:10:13 GMT
       Server:
       - Apache/2
       Location:
@@ -83,7 +83,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Thu, 02 Apr 2015 06:18:50 GMT
+      - Fri, 10 Apr 2015 01:10:13 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -99,7 +99,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Thu, 02 Apr 2015 00:18:50 GMT
+  recorded_at: Thu, 09 Apr 2015 19:10:13 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -121,7 +121,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 02 Apr 2015 00:18:50 GMT
+      - Thu, 09 Apr 2015 19:10:13 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -135,7 +135,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Thu, 02 Apr 2015 06:18:50 GMT
+      - Fri, 10 Apr 2015 01:10:13 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Content-Type:
@@ -1251,7 +1251,7 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Thu, 02 Apr 2015 00:18:50 GMT
+  recorded_at: Thu, 09 Apr 2015 19:10:14 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -1271,7 +1271,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Thu, 02 Apr 2015 00:18:50 GMT
+      - Thu, 09 Apr 2015 19:10:14 GMT
       Server:
       - Apache/2
       Location:
@@ -1279,7 +1279,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Thu, 02 Apr 2015 06:18:50 GMT
+      - Fri, 10 Apr 2015 01:10:14 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -1295,7 +1295,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Thu, 02 Apr 2015 00:18:50 GMT
+  recorded_at: Thu, 09 Apr 2015 19:10:14 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -1317,7 +1317,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 02 Apr 2015 00:18:50 GMT
+      - Thu, 09 Apr 2015 19:10:14 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -1331,7 +1331,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Thu, 02 Apr 2015 06:18:50 GMT
+      - Fri, 10 Apr 2015 01:10:14 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Content-Type:
@@ -2447,10 +2447,254 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Thu, 02 Apr 2015 00:18:51 GMT
+  recorded_at: Thu, 09 Apr 2015 19:10:14 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/annotations/02af37ed-28fb-4a0e-8ff0-cd4a49d6b6ed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/ld+json; profile="http://iiif.io/api/presentation/2/context.json"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/ld+json; charset=utf-8
+      Etag:
+      - W/"4f5246b6d89381d2ea68b94bdbd09f48"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 78f8a6a1-a29f-4308-b516-591996b6807c
+      X-Runtime:
+      - '0.224713'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      Date:
+      - Thu, 09 Apr 2015 19:10:15 GMT
+      Content-Length:
+      - '425'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@graph":[{"@id":"_:g70361750335900","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
+        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/02af37ed-28fb-4a0e-8ff0-cd4a49d6b6ed","@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":"_:g70361750335900"}]}'
+    http_version: 
+  recorded_at: Thu, 09 Apr 2015 19:10:15 GMT
+- request:
+    method: get
+    uri: http://iiif.io/api/presentation/2/context.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/ld+json, application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 09 Apr 2015 19:12:03 GMT
+      Server:
+      - Apache/2.2.15 (Red Hat)
+      Last-Modified:
+      - Fri, 27 Mar 2015 23:04:07 GMT
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '4235'
+      Cache-Control:
+      - max-age=86400
+      Expires:
+      - Fri, 10 Apr 2015 19:12:03 GMT
+      Content-Type:
+      - application/ld+json
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"@context\": [\n\t\t{\n\t\t\t\"sc\":      \"http://iiif.io/api/presentation/2#\",\n\t
+        \       \"iiif\":    \"http://iiif.io/api/image/2#\",\n\t        \"exif\":
+        \   \"http://www.w3.org/2003/12/exif/ns#\",\n\t        \"oa\":      \"http://www.w3.org/ns/oa#\",\n\t
+        \       \"cnt\":     \"http://www.w3.org/2011/content#\",\n\t        \"dc\":
+        \     \"http://purl.org/dc/elements/1.1/\",\n\t        \"dcterms\": \"http://purl.org/dc/terms/\",\n\t
+        \       \"dctypes\": \"http://purl.org/dc/dcmitype/\",\n\t        \"foaf\":
+        \   \"http://xmlns.com/foaf/0.1/\",\n\t        \"rdf\":     \"http://www.w3.org/1999/02/22-rdf-syntax-ns#\",\n\t
+        \       \"rdfs\":    \"http://www.w3.org/2000/01/rdf-schema#\",\n\t        \"xsd\":
+        \    \"http://www.w3.org/2001/XMLSchema#\",\n\t\t\t\"svcs\":    \"http://rdfs.org/sioc/services#\",\n\n\t
+        \       \"license\":     {\"@type\":\"@id\", \"@id\":\"dcterms:license\"},\n\t
+        \       \"service\":     {\"@type\":\"@id\", \"@id\":\"svcs:has_service\"},\n\t
+        \       \"seeAlso\":    {\"@type\":\"@id\", \"@id\":\"foaf:page\"},\n\t        \"within\":
+        \     {\"@type\":\"@id\", \"@id\":\"dcterms:isPartOf\"},\n\t        \"profile\":
+        \    {\"@type\":\"@id\", \"@id\":\"dcterms:conformsTo\"},\n\t        \"related\":
+        \    {\"@type\":\"@id\", \"@id\":\"dcterms:relation\"},\n\t        \"logo\":
+        \       {\"@type\":\"@id\", \"@id\":\"foaf:logo\"},\n\t        \"thumbnail\":
+        \  {\"@type\":\"@id\", \"@id\":\"foaf:thumbnail\"},\n\t        \"startCanvas\":
+        {\"@type\":\"@id\", \"@id\":\"sc:hasStartCanvas\"},\n\n\t        \"collections\":
+        {\"@type\":\"@id\", \"@id\":\"sc:hasCollections\", \"@container\":\"@list\"},\n\t
+        \       \"manifests\":   {\"@type\":\"@id\", \"@id\":\"sc:hasManifests\",
+        \"@container\":\"@list\"},\n\t        \"sequences\":   {\"@type\":\"@id\",
+        \"@id\":\"sc:hasSequences\", \"@container\":\"@list\"},\n\t        \"canvases\":
+        \   {\"@type\":\"@id\", \"@id\":\"sc:hasCanvases\", \"@container\":\"@list\"},\n\t
+        \       \"resources\":   {\"@type\":\"@id\", \"@id\":\"sc:hasAnnotations\",
+        \"@container\":\"@list\"},\n\t        \"images\":      {\"@type\":\"@id\",
+        \"@id\":\"sc:hasImageAnnotations\",\"@container\":\"@list\"},\n\t        \"otherContent\":
+        {\"@type\":\"@id\", \"@id\":\"sc:hasLists\", \"@container\":\"@list\"},\n\t
+        \       \"structures\":  {\"@type\":\"@id\", \"@id\":\"sc:hasRanges\", \"@container\":\"@list\"},\n\t
+        \       \"ranges\" :     {\"@type\": \"@id\", \"@id\": \"sc:hasRanges\", \"@container\":\"@list\"},\n\n\t
+        \       \"metadata\":    {\"@type\":\"@id\", \"@id\":\"sc:metadataLabels\",
+        \"@container\":\"@list\"},\n\n\t        \"description\": {\"@id\": \"dc:description\"},\n\t
+        \       \"height\":      {\"@type\":\"xsd:integer\", \"@id\":\"exif:height\"},\n\t
+        \       \"width\":       {\"@type\":\"xsd:integer\", \"@id\":\"exif:width\"},\n\n\t
+        \       \"attribution\": {\"@id\": \"sc:attributionLabel\"},\n\t        \"viewingDirection\":
+        {\"@id\": \"sc:viewingDirection\", \"@type\":\"@id\"},\n\t        \"viewingHint\":
+        {\"@id\": \"sc:viewingHint\", \"@type\":\"@id\"},\n\n\t        \"left-to-right\":
+        {\"@id\":\"sc:leftToRightDirection\", \"@type\":\"sc:ViewingDirection\"},\n\t
+        \       \"right-to-left\": {\"@id\":\"sc:rightToLeftDirection\", \"@type\":\"sc:ViewingDirection\"},\n\t
+        \       \"top-to-bottom\": {\"@id\":\"sc:topToBottomDirection\", \"@type\":\"sc:ViewingDirection\"},\t
+        \       \n\t        \"bottom-to-top\": {\"@id\":\"sc:bottomToTopDirection\",
+        \"@type\":\"sc:ViewingDirection\"},\n\n\t        \"paged\":         {\"@id\":\"sc:pagedHint\",
+        \"@type\":\"sc:ViewingHint\"},\n\t        \"non-paged\":     {\"@id\":\"sc:nonPagedHint\",
+        \"@type\":\"sc:ViewingHint\"},   \n\t        \"continuous\":    {\"@id\":\"sc:continuousHint\",
+        \"@type\":\"sc:ViewingHint\"},\n\t        \"individuals\":   {\"@id\":\"sc:individualsHint\",
+        \"@type\":\"sc:ViewingHint\"}, \n\t        \"top\":           {\"@id\":\"sc:topHint\",
+        \"@type\":\"sc:ViewingHint\"},\n\n\t        \"motivation\":  {\"@type\":\"@id\",
+        \"@id\":\"oa:motivatedBy\"},\n\t        \"resource\":    {\"@type\":\"@id\",
+        \"@id\":\"oa:hasBody\"},\n\t        \"on\":          {\"@type\":\"@id\", \"@id\":\"oa:hasTarget\"},\n\t
+        \       \"full\":        {\"@type\":\"@id\", \"@id\":\"oa:hasSource\"},\n\t
+        \       \"selector\":    {\"@type\":\"@id\", \"@id\":\"oa:hasSelector\"},\n\t
+        \       \"stylesheet\":  {\"@type\":\"@id\", \"@id\":\"oa:styledBy\"},\n\t
+        \       \"style\":       {\"@id\":\"oa:styleClass\"},\n\n\t\t    \"default\":
+        \    {\"@type\":\"@id\", \"@id\" : \"oa:default\"},\n\t\t    \"item\":        {\"@type\":\"@id\",
+        \"@id\" : \"oa:item\"},\n\t\t    \"chars\":       {\"@id\": \"cnt:chars\"},\n\t\t
+        \   \"encoding\":    {\"@id\": \"cnt:characterEncoding\"},\n\t\t    \"bytes\":
+        \      {\"@id\": \"cnt:bytes\"},\n\t\t    \"format\":      {\"@id\": \"dc:format\"},\n\t\t
+        \   \"language\":    {\"@id\": \"dc:language\"},\n\t\t    \"value\":       {\"@id\":
+        \"rdf:value\"},\n\t\t    \"label\":       {\"@id\": \"rdfs:label\"}\n\t\t}\n\t]\n}"
+    http_version: 
+  recorded_at: Thu, 09 Apr 2015 19:10:15 GMT
+- request:
+    method: get
+    uri: http://iiif.io/api/presentation/2/context.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/ld+json, application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 09 Apr 2015 19:12:04 GMT
+      Server:
+      - Apache/2.2.15 (Red Hat)
+      Last-Modified:
+      - Fri, 27 Mar 2015 23:04:07 GMT
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '4235'
+      Cache-Control:
+      - max-age=86400
+      Expires:
+      - Fri, 10 Apr 2015 19:12:04 GMT
+      Content-Type:
+      - application/ld+json
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: "{\n\t\"@context\": [\n\t\t{\n\t\t\t\"sc\":      \"http://iiif.io/api/presentation/2#\",\n\t
+        \       \"iiif\":    \"http://iiif.io/api/image/2#\",\n\t        \"exif\":
+        \   \"http://www.w3.org/2003/12/exif/ns#\",\n\t        \"oa\":      \"http://www.w3.org/ns/oa#\",\n\t
+        \       \"cnt\":     \"http://www.w3.org/2011/content#\",\n\t        \"dc\":
+        \     \"http://purl.org/dc/elements/1.1/\",\n\t        \"dcterms\": \"http://purl.org/dc/terms/\",\n\t
+        \       \"dctypes\": \"http://purl.org/dc/dcmitype/\",\n\t        \"foaf\":
+        \   \"http://xmlns.com/foaf/0.1/\",\n\t        \"rdf\":     \"http://www.w3.org/1999/02/22-rdf-syntax-ns#\",\n\t
+        \       \"rdfs\":    \"http://www.w3.org/2000/01/rdf-schema#\",\n\t        \"xsd\":
+        \    \"http://www.w3.org/2001/XMLSchema#\",\n\t\t\t\"svcs\":    \"http://rdfs.org/sioc/services#\",\n\n\t
+        \       \"license\":     {\"@type\":\"@id\", \"@id\":\"dcterms:license\"},\n\t
+        \       \"service\":     {\"@type\":\"@id\", \"@id\":\"svcs:has_service\"},\n\t
+        \       \"seeAlso\":    {\"@type\":\"@id\", \"@id\":\"foaf:page\"},\n\t        \"within\":
+        \     {\"@type\":\"@id\", \"@id\":\"dcterms:isPartOf\"},\n\t        \"profile\":
+        \    {\"@type\":\"@id\", \"@id\":\"dcterms:conformsTo\"},\n\t        \"related\":
+        \    {\"@type\":\"@id\", \"@id\":\"dcterms:relation\"},\n\t        \"logo\":
+        \       {\"@type\":\"@id\", \"@id\":\"foaf:logo\"},\n\t        \"thumbnail\":
+        \  {\"@type\":\"@id\", \"@id\":\"foaf:thumbnail\"},\n\t        \"startCanvas\":
+        {\"@type\":\"@id\", \"@id\":\"sc:hasStartCanvas\"},\n\n\t        \"collections\":
+        {\"@type\":\"@id\", \"@id\":\"sc:hasCollections\", \"@container\":\"@list\"},\n\t
+        \       \"manifests\":   {\"@type\":\"@id\", \"@id\":\"sc:hasManifests\",
+        \"@container\":\"@list\"},\n\t        \"sequences\":   {\"@type\":\"@id\",
+        \"@id\":\"sc:hasSequences\", \"@container\":\"@list\"},\n\t        \"canvases\":
+        \   {\"@type\":\"@id\", \"@id\":\"sc:hasCanvases\", \"@container\":\"@list\"},\n\t
+        \       \"resources\":   {\"@type\":\"@id\", \"@id\":\"sc:hasAnnotations\",
+        \"@container\":\"@list\"},\n\t        \"images\":      {\"@type\":\"@id\",
+        \"@id\":\"sc:hasImageAnnotations\",\"@container\":\"@list\"},\n\t        \"otherContent\":
+        {\"@type\":\"@id\", \"@id\":\"sc:hasLists\", \"@container\":\"@list\"},\n\t
+        \       \"structures\":  {\"@type\":\"@id\", \"@id\":\"sc:hasRanges\", \"@container\":\"@list\"},\n\t
+        \       \"ranges\" :     {\"@type\": \"@id\", \"@id\": \"sc:hasRanges\", \"@container\":\"@list\"},\n\n\t
+        \       \"metadata\":    {\"@type\":\"@id\", \"@id\":\"sc:metadataLabels\",
+        \"@container\":\"@list\"},\n\n\t        \"description\": {\"@id\": \"dc:description\"},\n\t
+        \       \"height\":      {\"@type\":\"xsd:integer\", \"@id\":\"exif:height\"},\n\t
+        \       \"width\":       {\"@type\":\"xsd:integer\", \"@id\":\"exif:width\"},\n\n\t
+        \       \"attribution\": {\"@id\": \"sc:attributionLabel\"},\n\t        \"viewingDirection\":
+        {\"@id\": \"sc:viewingDirection\", \"@type\":\"@id\"},\n\t        \"viewingHint\":
+        {\"@id\": \"sc:viewingHint\", \"@type\":\"@id\"},\n\n\t        \"left-to-right\":
+        {\"@id\":\"sc:leftToRightDirection\", \"@type\":\"sc:ViewingDirection\"},\n\t
+        \       \"right-to-left\": {\"@id\":\"sc:rightToLeftDirection\", \"@type\":\"sc:ViewingDirection\"},\n\t
+        \       \"top-to-bottom\": {\"@id\":\"sc:topToBottomDirection\", \"@type\":\"sc:ViewingDirection\"},\t
+        \       \n\t        \"bottom-to-top\": {\"@id\":\"sc:bottomToTopDirection\",
+        \"@type\":\"sc:ViewingDirection\"},\n\n\t        \"paged\":         {\"@id\":\"sc:pagedHint\",
+        \"@type\":\"sc:ViewingHint\"},\n\t        \"non-paged\":     {\"@id\":\"sc:nonPagedHint\",
+        \"@type\":\"sc:ViewingHint\"},   \n\t        \"continuous\":    {\"@id\":\"sc:continuousHint\",
+        \"@type\":\"sc:ViewingHint\"},\n\t        \"individuals\":   {\"@id\":\"sc:individualsHint\",
+        \"@type\":\"sc:ViewingHint\"}, \n\t        \"top\":           {\"@id\":\"sc:topHint\",
+        \"@type\":\"sc:ViewingHint\"},\n\n\t        \"motivation\":  {\"@type\":\"@id\",
+        \"@id\":\"oa:motivatedBy\"},\n\t        \"resource\":    {\"@type\":\"@id\",
+        \"@id\":\"oa:hasBody\"},\n\t        \"on\":          {\"@type\":\"@id\", \"@id\":\"oa:hasTarget\"},\n\t
+        \       \"full\":        {\"@type\":\"@id\", \"@id\":\"oa:hasSource\"},\n\t
+        \       \"selector\":    {\"@type\":\"@id\", \"@id\":\"oa:hasSelector\"},\n\t
+        \       \"stylesheet\":  {\"@type\":\"@id\", \"@id\":\"oa:styledBy\"},\n\t
+        \       \"style\":       {\"@id\":\"oa:styleClass\"},\n\n\t\t    \"default\":
+        \    {\"@type\":\"@id\", \"@id\" : \"oa:default\"},\n\t\t    \"item\":        {\"@type\":\"@id\",
+        \"@id\" : \"oa:item\"},\n\t\t    \"chars\":       {\"@id\": \"cnt:chars\"},\n\t\t
+        \   \"encoding\":    {\"@id\": \"cnt:characterEncoding\"},\n\t\t    \"bytes\":
+        \      {\"@id\": \"cnt:bytes\"},\n\t\t    \"format\":      {\"@id\": \"dc:format\"},\n\t\t
+        \   \"language\":    {\"@id\": \"dc:language\"},\n\t\t    \"value\":       {\"@id\":
+        \"rdf:value\"},\n\t\t    \"label\":       {\"@id\": \"rdfs:label\"}\n\t\t}\n\t]\n}"
+    http_version: 
+  recorded_at: Thu, 09 Apr 2015 19:10:15 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/annotations/2d028a09-4495-447b-99f3-e67a41443eaa
+    uri: http://localhost:3000/annotations/02af37ed-28fb-4a0e-8ff0-cd4a49d6b6ed
     body:
       encoding: US-ASCII
       string: ''
@@ -2477,22 +2721,22 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 7921dacd-b8de-4c39-b987-7de56a184167
+      - 4ae7963d-926c-4aad-b964-3184a7f7f20d
       X-Runtime:
-      - '0.259817'
+      - '0.257696'
       Server:
       - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
       Date:
-      - Thu, 02 Apr 2015 00:18:51 GMT
+      - Thu, 09 Apr 2015 19:10:15 GMT
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=Y2xiUFp3VUxhWitlV2tLYUFWRE9xRC8rWmt4TXc5MXBqNllTUE1BMU13cjVFV0ZMVFh5YW9BK2JreXo0SDNHeWQ1NjFzMXFGQkZnZDc3V1dTKzlSOUJ6YmJ1Ny9EUjV2dS9GWi94M0tweTVHcVNEcWJnSXdST053T004THlETTU0NzVEOFRETER0Y04vUzJwNm91QkJnTTVaajNDUEcwL1VlZitqQTZxeTRKVW5QSkZVcVVRdkpRK0s0WURYVjZGLS1Ubkt6cVVhTGUyd25ueERKWExITUFRPT0%3D--a6933adacbc7b4b6c39bad5a9016429b8855966e;
+      - _internal_session=S0FjZEVDRlhKMEs3blZ3VGVqT2V3eHpaeHI5aUFNV3RwMm1pby82SVF0d1BPMS9LRmdJMUgyQ3FnYm9PMnVjQWszNTduUVJJKzF5VGhjVFJ0b0lzTU1jeElaZ0tLVzd1UkZxRS9YeCtqQUJ0QTdXd3ZnZDd0TDRWYXlvM0puVzhZTmhjU09vSGlLLzRsWXlRRDU2U2JTQ3VXYXgxL2VJdXNkekV6eXZFWE1zTm52SERNY0VsK2lPU1NwUDdmL3NJLS1hUWlDL1RVVzRpQWFmdjNtemE3TXZ3PT0%3D--8606eae2e22b8940dbcac382a5f7f33e92bd89f1;
         path=/; HttpOnly
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Thu, 02 Apr 2015 00:18:51 GMT
+  recorded_at: Thu, 09 Apr 2015 19:10:15 GMT
 recorded_with: VCR 2.9.3
