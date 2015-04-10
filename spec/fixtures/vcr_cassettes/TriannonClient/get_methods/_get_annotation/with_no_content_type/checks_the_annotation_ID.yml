@@ -31,31 +31,31 @@ http_interactions:
       Content-Type:
       - application/ld+json; charset=utf-8
       Etag:
-      - W/"3c1b38718930968edbf5f1a1bb05a3fa"
+      - W/"47c7c07c92356a07ac6948037c3a9457"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6cf905f9-7936-47f5-91f7-fcc35a355a27
+      - 6e5c9d26-1e04-4b51-97a2-4fe22ef6115e
       X-Runtime:
-      - '1.517381'
+      - '1.788030'
       Server:
       - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
       Date:
-      - Fri, 10 Apr 2015 16:13:45 GMT
+      - Fri, 10 Apr 2015 20:30:02 GMT
       Content-Length:
       - '431'
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=ZE1tY05xQ0krRUdTZ1Y4N3ZyWTRjK1YwY2p0NE9BU1cyWG9ud3l5dkdYdm4zNmJVdUkvVndjaVJqYkN6VzZwUHpwTXZtNDRVUnozQW1hTEJTS3I3c1J1SWJIU2oyRTFUL2JkdHlxZGkrUUpXa2lrVFhsTGUvc1p3MXNaMDRJYmtqYVp1MTJEZEJRSnliNFVXcTVhNmU0TzhkSjdlY1VJSUNsWkNEbEtZQmNEZzh6ZG5zMloyT3JWd3phbDcxVGVhL1dTY1IzTnU3Z0Mxby9sTFZUOE9xZk9hNmI0N1hXdytOTHBPODBEbmRFaz0tLXdFZW9ta0M5UzlNMjFsaldJeFVrdlE9PQ%3D%3D--14f049812d959306280ec30b165ad963cd735e47;
+      - _internal_session=S01jUks3dkJTa0lqVWRhQmFPVzdzK2xTMVpKU3FOQTNaV1FqNExUSWp0VjBrZGJXK2t0L1ZDRXBjMlJvTXdKTnVEcUorakY4bWpLbEtORVJrVG5YSERlay9IUEtDODRzT0hPZ00wRy85TmVlWXF6Mm9ReVdOWDNVNGw3MjR5ZzJiamdpMGovdld5c1NWU1piSUVjYWM4bUZUamhpdW96RDRUK3UyTldMZG84ZWw1OFhpUlAxLzR1SjU1VXRwM052UTZDdWRGanV2eEUrazJ3aWw4T013NzYxbFM3TVJDMnZMY0o5MjNjdDd6Zz0tLVBrV24zaFIzUGJtV3pYUmVxVzM4RHc9PQ%3D%3D--bdf8e80ff52677b50be0a488a210fdd6e270435d;
         path=/; HttpOnly
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g70361749615000","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
-        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/24659925-87f9-472a-a695-f4624b9e2988","@type":"oa:Annotation","hasBody":"_:g70361749615000","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
+      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g70361751227560","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
+        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/a00f60c3-fc2f-48aa-b9e9-c337220efa93","@type":"oa:Annotation","hasBody":"_:g70361751227560","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
     http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:13:45 GMT
+  recorded_at: Fri, 10 Apr 2015 20:30:02 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -75,7 +75,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Fri, 10 Apr 2015 16:13:45 GMT
+      - Fri, 10 Apr 2015 20:30:02 GMT
       Server:
       - Apache/2
       Location:
@@ -83,7 +83,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 10 Apr 2015 22:13:45 GMT
+      - Sat, 11 Apr 2015 02:30:02 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -99,7 +99,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:13:45 GMT
+  recorded_at: Fri, 10 Apr 2015 20:30:02 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -121,7 +121,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 10 Apr 2015 16:13:45 GMT
+      - Fri, 10 Apr 2015 20:30:02 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -135,7 +135,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 10 Apr 2015 22:13:45 GMT
+      - Sat, 11 Apr 2015 02:30:02 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Content-Type:
@@ -1251,7 +1251,7 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:13:45 GMT
+  recorded_at: Fri, 10 Apr 2015 20:30:03 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -1271,7 +1271,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Fri, 10 Apr 2015 16:13:46 GMT
+      - Fri, 10 Apr 2015 20:30:03 GMT
       Server:
       - Apache/2
       Location:
@@ -1279,7 +1279,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 10 Apr 2015 22:13:46 GMT
+      - Sat, 11 Apr 2015 02:30:03 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -1295,7 +1295,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:13:46 GMT
+  recorded_at: Fri, 10 Apr 2015 20:30:03 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -1317,7 +1317,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 10 Apr 2015 16:13:46 GMT
+      - Fri, 10 Apr 2015 20:30:03 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -1331,7 +1331,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 10 Apr 2015 22:13:46 GMT
+      - Sat, 11 Apr 2015 02:30:03 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Content-Type:
@@ -2447,10 +2447,10 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:13:46 GMT
+  recorded_at: Fri, 10 Apr 2015 20:30:03 GMT
 - request:
     method: get
-    uri: http://localhost:3000/annotations/85f013a4-d29f-4030-9f45-6633811e4f63
+    uri: http://localhost:3000/annotations/anything_here_is_OK
     body:
       encoding: US-ASCII
       string: ''
@@ -2479,13 +2479,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 1c642c45-b4fe-4f88-a2d6-b752c13c8057
+      - 7aefc55b-9499-4b04-b4c6-8e6e131040dd
       X-Runtime:
-      - '0.654433'
+      - '0.633849'
       Server:
       - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
       Date:
-      - Fri, 10 Apr 2015 16:13:47 GMT
+      - Fri, 10 Apr 2015 20:30:04 GMT
       Content-Length:
       - '60'
       Connection:
@@ -2494,7 +2494,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
     http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:13:47 GMT
+  recorded_at: Fri, 10 Apr 2015 20:30:04 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -2514,7 +2514,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Fri, 10 Apr 2015 16:13:47 GMT
+      - Fri, 10 Apr 2015 20:30:04 GMT
       Server:
       - Apache/2
       Location:
@@ -2522,7 +2522,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 10 Apr 2015 22:13:47 GMT
+      - Sat, 11 Apr 2015 02:30:04 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -2538,7 +2538,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:13:47 GMT
+  recorded_at: Fri, 10 Apr 2015 20:30:04 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -2560,7 +2560,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 10 Apr 2015 16:13:47 GMT
+      - Fri, 10 Apr 2015 20:30:04 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -2574,7 +2574,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 10 Apr 2015 22:13:47 GMT
+      - Sat, 11 Apr 2015 02:30:04 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Content-Type:
@@ -3690,7 +3690,7 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:13:47 GMT
+  recorded_at: Fri, 10 Apr 2015 20:30:05 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -3710,7 +3710,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Fri, 10 Apr 2015 16:13:48 GMT
+      - Fri, 10 Apr 2015 20:30:05 GMT
       Server:
       - Apache/2
       Location:
@@ -3718,7 +3718,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 10 Apr 2015 22:13:48 GMT
+      - Sat, 11 Apr 2015 02:30:05 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -3734,7 +3734,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:13:48 GMT
+  recorded_at: Fri, 10 Apr 2015 20:30:05 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -3756,7 +3756,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 10 Apr 2015 16:13:48 GMT
+      - Fri, 10 Apr 2015 20:30:05 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -3770,7 +3770,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 10 Apr 2015 22:13:48 GMT
+      - Sat, 11 Apr 2015 02:30:05 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Content-Type:
@@ -4886,10 +4886,10 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:13:48 GMT
+  recorded_at: Fri, 10 Apr 2015 20:30:05 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/annotations/24659925-87f9-472a-a695-f4624b9e2988
+    uri: http://localhost:3000/annotations/a00f60c3-fc2f-48aa-b9e9-c337220efa93
     body:
       encoding: US-ASCII
       string: ''
@@ -4916,1244 +4916,22 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - c6d398a3-4325-40f3-83f5-89ad917b484b
+      - 2aa9afcb-5689-4664-85b7-7355a1a5d8e0
       X-Runtime:
-      - '0.237973'
+      - '0.221067'
       Server:
       - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
       Date:
-      - Fri, 10 Apr 2015 16:13:48 GMT
+      - Fri, 10 Apr 2015 20:30:06 GMT
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=L2VhUDI0cUIwL2VFZ2huN04vUTF6TEFaS2R0RFZNRUZEOVhOWVU1U3ZkZ2NoZmpCbTV4UU41ZDdHZUEwaVJHU0xScHZOeitMeGRIVUJYRlhmVHA4Q1E4bVlGVXpaTklWMk9Fc2lFeEg1OUg1WEJ5ZjZMV3dFVCtxaTlNMlE2RE1CK2gyUW9CWk1HQzdMbDA5WHovSmsxOHRuTHVmQmw0RUNscmcxY2YvYzlrOEhCdnRyd2poOVpaUFZUeXNuMGlELS1JUGNCOGhKemdjMnBpN2ROUFRrcDB3PT0%3D--1d9279956a43d9d44ebd474a4578770be0da7cbf;
+      - _internal_session=U0VpWmkwVEg5RUUyZDgzcjJ3T1NqZTcwd3J3ZlBuck1TQ1I1ZW9MUmRPN1ZBMWlBSkw3N2UrWGFTSkJVOVl0YkhIVnN2M05OVHlaY3BRTnJ3QUUrZFE3UmtZSEpsV2JrNStpRnpMRnhxOEVVbUdJSUpLbzN4YWp1dnR6Y05NZWQzMUZtZXNyVUhZVjljL1ZFK3M0a2pUWFRLcEY0Y2JLWUVxV2p6NVJoL1N4UE85aXJSYk9qRlFRU0N3OXh4KzI3LS1hL0NLSHBpSlM0aS8yUnlSMitOUE5RPT0%3D--693694ce944298b32cdcbf9ab0c1d8a441dbaedd;
         path=/; HttpOnly
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:13:48 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/86882bfe-ce2a-4f70-9810-32b212741492
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 5ded725b-7198-454f-a738-b35e2c486e85
-      X-Runtime:
-      - '0.706200'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 16:14:06 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:14:06 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/73386d4e-b970-4e99-a3b5-84bdceb604d0
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 3c5db8de-524b-4961-8ba3-512f6e6e9b34
-      X-Runtime:
-      - '0.649464'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 16:16:12 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:16:12 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/a2cda5cf-0ca9-49e3-beb8-4549df74f96d
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 7a8f99fe-d268-4f18-a7cb-f30accb3e454
-      X-Runtime:
-      - '0.698492'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 16:17:31 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 16:17:31 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/0f1c2e6f-9bcd-4c30-8146-b2d1ed749835
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - af278ee4-0259-46a3-8330-3199c57b14f4
-      X-Runtime:
-      - '13.659506'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 18:43:06 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 18:43:06 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/922d74ff-e202-4cc4-9270-8a6ff7a65faf
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 477bc6a3-6a2f-4a8b-a9b2-93a8ebf186e3
-      X-Runtime:
-      - '9.085807'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 18:43:59 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 18:43:59 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/7ad7be74-3b04-45ac-a67b-85f9ac0ca0c5
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - a9917e48-a8ba-49b5-bb5c-252c336121a5
-      X-Runtime:
-      - '7.812707'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 18:46:55 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 18:46:55 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/10c03a70-c3d0-4e66-a81d-ecf306fdc449
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 189b7f59-0135-4776-b1b6-72637d714cbb
-      X-Runtime:
-      - '15.306811'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 18:49:47 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 18:49:47 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/b29b264f-9e2f-48c9-a851-dfcd55d5d2c5
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 32d270eb-8836-46b7-85d4-169bdc4daa44
-      X-Runtime:
-      - '1.441552'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 18:50:25 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 18:50:25 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/4adddab4-a716-493c-a79b-85860c195923
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 9831fd3b-baad-4b43-9828-e1b15756d611
-      X-Runtime:
-      - '12.418435'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 18:51:54 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 18:51:54 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/3afceafa-2b6e-471c-af22-be06d23235fd
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - bb6d07b8-bd8f-49c6-b8e0-a26f5c12001d
-      X-Runtime:
-      - '4.928464'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 18:52:27 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 18:52:27 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/86054ff9-aa7e-4c95-bb78-198746d68f5a
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - a9326a05-58f3-43de-9e87-6ca85437134f
-      X-Runtime:
-      - '1.315847'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 18:59:31 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 18:59:31 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/c31604eb-8ffe-4105-921f-7cfee002b408
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - a7151ed7-08f9-460a-9b4a-a2bd53ccdac1
-      X-Runtime:
-      - '1.566657'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 19:00:22 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 19:00:22 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/cef9bd24-f740-4454-880a-7b09874cfa55
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 8df49914-7412-47ce-8bf4-eeea1b6c14f0
-      X-Runtime:
-      - '1.213100'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 19:01:05 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 19:01:05 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/3494f364-ff60-44f6-876b-dd05151d5e68
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 44ea0ab9-941d-4f88-8449-18ee1f14b589
-      X-Runtime:
-      - '1.564058'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 19:01:58 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 19:01:58 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/2d489939-f91f-4072-80dd-60f56f9ef505
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - c277b06c-f9eb-4031-a88a-da54158a1d47
-      X-Runtime:
-      - '0.670230'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 20:16:24 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 20:16:24 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/8f6e9c96-c6c4-40b9-97b5-0673b77f3f95
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 73c0eca0-7cf6-4401-882b-4bc3f40664cc
-      X-Runtime:
-      - '0.680394'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 20:17:55 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 20:17:55 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/2f42b98c-c36a-4273-a72e-674940357dc8
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 51efdf8a-2b76-4604-ae6e-0b7a073736ac
-      X-Runtime:
-      - '0.624140'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 20:21:42 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 20:21:42 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/94943b63-3751-48f0-9518-0e6532307c8c
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 4feda5a8-e2bf-42f4-8b97-440bd21ad9f8
-      X-Runtime:
-      - '0.645185'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 20:28:15 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 20:28:15 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/fff3fb83-1c81-4714-ac44-f3f17b089d8b
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 08ef70f2-24a3-46ac-87fc-ee648871d781
-      X-Runtime:
-      - '0.623637'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 20:30:06 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
   recorded_at: Fri, 10 Apr 2015 20:30:06 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/47933158-78aa-4c84-84c9-4bca4dbe7e8d
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - c62114d2-4d5a-4104-a5d5-a813c98199ce
-      X-Runtime:
-      - '0.613371'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 20:40:43 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 20:40:43 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/53e48941-6bc8-420d-a326-cef75f242825
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - da50a607-ab23-4d27-8c65-a0cc6eec8b20
-      X-Runtime:
-      - '0.648677'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 20:51:09 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 20:51:09 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/924d0e5b-aa5b-4339-9e6f-68dcdd1db031
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 2c5bf5bc-19d0-4050-9bf9-f042ab999c1a
-      X-Runtime:
-      - '0.637775'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 20:53:09 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 20:53:09 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/60ddbd3e-1471-4357-9825-aafa03641bf1
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 6d941404-2d51-4c05-97f3-2ffc771065bc
-      X-Runtime:
-      - '0.674493'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 20:53:29 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 20:53:29 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/4f391486-660d-49e2-9b33-5a351041b12a
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 7cc83adc-bc7d-4413-9786-5103b428d190
-      X-Runtime:
-      - '0.604547'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 20:53:39 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 20:53:39 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/6ef7221a-d53f-4669-a72e-1c62ab78047f
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 2a54085c-801d-4be0-9a4d-4ad9a3f346c3
-      X-Runtime:
-      - '0.746552'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 20:54:24 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 20:54:24 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/af129259-4372-4833-b033-60ffd8728fab
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: 'OK '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - application/ld+json; charset=utf-8
-      Etag:
-      - W/"9df5c3974b1caa6c7eebec7d20f4b8df"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 17921c6d-519e-4839-ac8c-2b8f5d956f67
-      X-Runtime:
-      - '0.630949'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
-      Date:
-      - Fri, 10 Apr 2015 21:06:27 GMT
-      Content-Length:
-      - '60'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json"}'
-    http_version: 
-  recorded_at: Fri, 10 Apr 2015 21:06:27 GMT
 recorded_with: VCR 2.9.3
