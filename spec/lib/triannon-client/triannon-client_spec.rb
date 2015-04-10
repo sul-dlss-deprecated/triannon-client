@@ -40,15 +40,6 @@ describe TriannonClient, :vcr do
     @oa_jsonld = '{"@context":"http://iiif.io/api/presentation/2/context.json","@graph":[{"@id":"_:g70349699654640","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I love this!","format":"text/plain","language":"en"},{"@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":"_:g70349699654640"}]}'
   end
 
-  # before :each do
-  #   @anno = create_annotation
-  # end
-
-  # after :each do
-  #   tc = TriannonClient::TriannonClient.new
-  #   tc.delete_annotation(@anno[:id])
-  # end
-
   describe 'has constant' do
     it 'CONTENT_TYPES' do
       const = TriannonClient::TriannonClient::CONTENT_TYPES
