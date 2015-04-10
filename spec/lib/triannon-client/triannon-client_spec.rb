@@ -124,16 +124,18 @@ describe TriannonClient, :vcr do
     before(:example) do
       @tc = TriannonClient::TriannonClient.new
     end
-    it "should handle a 204 response to DELETE request" do
-      skip ("mock this properly")
-      # back_end = double()
-      # response = double
-      # allow(response),to receive(:code).and_return(204)
-      # allow(back_end).to receive(:delete).and_return(response)
-
-      # allow_any_instance_of(RestClient).to receive(:delete)
-      # allow(@tc).to receive(@sitle).and_return(back_end)
-      # expect(@tc.delete_annotation).to be true
+    def test_successful_delete_for_response_code(code)
+      allow_any_instance_of(RestClient::Response).to receive(:code).and_return(code)
+      expect(@tc.delete_annotation('anything_here_is_OK')).to be true
+    end
+    it "returns true for a 200 response to a DELETE request" do
+      test_successful_delete_for_response_code(200)
+    end
+    it "returns true for a 202 response to a DELETE request" do
+      test_successful_delete_for_response_code(202)
+    end
+    it "returns true for a 204 response to a DELETE request" do
+      test_successful_delete_for_response_code(204)
     end
     it 'deletes an open annotation that exists' do
       anno = create_annotation
