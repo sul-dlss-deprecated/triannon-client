@@ -128,6 +128,11 @@ describe TriannonClient, :vcr do
     it "returns true for a 204 response to a DELETE request" do
       test_successful_delete_for_response_code(204)
     end
+    it 'checks the annotation ID' do
+      allow(@tc).to receive(:check_id)
+      @tc.delete_annotation('anything_here_is_OK')
+      expect(@tc).to have_received(:check_id)
+    end
     it 'deletes an open annotation that exists' do
       anno = create_annotation
       expect( @tc.delete_annotation(anno[:id]) ).to be true
@@ -175,6 +180,11 @@ describe TriannonClient, :vcr do
         #TODO
       end
       context 'with no content_type' do
+        it 'checks the annotation ID' do
+          allow(@tc).to receive(:check_id)
+          @tc.get_annotation('anything_here_is_OK') rescue nil
+          expect(@tc).to have_received(:check_id)
+        end
         it 'raises an argument error with a nil ID' do
           expect{@tc.get_annotation(nil)}.to raise_error(ArgumentError)
         end
