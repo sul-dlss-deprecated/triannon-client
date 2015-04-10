@@ -144,11 +144,10 @@ describe TriannonClient, :vcr do
       id = 'anno_does_not_exist'
       expect( @tc.delete_annotation(id) ).to be false
     end
-    it "logging" do
-      skip ("mock this properly")
-      # expect(@tc.send(:logger)).to receive(:error).with("could not delete id ")
-      # # mock mock mock
-      # @tc.delete_annotation(non-existen-id)  or return 404 or whatever
+    it 'logs exceptions' do
+      allow_any_instance_of(RestClient::Response).to receive(:code).and_raise('trigger_logging')
+      expect(TriannonClient.configuration.logger).to receive(:error).with(/trigger_logging/)
+      @tc.delete_annotation('anything_here_is_OK')
     end
     it "doesn't call the back end" do
       skip ("mock this properly")
