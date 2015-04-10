@@ -115,18 +115,21 @@ describe TriannonClient, :vcr do
     before(:example) do
       @tc = TriannonClient::TriannonClient.new
     end
-    def test_successful_delete_for_response_code(code)
-      allow_any_instance_of(RestClient::Response).to receive(:code).and_return(code)
-      expect(@tc.delete_annotation('anything_here_is_OK')).to be true
+    def test_delete_for_response_code(status, response)
+      allow_any_instance_of(RestClient::Response).to receive(:code).and_return(status)
+      expect(@tc.delete_annotation('anything_here_is_OK')).to be response
+    end
+    it "returns false for a 500 response to a DELETE request" do
+      test_delete_for_response_code(500, false)
     end
     it "returns true for a 200 response to a DELETE request" do
-      test_successful_delete_for_response_code(200)
+      test_delete_for_response_code(200, true)
     end
     it "returns true for a 202 response to a DELETE request" do
-      test_successful_delete_for_response_code(202)
+      test_delete_for_response_code(202, true)
     end
     it "returns true for a 204 response to a DELETE request" do
-      test_successful_delete_for_response_code(204)
+      test_delete_for_response_code(204, true)
     end
     it 'checks the annotation ID' do
       allow(@tc).to receive(:check_id)
