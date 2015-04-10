@@ -75,57 +75,55 @@ describe TriannonClient, :vcr do
   end
 
   describe 'responds to' do
+    before(:example) do
+      @tc = TriannonClient::TriannonClient.new
+    end
     it 'delete_annotation' do
-      tc = TriannonClient::TriannonClient.new
-      expect(tc).to respond_to(:delete_annotation)
+      expect(@tc).to respond_to(:delete_annotation)
     end
     it 'get_annotations' do
-      tc = TriannonClient::TriannonClient.new
-      expect(tc).to respond_to(:get_annotations)
+      expect(@tc).to respond_to(:get_annotations)
     end
     it 'get_annotation' do
-      tc = TriannonClient::TriannonClient.new
-      expect(tc).to respond_to(:get_annotation)
+      expect(@tc).to respond_to(:get_annotation)
     end
     it 'get_iiif_annotation' do
-      tc = TriannonClient::TriannonClient.new
-      expect(tc).to respond_to(:get_iiif_annotation)
+      expect(@tc).to respond_to(:get_iiif_annotation)
     end
     it 'get_oa_annotation' do
-      tc = TriannonClient::TriannonClient.new
-      expect(tc).to respond_to(:get_oa_annotation)
+      expect(@tc).to respond_to(:get_oa_annotation)
     end
     it 'site' do
-      tc = TriannonClient::TriannonClient.new
-      expect(tc).to respond_to(:site)
+      expect(@tc).to respond_to(:site)
     end
     # utilities
     it 'response2graph' do
-      tc = TriannonClient::TriannonClient.new
-      expect(tc).to respond_to(:response2graph)
+      expect(@tc).to respond_to(:response2graph)
     end
     it 'annotation_id' do
-      tc = TriannonClient::TriannonClient.new
-      expect(tc).to respond_to(:annotation_id)
+      expect(@tc).to respond_to(:annotation_id)
     end
     it 'annotation_uri' do
-      tc = TriannonClient::TriannonClient.new
-      expect(tc).to respond_to(:annotation_uri)
+      expect(@tc).to respond_to(:annotation_uri)
     end
   end
 
   describe 'has private method' do
+    before(:example) do
+      @tc = TriannonClient::TriannonClient.new
+    end
     it 'check_id' do
-      tc = TriannonClient::TriannonClient.new
-      expect(tc).not_to respond_to(:check_id)
+      expect(@tc).not_to respond_to(:check_id)
     end
     it 'check_content_type' do
-      tc = TriannonClient::TriannonClient.new
-      expect(tc).not_to respond_to(:check_content_type)
+      expect(@tc).not_to respond_to(:check_content_type)
     end
   end
 
   describe "#delete_annotation" do
+    before(:example) do
+      @tc = TriannonClient::TriannonClient.new
+    end
     it "should handle a 204 response to DELETE request" do
       skip ("mock this properly")
       # back_end = double()
@@ -139,14 +137,11 @@ describe TriannonClient, :vcr do
     end
     it 'deletes an open annotation that exists' do
       anno = create_annotation
-      id = anno[:id]
-      tc = TriannonClient::TriannonClient.new
-      expect( tc.delete_annotation(id) ).to be true
+      expect( @tc.delete_annotation(anno[:id]) ).to be true
     end
     it 'fails to delete an open annotation that does NOT exist' do
       id = 'anno_does_not_exist'
-      tc = TriannonClient::TriannonClient.new
-      expect( tc.delete_annotation(id) ).to be false
+      expect( @tc.delete_annotation(id) ).to be false
     end
     it "logging" do
       skip ("mock this properly")
@@ -171,65 +166,62 @@ describe TriannonClient, :vcr do
     end
   end
 
-  describe "#get_annotation" do
-    context 'with content_type' do
-      #TODO
+
+  describe "get_methods" do
+    before(:example) do
+      # create a new annotation and call all the response processing utils.
+      @tc = TriannonClient::TriannonClient.new
+      @anno = create_annotation
     end
-    context 'with no content_type' do
-      it 'raises an argument error with a nil ID' do
-        tc = TriannonClient::TriannonClient.new
-        expect{tc.get_annotation(nil)}.to raise_error(ArgumentError)
+    after(:example) do
+      delete_annotation(@anno[:id]) # cleanup after create_annotation
+    end
+
+    describe "#get_annotation" do
+      context 'with content_type' do
+        #TODO
       end
-      it 'raises an argument error with an integer ID' do
-        tc = TriannonClient::TriannonClient.new
-        expect{tc.get_annotation(0)}.to raise_error(ArgumentError)
+      context 'with no content_type' do
+        it 'raises an argument error with a nil ID' do
+          expect{@tc.get_annotation(nil)}.to raise_error(ArgumentError)
+        end
+        it 'raises an argument error with an integer ID' do
+          expect{@tc.get_annotation(0)}.to raise_error(ArgumentError)
+        end
+        it 'raises an argument error with an empty string ID' do
+          expect{@tc.get_annotation('')}.to raise_error(ArgumentError)
+        end
+        it 'returns an RDF graph with a valid ID for an annotation on the server' do
+          graph = @tc.get_annotation(@anno[:id])
+          check_graph_has_statements(graph)
+        end
+        it 'returns an EMPTY RDF graph with a valid ID for NO annotation on the server' do
+          id = SecureRandom.uuid
+          graph = @tc.get_annotation(id)
+          expect(graph).to be_instance_of RDF::Graph
+          expect(graph.empty?).to be true
+        end
       end
-      it 'raises an argument error with an empty string ID' do
-        tc = TriannonClient::TriannonClient.new
-        expect{tc.get_annotation('')}.to raise_error(ArgumentError)
-      end
-      it 'returns an RDF graph with a valid ID for an annotation on the server' do
-        anno = create_annotation
-        id = anno[:id]
-        tc = TriannonClient::TriannonClient.new
-        graph = tc.get_annotation(id)
+    end
+
+    describe "#get_iiif_annotation" do
+      # the mime type is fixed as 'ld+json' for this method
+      it 'requests an open annotation by ID, using a IIIF profile' do
+        graph = @tc.get_iiif_annotation(@anno[:id])
         check_graph_has_statements(graph)
-        delete_annotation(id)
-      end
-      it 'returns an EMPTY RDF graph with a valid ID for NO annotation on the server' do
-        id = SecureRandom.uuid
-        tc = TriannonClient::TriannonClient.new
-        graph = tc.get_annotation(id)
-        expect(graph).to be_instance_of RDF::Graph
-        expect(graph.empty?).to be true
+        #TODO check that client sends a request with the right profile header
       end
     end
-  end
 
-  describe "#get_iiif_annotation" do
-    # the mime type is fixed as 'ld+json' for this method
-    it 'requests an open annotation by ID, using a IIIF profile' do
-      anno = create_annotation
-      id = anno[:id]
-      tc = TriannonClient::TriannonClient.new
-      graph = tc.get_iiif_annotation(id)
-      check_graph_has_statements(graph)
-      delete_annotation(id)
-      #TODO check that @tc client sends a request with the right profile header
+    describe "#get_oa_annotation" do
+      # the mime type is fixed as 'ld+json' for this method
+      it 'requests an open annotation by ID, using an OA profile' do
+        graph = @tc.get_iiif_annotation(@anno[:id])
+        check_graph_has_statements(graph)
+        #TODO check that client sends a request with the right profile header
+      end
     end
-  end
 
-  describe "#get_oa_annotation" do
-    # the mime type is fixed as 'ld+json' for this method
-    it 'requests an open annotation by ID, using an OA profile' do
-      anno = create_annotation
-      id = anno[:id]
-      tc = TriannonClient::TriannonClient.new
-      graph = tc.get_oa_annotation(id)
-      check_graph_has_statements(graph)
-      delete_annotation(id)
-      #TODO check that @tc client sends a request with the right profile header
-    end
   end
 
   describe "#post_annotation" do
@@ -239,7 +231,7 @@ describe TriannonClient, :vcr do
       expect do
         response = tc.post_annotation(@oa_jsonld)
       end.not_to raise_error
-      # Check the POST by deleting the annotation.
+      # Double check the POST by deleting the annotation.
       # If the POST was successful, the DELETE should work too.
       graph = tc.response2graph(response)
       uri = tc.annotation_uri(graph)
@@ -256,48 +248,50 @@ describe TriannonClient, :vcr do
       expect(r).to respond_to(:code)
       expect(r).to respond_to(:body)
       expect(r).to respond_to(:headers)
-      delete_annotation(anno[:id])
-    end
-  end
-
-  describe '#response2graph' do
-    it 'returns an RDF::Graph' do
-      anno = create_annotation
-      expect(anno[:graph]).to be_instance_of RDF::Graph
-      delete_annotation(anno[:id])
-    end
-  end
-
-  describe "#annotation_uri" do
-    it "returns an RDF::URI from an RDF::Graph of an annotation" do
-      anno = create_annotation
-      expect(anno[:graph]).to be_instance_of RDF::Graph
-      expect(anno[:uri]).to be_instance_of RDF::URI
-      delete_annotation(anno[:id])
-    end
-    it "returns an RDF::URI that is a valid URI" do
-      anno = create_annotation
-      expect(anno[:uri]).to match(/\A#{URI::regexp}\z/)
-      delete_annotation(anno[:id])
-    end
-  end
-
-  describe "#annotation_id" do
-    it "returns a String ID from the RDF::URI of an annotation" do
-      anno = create_annotation
-      expect(anno[:uri]).to be_instance_of RDF::URI
-      expect(anno[:id]).to be_instance_of String
-      delete_annotation(anno[:id])
-    end
-    it "returns a String ID that is not empty" do
-      anno = create_annotation
-      expect(anno[:id]).to be_instance_of String
-      expect(anno[:id].empty?).to be false
-      delete_annotation(anno[:id])
+      delete_annotation(anno[:id]) # cleanup after create_annotation
     end
   end
 
 
+  describe 'response processing utilities' do
+
+    before(:example) do
+      # create a new annotation and call all the response processing utils.
+      @anno = create_annotation
+    end
+    after(:example) do
+      delete_annotation(@anno[:id]) # cleanup after create_annotation
+    end
+
+    describe '#response2graph' do
+      it 'returns an RDF::Graph' do
+        expect(@anno[:graph]).to be_instance_of RDF::Graph
+      end
+    end
+
+    describe "#annotation_uri" do
+      it "returns an RDF::URI from an RDF::Graph of an annotation" do
+        expect(@anno[:graph]).to be_instance_of RDF::Graph
+        expect(@anno[:uri]).to be_instance_of RDF::URI
+      end
+      it "returns an RDF::URI that is a valid URI" do
+        expect(@anno[:uri]).to match(/\A#{URI::regexp}\z/)
+        delete_annotation(@anno[:id]) # cleanup after create_annotation
+      end
+    end
+
+    describe "#annotation_id" do
+      it "returns a String ID from the RDF::URI of an annotation" do
+        expect(@anno[:uri]).to be_instance_of RDF::URI
+        expect(@anno[:id]).to be_instance_of String
+      end
+      it "returns a String ID that is not empty" do
+        expect(@anno[:id]).to be_instance_of String
+        expect(@anno[:id].empty?).to be false
+      end
+    end
+
+  end
 
 end
 
