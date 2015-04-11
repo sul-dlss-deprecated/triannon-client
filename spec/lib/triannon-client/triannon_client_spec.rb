@@ -46,17 +46,27 @@ describe TriannonClient, :vcr do
       expect(const).to be_instance_of Array
       expect(const).to include('application/ld+json')
     end
+    it 'PROFILE_TYPE_IIIF' do
+      const = TriannonClient::TriannonClient::PROFILE_IIIF
+      expect(const).to be_instance_of String
+      expect(const).to include('http://iiif.io/api/presentation/2/context.json')
+    end
+    it 'PROFILE_TYPE_OA' do
+      const = TriannonClient::TriannonClient::PROFILE_OA
+      expect(const).to be_instance_of String
+      expect(const).to include('http://www.w3.org/ns/oa-context-20130208.json')
+    end
     it 'CONTENT_TYPE_IIIF' do
       const = TriannonClient::TriannonClient::CONTENT_TYPE_IIIF
       expect(const).to be_instance_of String
       expect(const).to include('application/ld+json')
-      expect(const).to include('profile="http://iiif.io/api/presentation/2/context.json"')
+      expect(const).to include('http://iiif.io/api/presentation/2/context.json')
     end
     it 'CONTENT_TYPE_OA' do
       const = TriannonClient::TriannonClient::CONTENT_TYPE_OA
       expect(const).to be_instance_of String
       expect(const).to include('application/ld+json')
-      expect(const).to include('profile="http://www.w3.org/ns/oa-context-20130208.json"')
+      expect(const).to include('http://www.w3.org/ns/oa-context-20130208.json')
     end
     it 'JSONLD_TYPE' do
       const = TriannonClient::TriannonClient::JSONLD_TYPE
