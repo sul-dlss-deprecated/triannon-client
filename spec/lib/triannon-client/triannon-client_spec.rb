@@ -149,11 +149,14 @@ describe TriannonClient, :vcr do
       expect(TriannonClient.configuration.logger).to receive(:error).with(/trigger_logging/)
       @tc.delete_annotation('anything_here_is_OK')
     end
-    it "doesn't call the back end" do
-      skip ("mock this properly")
-      # allow(@tc).to receive(@rest_client).and_return(mock)
-      # expect(@rest_client).not_to receive(:delete)
-      # @tc.del
+    it 'does NOT set a path to DELETE an invalid annotation ID' do
+      expect(@tc.site).not_to receive(:[])
+      @tc.delete_annotation('') rescue nil
+      @tc.delete_annotation(nil) rescue nil
+    end
+    it 'sets a path to DELETE a valid annotation ID' do
+      expect(@tc.site).to receive(:[])
+      @tc.delete_annotation('a_non_empty_string_is_OK')
     end
   end
 
