@@ -171,11 +171,26 @@ describe TriannonClient, :vcr do
   end
 
   describe "#get_annotations" do
-    it 'returns an array of open annotations' do
-      skip ("pending changes to triannon")
-      # annos = @tc.get_annotations
-      # expect(annos).to be_instance_of Array
-      # expect(annos.length > 0).to be_truthy
+    before(:example) do
+      @tc = TriannonClient::TriannonClient.new
+    end
+    it 'returns an RDF::Graph' do
+      annos = @tc.get_annotations
+      expect(annos).to be_instance_of RDF::Graph
+    end
+    it 'returns an RDF::Graph that contains an AnnotationList' do
+      annos = @tc.get_annotations
+      anno_list_uri = RDF::URI.parse('http://iiif.io/api/presentation/2#AnnotationList')
+      result = annos.query([nil, nil, anno_list_uri])
+      expect(result.size).to eql(1)
+    end
+    it 'returns an annotation list with an annotation created by a prior POST' do
+      anno = create_annotation
+      annos = @tc.get_annotations
+      result = annos.query([nil, RDF.type, RDF::Vocab::OA.Annotation])
+      expect(result.size).to eql(1)
+      expect(result.each_subject.collect{|s| s}).to include(anno[:uri])
+      @tc.delete_annotation(anno[:id])
     end
   end
 

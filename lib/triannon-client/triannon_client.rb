@@ -9,8 +9,8 @@ module TriannonClient
     JSONLD_TYPE = 'application/ld+json'
     PROFILE_IIIF = 'http://iiif.io/api/presentation/2/context.json'
     PROFILE_OA   = 'http://www.w3.org/ns/oa-context-20130208.json'
-    CONTENT_TYPE_IIIF = "#{JSONLD_TYPE}; profile='#{PROFILE_IIIF}'"
-    CONTENT_TYPE_OA   = "#{JSONLD_TYPE}; profile='#{PROFILE_OA}'"
+    CONTENT_TYPE_IIIF = "#{JSONLD_TYPE}; profile=\"#{PROFILE_IIIF}\""
+    CONTENT_TYPE_OA   = "#{JSONLD_TYPE}; profile=\"#{PROFILE_OA}\""
 
     attr_reader :config
     attr_accessor :site
