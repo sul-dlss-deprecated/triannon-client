@@ -126,6 +126,9 @@ module TriannonClient
     # @param response [RestClient::Response] A RestClient::Response from Triannon
     # @response graph [RDF::Graph] An RDF::Graph instance
     def response2graph(response)
+      unless response.instance_of?(String) && response.respond_to?(:headers)
+        raise ArgumentError, 'response is not a RestClient::Response'
+      end
       content_type = response.headers[:content_type]
       check_content_type(content_type)
       g = RDF::Graph.new
@@ -136,7 +139,7 @@ module TriannonClient
         end
       rescue
         binding.pry if @config.debug
-        @config.logger.error("Failed parse response into RDF::Graph: #{e.message}")
+        @config.logger.error("Failed to parse response into RDF::Graph: #{e.message}")
       end
       g
     end

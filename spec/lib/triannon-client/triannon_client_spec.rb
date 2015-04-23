@@ -40,7 +40,7 @@ describe TriannonClient, :vcr do
     @oa_jsonld = '{"@context":"http://iiif.io/api/presentation/2/context.json","@graph":[{"@id":"_:g70349699654640","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I love this!","format":"text/plain","language":"en"},{"@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":"_:g70349699654640"}]}'
   end
 
-  describe 'has constant' do
+  describe 'has constants:' do
     it 'CONTENT_TYPES' do
       const = TriannonClient::TriannonClient::CONTENT_TYPES
       expect(const).to be_instance_of Array
@@ -75,7 +75,7 @@ describe TriannonClient, :vcr do
     end
   end
 
-  describe 'responds to' do
+  describe 'has public methods:' do
     before(:example) do
       @tc = TriannonClient::TriannonClient.new
     end
@@ -109,7 +109,7 @@ describe TriannonClient, :vcr do
     end
   end
 
-  describe 'has private method' do
+  describe 'has private methods:' do
     before(:example) do
       @tc = TriannonClient::TriannonClient.new
     end
@@ -141,17 +141,20 @@ describe TriannonClient, :vcr do
     it "returns true for a 204 response to a DELETE request" do
       test_delete_for_response_code(204, true)
     end
-    it 'checks the annotation ID' do
-      allow(@tc).to receive(:check_id)
+    it 'validates the annotation ID' do
+      expect(@tc).to receive(:check_id)
       @tc.delete_annotation('anything_here_is_OK')
-      expect(@tc).to have_received(:check_id)
     end
     it 'deletes an open annotation that exists' do
       anno = create_annotation
       expect( @tc.delete_annotation(anno[:id]) ).to be true
+      graph = @tc.get_annotation(anno[:id])
+      expect(graph).to be_empty
     end
     it 'fails to delete an open annotation that does NOT exist' do
       id = 'anno_does_not_exist'
+      graph = @tc.get_annotation(id)
+      expect(graph).to be_empty
       expect( @tc.delete_annotation(id) ).to be false
     end
     it 'logs exceptions' do
@@ -159,12 +162,16 @@ describe TriannonClient, :vcr do
       expect(TriannonClient.configuration.logger).to receive(:error).with(/trigger_logging/)
       @tc.delete_annotation('anything_here_is_OK')
     end
-    it 'does NOT set a path to DELETE an invalid annotation ID' do
+    it 'quits after detecting an invalid annotation ID' do
+      # TriannonClient#site should not receive a URI path in the :[] method, see
+      # http://www.rubydoc.info/gems/rest-client/RestClient/Resource#[]-instance_method
       expect(@tc.site).not_to receive(:[])
       @tc.delete_annotation('') rescue nil
       @tc.delete_annotation(nil) rescue nil
     end
-    it 'sets a path to DELETE a valid annotation ID' do
+    it 'uses TriannonClient#site to DELETE a valid annotation ID' do
+      # TriannonClient#site should receive a URI path in the :[] method, see
+      # http://www.rubydoc.info/gems/rest-client/RestClient/Resource#[]-instance_method
       expect(@tc.site).to receive(:[])
       @tc.delete_annotation('a_non_empty_string_is_OK')
     end
@@ -194,8 +201,7 @@ describe TriannonClient, :vcr do
     end
   end
 
-
-  describe "get_methods" do
+  describe "GET annotation by ID:" do
     before(:example) do
       # create a new annotation and call all the response processing utils.
       @tc = TriannonClient::TriannonClient.new
@@ -290,6 +296,7 @@ describe TriannonClient, :vcr do
 
     before(:example) do
       # create a new annotation and call all the response processing utils.
+      @tc = TriannonClient::TriannonClient.new
       @anno = create_annotation
     end
     after(:example) do
@@ -297,6 +304,16 @@ describe TriannonClient, :vcr do
     end
 
     describe '#response2graph' do
+      it 'accepts a RestClient::Response instance' do
+        r = @anno[:response]
+        expect{@tc.response2graph(r)}.not_to raise_error
+      end
+      it 'raises ArgumentError when given nil' do
+        expect{@tc.response2graph(nil)}.to raise_error(ArgumentError)
+      end
+      it 'raises ArgumentError when given an empty String' do
+        expect{@tc.response2graph('')}.to raise_error(ArgumentError)
+      end
       it 'returns an RDF::Graph' do
         expect(@anno[:graph]).to be_instance_of RDF::Graph
       end
