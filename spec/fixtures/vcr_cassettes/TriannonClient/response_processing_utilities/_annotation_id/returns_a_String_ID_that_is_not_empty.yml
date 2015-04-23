@@ -31,31 +31,31 @@ http_interactions:
       Content-Type:
       - application/ld+json; charset=utf-8
       Etag:
-      - W/"11f0fb48f10afcbf41f997e84d2ecde7"
+      - W/"58c7c125ee148ab4b97ed6514f12d8b6"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 50dc3ab1-18dd-463d-a3fd-a8ba9b84c81e
+      - 024beb6a-79f7-486b-8ee4-15cc063613c4
       X-Runtime:
-      - '1.573261'
+      - '1.561145'
       Server:
       - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
       Date:
-      - Wed, 22 Apr 2015 18:16:59 GMT
+      - Thu, 23 Apr 2015 00:12:29 GMT
       Content-Length:
       - '431'
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=TkJuV254WFJxOUk5eDlDbGw3S0lyYXR3ZlNqUGJpdjh1OHpZcnRWVEtwTnZ3WmxscHVVN3FnTnYxclB4cytWOXRFV21BM1FPbm1FbFZ2Mk1zY3hKUDRnZWlWeEJieXQrSk9RWWZJYzBOeXNHV2pUSVRpOVpFSGR3NzNhMW51SkdSVmVnZFl3eGNjL0w2enFuc1c4UFAxQndpSDFmNHVzNTlhcUJBa3A4dnhMaGZWSktpM0lrTUpvSSt4NnJyandwZDZKQ1dqc3ZkajRJNnpSYkdsZlkzZkRHTjlCNWZFeWdWa0FVUU91N3d1Yz0tLVhFSWswbzBLT0lpMHU1YXRDc1lFZVE9PQ%3D%3D--977307af56f6a8207d24f524eae9abf524e7ab79;
+      - _internal_session=NEZFcFpYTTM4S3Bua1kwMTRCVTV2dUFEK0N1OUlOMEdwcnRkM0dlK3EzOTVDdWN2dENXV3hCTnJpYi9vT1ZNZS94RVhSekpKRTdzRU9TSGsvSVoyT2R6V0NyKzJSK1J1b2F3bGVIUmlSdm55YU4rcm50UFpWK010UVJvV3NtaEJxU1VNTGxuYUN1RXhaMkFBVXZhczk4OE03NzNtUVFWZjNxdXR1QlZIditSYXFlajg4MjVyTUsvOXFLUlFENkl0VXp0ZER2RzNnbkZ4TjN1bDZiT240bStZL25BN2FJblZZU0puSXNnNE5kWT0tLTZ3MFN0OE92SnI5YnBrSW9HelpRcWc9PQ%3D%3D--ad5f72a69b59dcdf5bc95d93fbd86ed292f41ecd;
         path=/; HttpOnly
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g70164490679320","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
-        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/c01abc9b-1bab-4046-b883-9791e4699e41","@type":"oa:Annotation","hasBody":"_:g70164490679320","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
+      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g70064211451280","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
+        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/d9e27712-b5c3-4053-a343-93ce24829046","@type":"oa:Annotation","hasBody":"_:g70064211451280","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 18:16:59 GMT
+  recorded_at: Thu, 23 Apr 2015 00:12:29 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -75,7 +75,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Wed, 22 Apr 2015 18:16:59 GMT
+      - Thu, 23 Apr 2015 00:12:29 GMT
       Server:
       - Apache/2
       Location:
@@ -83,7 +83,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Thu, 23 Apr 2015 00:16:59 GMT
+      - Thu, 23 Apr 2015 06:12:29 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -99,7 +99,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 18:16:59 GMT
+  recorded_at: Thu, 23 Apr 2015 00:12:29 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -121,7 +121,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 18:16:59 GMT
+      - Thu, 23 Apr 2015 00:12:30 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -135,7 +135,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Thu, 23 Apr 2015 00:16:59 GMT
+      - Thu, 23 Apr 2015 06:12:30 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Content-Type:
@@ -1251,7 +1251,7 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 18:16:59 GMT
+  recorded_at: Thu, 23 Apr 2015 00:12:29 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -1271,7 +1271,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Wed, 22 Apr 2015 18:17:00 GMT
+      - Thu, 23 Apr 2015 00:12:30 GMT
       Server:
       - Apache/2
       Location:
@@ -1279,7 +1279,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Thu, 23 Apr 2015 00:17:00 GMT
+      - Thu, 23 Apr 2015 06:12:30 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -1295,7 +1295,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 18:17:00 GMT
+  recorded_at: Thu, 23 Apr 2015 00:12:30 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -1317,7 +1317,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 22 Apr 2015 18:17:00 GMT
+      - Thu, 23 Apr 2015 00:12:30 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -1331,7 +1331,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Thu, 23 Apr 2015 00:17:00 GMT
+      - Thu, 23 Apr 2015 06:12:30 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Content-Type:
@@ -2447,10 +2447,10 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 18:17:00 GMT
+  recorded_at: Thu, 23 Apr 2015 00:12:30 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/annotations/c01abc9b-1bab-4046-b883-9791e4699e41
+    uri: http://localhost:3000/annotations/d9e27712-b5c3-4053-a343-93ce24829046
     body:
       encoding: US-ASCII
       string: ''
@@ -2477,22 +2477,22 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - c1cee0cf-6e99-4ce6-a52d-ffda08affab6
+      - 071581ee-46ba-4520-bbce-f37c98b2dade
       X-Runtime:
-      - '0.170746'
+      - '0.158054'
       Server:
       - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
       Date:
-      - Wed, 22 Apr 2015 18:17:00 GMT
+      - Thu, 23 Apr 2015 00:12:30 GMT
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=ZXU1Z3JsN3NmbXB3QXVyRUpreUxCL2ZHZFBtTG12Y3k3bS9ZRFJTMXl5YktwTHdtTTVjc3lKY0Y0N2d5aTFpZDlCRWpiczVZWEVObFdRcHJpcVJ5OXIvSjJ4Q1RGRklnT2tMMHhBK0toSzgvdmFmQlhRS2JFTG1lT0F2bm5MVkVBVmhwS2hVTER4Rkt4WU4zS1BGNE1PK0lrUkNqRDQ4VWdvYUhPNWVqV0IyNWtuNUJJR3EyR1k3MUFYZ0QrY01GLS1WdjNMSldkVjF0Z044K3pGaGZpYTRRPT0%3D--4620e321a2fffb98fe1d02c9d1d30702ebb67ffe;
+      - _internal_session=QXBiaTZhUnFZVU04MEJzWGY0RjdrQnp4emNtQlNaanE0MmNrdksvdm9WR01vTFJDNzhCTVJkdFdNVWRmM3U1N1N6RXdzRGg4UnFPS2dTSlJXYURmK1VkVjgyZWVBeCswNitQanZHbWptb2hjbkpzTFZPTTdZMS81VU5ZN0Ixempjc0RHa2EvdEJ2SUtLR2ZPdXUwS09lN3NzWmNUVDRHZUJOZUllTkV5ZGhFWGpGeEJONmtqY05GUC83N0xUUldXLS1VN2t4UzIvTmphZENoSUhLTWVEQ2tRPT0%3D--18537436a1cb8e5f7cdd85c596ef90da233045f5;
         path=/; HttpOnly
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 22 Apr 2015 18:17:00 GMT
+  recorded_at: Thu, 23 Apr 2015 00:12:30 GMT
 recorded_with: VCR 2.9.3
