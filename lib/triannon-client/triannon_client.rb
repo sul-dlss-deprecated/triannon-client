@@ -1,33 +1,29 @@
-
 module TriannonClient
-
   class TriannonClient
-
     # Triannon may not support all content types in RDF::Format.content_types,
     # but the client code is more generic using this as a reasonable set; this
     # allows triannon to evolve support for anything supported by RDF::Format.
     CONTENT_ERROR = 'content_type not found in RDF::Format.content_types'
     CONTENT_TYPES = RDF::Format.content_types.keys
 
-    CONTENT_TYPE_IIIF = 'application/ld+json; profile="http://iiif.io/api/presentation/2/context.json"'
-    CONTENT_TYPE_OA   = 'application/ld+json; profile="http://www.w3.org/ns/oa-context-20130208.json"'
-
     JSONLD_TYPE = 'application/ld+json'
+    PROFILE_IIIF = 'http://iiif.io/api/presentation/2/context.json'
+    PROFILE_OA   = 'http://www.w3.org/ns/oa-context-20130208.json'
+    CONTENT_TYPE_IIIF = "#{JSONLD_TYPE}; profile=\"#{PROFILE_IIIF}\""
+    CONTENT_TYPE_OA   = "#{JSONLD_TYPE}; profile=\"#{PROFILE_OA}\""
 
-
-    @@config = nil
-
+    attr_reader :config
     attr_accessor :site
 
     def initialize
       # Configure triannon-app service
-      @@config ||= ::TriannonClient.configuration
+      @config = ::TriannonClient.configuration
       @site = RestClient::Resource.new(
-        @@config.host,
-        :user => @@config.user,
-        :password => @@config.pass,
-        :open_timeout => 5,  #seconds
-        :read_timeout => 30, #seconds
+        @config.host,
+        user: @config.user,
+        password: @config.pass,
+        open_timeout: 5,
+        read_timeout: 30
       )
     end
 
@@ -38,15 +34,15 @@ module TriannonClient
       check_id(id)
       begin
         response = @site["/annotations/#{id}"].delete
-        # HTTP DELETE response codes:
-        # A successful response SHOULD be 200 (OK) if the response includes an
-        # entity describing the status, 202 (Accepted) if the action has not yet
-        # been enacted, or 204 (No Content) if the action has been enacted but the
-        # response does not include an entity.
+        # HTTP DELETE response codes: A successful response SHOULD be
+        # 200 (OK) if the response includes an entity describing the status,
+        # 202 (Accepted) if the action has not yet been enacted, or
+        # 204 (No Content) if the action has been enacted but the response
+        # does not include an entity.
         [200, 202, 204].include? response.code
       rescue => e
-        binding.pry if @@config.debug
-        @@config.logger.error("Failed to DELETE annotation: #{id}, #{e.message}")
+        binding.pry if @config.debug
+        @config.logger.error("Failed to DELETE annotation: #{id}, #{e.message}")
         false
       end
     end
@@ -56,8 +52,8 @@ module TriannonClient
     # @return response [RestClient::Response|nil]
     def post_annotation(oa)
       post_data = {
-        "commit" => "Create Annotation",
-        "annotation" => {"data" => oa}
+        'commit' => 'Create Annotation',
+        'annotation' => {'data' => oa}
       }
       response = nil
       tries = 0
@@ -69,8 +65,8 @@ module TriannonClient
         sleep 1*tries
         retry if tries < 3
         response = e.response
-        binding.pry if @@config.debug
-        @@config.logger.error("Failed to POST annotation: #{response.code}: #{response.body}")
+        binding.pry if @config.debug
+        @config.logger.error("Failed to POST annotation: #{response.code}: #{response.body}")
       end
       return response
     end
@@ -83,10 +79,11 @@ module TriannonClient
       begin
         response = @site['/annotations'].get({:accept => content_type})
         # TODO: switch yard for different response.code?
+        # TODO: log a failure for a response.code == 404
         response2graph(response)
       rescue => e
-        binding.pry if @@config.debug
-        @@config.logger.error("Failed to GET annotations: #{e.message}")
+        binding.pry if @config.debug
+        @config.logger.error("Failed to GET annotations: #{e.message}")
         RDF::Graph.new # return an empty graph
       end
     end
@@ -105,8 +102,8 @@ module TriannonClient
         response2graph(response)
       rescue => e
         # response = e.response
-        binding.pry if @@config.debug
-        @@config.logger.error("Failed to GET annotation: #{id}, #{e.message}")
+        binding.pry if @config.debug
+        @config.logger.error("Failed to GET annotation: #{id}, #{e.message}")
         RDF::Graph.new # return an empty graph
       end
     end
@@ -129,6 +126,9 @@ module TriannonClient
     # @param response [RestClient::Response] A RestClient::Response from Triannon
     # @response graph [RDF::Graph] An RDF::Graph instance
     def response2graph(response)
+      unless response.is_a? RestClient::Response
+        raise ArgumentError, 'response must be a RestClient::Response'
+      end
       content_type = response.headers[:content_type]
       check_content_type(content_type)
       g = RDF::Graph.new
@@ -138,8 +138,8 @@ module TriannonClient
           reader.each_statement {|s| g << s }
         end
       rescue
-        binding.pry if @@config.debug
-        @@config.logger.error("Failed parse response into RDF::Graph: #{e.message}")
+        binding.pry if @config.debug
+        @config.logger.error("Failed to parse response into RDF::Graph: #{e.message}")
       end
       g
     end
