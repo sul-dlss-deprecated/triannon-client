@@ -200,12 +200,13 @@ describe TriannonClient, :vcr do
   describe "GET annotation by ID:" do
     before(:example) do
       # create a new annotation and call all the response processing utils.
-      @tc = TriannonClient::TriannonClient.new
       @anno = create_annotation
     end
     after(:example) do
       delete_annotation(@anno[:id]) # cleanup after create_annotation
     end
+
+    let(:tc) { TriannonClient::TriannonClient.new }
 
     describe "#get_annotation" do
       context 'with content_type' do
@@ -213,28 +214,44 @@ describe TriannonClient, :vcr do
       end
       context 'with no content_type' do
         it 'checks the annotation ID' do
-          allow(@tc).to receive(:check_id)
-          @tc.get_annotation('anything_here_is_OK') rescue nil
-          expect(@tc).to have_received(:check_id)
+          # expect(@tc).to receive(:check_id)
+          # @tc.get_annotation('anything_here_is_OK') rescue nil
+          expect(tc).to receive(:check_id)
+          tc.get_annotation('anything_here_is_OK') rescue nil
         end
         it 'raises an argument error with a nil ID' do
-          expect{@tc.get_annotation(nil)}.to raise_error(ArgumentError)
+          expect{tc.get_annotation(nil)}.to raise_error(ArgumentError)
         end
         it 'raises an argument error with an integer ID' do
-          expect{@tc.get_annotation(0)}.to raise_error(ArgumentError)
+          expect{tc.get_annotation(0)}.to raise_error(ArgumentError)
         end
         it 'raises an argument error with an empty string ID' do
-          expect{@tc.get_annotation('')}.to raise_error(ArgumentError)
+          expect{tc.get_annotation('')}.to raise_error(ArgumentError)
         end
         it 'returns an RDF graph with a valid ID for an annotation on the server' do
-          graph = @tc.get_annotation(@anno[:id])
+          graph = tc.get_annotation(@anno[:id])
           check_graph_has_statements(graph)
         end
         it 'returns an EMPTY RDF graph with a valid ID for NO annotation on the server' do
           id = SecureRandom.uuid
-          graph = @tc.get_annotation(id)
+          graph = tc.get_annotation(id)
           expect(graph).to be_instance_of RDF::Graph
-          expect(graph.empty?).to be true
+          expect(graph).to be_empty
+        end
+        it 'returns an EMPTY RDF graph for a 500 server response' do
+          response = double
+          allow(response).to receive(:is_a?).and_return(RestClient::Response)
+          allow(response).to receive(:headers).and_return({content_type: 'application/ld+json'})
+          allow(response).to receive(:code).and_return(500)
+          allow_any_instance_of(RestClient::Resource).to receive(:get).and_return(response)
+          graph = tc.get_annotation(@anno[:id])
+          expect(graph).to be_instance_of RDF::Graph
+          expect(graph).to be_empty
+        end
+        it 'logs exceptions' do
+          allow_any_instance_of(RestClient::Resource).to receive(:get).and_raise('get_exception')
+          expect(TriannonClient.configuration.logger).to receive(:error).with(/get_exception/)
+          tc.get_annotation('raise_get_exception')
         end
       end
     end
@@ -242,7 +259,7 @@ describe TriannonClient, :vcr do
     describe "#get_iiif_annotation" do
       # the mime type is fixed as 'ld+json' for this method
       it 'requests an open annotation by ID, using a IIIF profile' do
-        graph = @tc.get_iiif_annotation(@anno[:id])
+        graph = tc.get_iiif_annotation(@anno[:id])
         check_graph_has_statements(graph)
         #TODO check that client sends a request with the right profile header
       end
@@ -251,7 +268,7 @@ describe TriannonClient, :vcr do
     describe "#get_oa_annotation" do
       # the mime type is fixed as 'ld+json' for this method
       it 'requests an open annotation by ID, using an OA profile' do
-        graph = @tc.get_iiif_annotation(@anno[:id])
+        graph = tc.get_iiif_annotation(@anno[:id])
         check_graph_has_statements(graph)
         #TODO check that client sends a request with the right profile header
       end
