@@ -29,13 +29,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - adfb72d9-9a56-472f-a16a-575fc1830ef6
+      - c5f45480-771d-4d6d-865b-c0e8b31fdcd4
       X-Runtime:
-      - '0.013568'
+      - '0.012721'
       Server:
       - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
       Date:
-      - Thu, 23 Apr 2015 00:11:31 GMT
+      - Tue, 28 Apr 2015 23:58:44 GMT
       Content-Length:
       - '1452'
       Connection:
@@ -58,7 +58,7 @@ http_interactions:
         \                                               \n<br/>                                                \n<br/>
         \                                               \n\n</body>\n</html>\n"
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 00:11:31 GMT
+  recorded_at: Tue, 28 Apr 2015 23:58:44 GMT
 - request:
     method: delete
     uri: http://localhost:3000/annotations/anno_does_not_exist
@@ -88,13 +88,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - c82ae299-e99f-4a45-b1d5-d639cde5d5c7
+      - 4db7cb2b-c3e9-4790-8c07-d6705165a6d9
       X-Runtime:
-      - '0.015887'
+      - '0.013973'
       Server:
       - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
       Date:
-      - Thu, 23 Apr 2015 00:11:32 GMT
+      - Tue, 28 Apr 2015 23:58:44 GMT
       Content-Length:
       - '1452'
       Connection:
@@ -119,5 +119,5 @@ http_interactions:
         \                                               \n<br/>                                                \n<br/>
         \                                               \n\n</body>\n</html>\n"
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 00:11:32 GMT
+  recorded_at: Tue, 28 Apr 2015 23:58:44 GMT
 recorded_with: VCR 2.9.3
