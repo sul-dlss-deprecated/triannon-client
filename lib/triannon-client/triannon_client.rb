@@ -126,8 +126,8 @@ module TriannonClient
     # @param response [RestClient::Response] A RestClient::Response from Triannon
     # @response graph [RDF::Graph] An RDF::Graph instance
     def response2graph(response)
-      unless response.instance_of?(String) && response.respond_to?(:headers)
-        raise ArgumentError, 'response is not a RestClient::Response'
+      unless response.is_a? RestClient::Response
+        raise ArgumentError, 'response must be a RestClient::Response'
       end
       content_type = response.headers[:content_type]
       check_content_type(content_type)
