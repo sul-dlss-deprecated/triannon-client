@@ -158,22 +158,18 @@ describe TriannonClient, :vcr do
       expect( @tc.delete_annotation(id) ).to be false
     end
     it 'logs exceptions' do
-      allow_any_instance_of(RestClient::Response).to receive(:code).and_raise('trigger_logging')
-      expect(TriannonClient.configuration.logger).to receive(:error).with(/trigger_logging/)
-      @tc.delete_annotation('anything_here_is_OK')
+      allow_any_instance_of(RestClient::Resource).to receive(:delete).and_raise('delete_exception')
+      expect(TriannonClient.configuration.logger).to receive(:error).with(/delete_exception/)
+      @tc.delete_annotation('raise_delete_exception')
     end
     it 'quits after detecting an invalid annotation ID' do
-      # TriannonClient#site should not receive a URI path in the :[] method, see
-      # http://www.rubydoc.info/gems/rest-client/RestClient/Resource#[]-instance_method
-      expect(@tc.site).not_to receive(:[])
+      expect_any_instance_of(RestClient::Resource).not_to receive(:delete)
       @tc.delete_annotation('') rescue nil
       @tc.delete_annotation(nil) rescue nil
     end
-    it 'uses TriannonClient#site to DELETE a valid annotation ID' do
-      # TriannonClient#site should receive a URI path in the :[] method, see
-      # http://www.rubydoc.info/gems/rest-client/RestClient/Resource#[]-instance_method
-      expect(@tc.site).to receive(:[])
-      @tc.delete_annotation('a_non_empty_string_is_OK')
+    it 'uses RestClient::Resource.delete to DELETE a valid annotation ID' do
+      expect_any_instance_of(RestClient::Resource).to receive(:delete)
+      @tc.delete_annotation(SecureRandom.uuid)
     end
   end
 
