@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
 
   s.authors     = ['Darren Weber',]
-  s.email       = ['darren.weber@stanford.edu']
+  s.email       = ['triannon-commits@lists.stanford.edu']
 
   s.homepage    = 'https://github.com/sul-dlss/triannon-client'
   s.summary     = 'A client for RESTful transactions with a triannon annotation server'
