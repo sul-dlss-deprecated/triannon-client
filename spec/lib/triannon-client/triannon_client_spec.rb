@@ -209,56 +209,136 @@ describe TriannonClient, :vcr do
 
     describe "#get_annotation" do
       context 'with content_type' do
+        # Content types could be supported for RDF::Format.content_types.keys,
+        # but not all of them are supported.  The supported content types for
+        # triannon are defined in
+        # https://github.com/sul-dlss/triannon/blob/master/config/initializers/mime_types.rb
+        # https://github.com/sul-dlss/triannon/blob/master/app/controllers/triannon/annotations_controller.rb
+        # https://github.com/sul-dlss/triannon/blob/master/app/controllers/triannon/search_controller.rb
+        # The default content type is "application/ld+json" and, at the time of
+        # writing, triannon also supports:
+        # turtle as:  ["application/x-turtle", "text/turtle"]
+        # rdf+xml as: ["application/rdf+xml", "text/rdf+xml", "text/rdf"]
+        # json as:    ["application/json", "text/x-json", "application/jsonrequest"]
+        # xml as:     ["application/xml", "text/xml", "application/x-xml"]
+        # html
         def request_anno_with_content_type(content_type)
           expect_any_instance_of(RestClient::Resource).to receive(:get).with(hash_including(:accept => content_type) )
           tc.get_annotation(@anno[:id], content_type)
         end
-        def get_anno_with_content_type(content_type)
+        def gets_anno_with_content_type(content_type)
           graph = tc.get_annotation(@anno[:id], content_type)
           graph_has_statements(graph)
           graph_contains_open_annotation(graph, @anno[:uri])
         end
+        def cannot_get_anno_with_content_type(content_type)
+          graph = tc.get_annotation(@anno[:id], content_type)
+          graph_is_empty(graph)
+        end
+        #  "text/plain",
+        #  "text/html",
+        #  "application/xhtml+xml",
         it 'requests an open annotation by ID, with content type "application/ld+json"' do
           request_anno_with_content_type("application/ld+json")
         end
         it 'gets an open annotation by ID, with content type "application/ld+json"' do
-          get_anno_with_content_type("application/ld+json")
+          gets_anno_with_content_type("application/ld+json")
         end
-        # it 'requests an open annotation by ID, with content type "application/x-ld+json"' do
-        #   request_anno_with_content_type("application/x-ld+json")
-        # end
-        # it 'gets an open annotation by ID, with content type "application/x-ld+json"' do
-        #   get_anno_with_content_type("application/x-ld+json")
-        # end
-        # it 'requests an open annotation by ID, with content type "application/rdf+json"' do
-        #   request_anno_with_content_type("application/rdf+json")
-        # end
-        # it 'gets an open annotation by ID, with content type "application/rdf+json"' do
-        #   get_anno_with_content_type("application/rdf+json")
-        # end
+        it 'requests an open annotation by ID, with content type "application/x-ld+json"' do
+          request_anno_with_content_type("application/x-ld+json")
+        end
+        it 'cannot get an open annotation by ID, with content type "application/x-ld+json"' do
+          cannot_get_anno_with_content_type("application/x-ld+json")
+        end
+        it 'requests an open annotation by ID, with content type "application/rdf+json"' do
+          request_anno_with_content_type("application/rdf+json")
+        end
+        it 'cannot get an open annotation by ID, with content type "application/rdf+json"' do
+          cannot_get_anno_with_content_type("application/rdf+json")
+        end
+        it 'requests an open annotation by ID, with content type "application/rdf+xml"' do
+          request_anno_with_content_type("application/rdf+xml")
+        end
+        it 'gets an open annotation by ID, with content type "application/rdf+xml"' do
+          gets_anno_with_content_type("application/rdf+xml")
+        end
         it 'requests an open annotation by ID, with content type "text/turtle"' do
           request_anno_with_content_type("text/turtle")
         end
         it 'gets an open annotation by ID, with content type "text/turtle"' do
-          get_anno_with_content_type("text/turtle")
+          gets_anno_with_content_type("text/turtle")
         end
-        # it 'requests an open annotation by ID, with content type "text/rdf+turtle"' do
-        #   request_anno_with_content_type("text/rdf+turtle")
-        # end
-        # it 'gets an open annotation by ID, with content type "text/rdf+turtle"' do
-        #   get_anno_with_content_type("text/rdf+turtle")
-        # end
-        # it 'requests an open annotation by ID, with content type "application/turtle"' do
-        #   request_anno_with_content_type("application/turtle")
-        # end
-        # it 'gets an open annotation by ID, with content type "application/turtle"' do
-        #   get_anno_with_content_type("application/turtle")
-        # end
+        it 'requests an open annotation by ID, with content type "text/rdf+turtle"' do
+          request_anno_with_content_type("text/rdf+turtle")
+        end
+        it 'cannot get an open annotation by ID, with content type "text/rdf+turtle"' do
+          cannot_get_anno_with_content_type("text/rdf+turtle")
+        end
+        it 'requests an open annotation by ID, with content type "application/turtle"' do
+          request_anno_with_content_type("application/turtle")
+        end
+        it 'cannot get an open annotation by ID, with content type "application/turtle"' do
+          cannot_get_anno_with_content_type("application/turtle")
+        end
         it 'requests an open annotation by ID, with content type "application/x-turtle"' do
           request_anno_with_content_type("application/x-turtle")
         end
         it 'gets an open annotation by ID, with content type "application/x-turtle"' do
-          get_anno_with_content_type("application/x-turtle")
+          gets_anno_with_content_type("application/x-turtle")
+        end
+        it 'requests an open annotation by ID, with content type "application/n-triples"' do
+          request_anno_with_content_type("application/n-triples")
+        end
+        it 'cannot get an open annotation by ID, with content type "application/n-triples"' do
+          cannot_get_anno_with_content_type("application/n-triples")
+        end
+        it 'requests an open annotation by ID, with content type "application/rdf+n3"' do
+          request_anno_with_content_type("application/rdf+n3")
+        end
+        it 'cannot get an open annotation by ID, with content type "application/rdf+n3"' do
+          cannot_get_anno_with_content_type("application/rdf+n3")
+        end
+        it 'requests an open annotation by ID, with content type "text/n3"' do
+          request_anno_with_content_type("text/n3")
+        end
+        it 'cannot get an open annotation by ID, with content type "text/n3"' do
+          cannot_get_anno_with_content_type("text/n3")
+        end
+        it 'requests an open annotation by ID, with content type "text/rdf+n3"' do
+          request_anno_with_content_type("text/rdf+n3")
+        end
+        it 'cannot get an open annotation by ID, with content type "text/rdf+n3"' do
+          cannot_get_anno_with_content_type("text/rdf+n3")
+        end
+        it 'requests an open annotation by ID, with content type "application/n-quads"' do
+          request_anno_with_content_type("application/n-quads")
+        end
+        it 'cannot get an open annotation by ID, with content type "application/n-quads"' do
+          cannot_get_anno_with_content_type("application/n-quads")
+        end
+        it 'requests an open annotation by ID, with content type "text/x-nquads"' do
+          request_anno_with_content_type("text/x-nquads")
+        end
+        it 'cannot get an open annotation by ID, with content type "text/x-nquads"' do
+          cannot_get_anno_with_content_type("text/x-nquads")
+        end
+        it 'requests an open annotation by ID, with content type "application/trig"' do
+          request_anno_with_content_type("application/trig")
+        end
+        it 'cannot get an open annotation by ID, with content type "application/trig"' do
+          cannot_get_anno_with_content_type("application/trig")
+        end
+        it 'requests an open annotation by ID, with content type "application/x-trig"' do
+          request_anno_with_content_type("application/x-trig")
+        end
+        it 'cannot get an open annotation by ID, with content type "application/x-trig"' do
+          cannot_get_anno_with_content_type("application/x-trig")
+        end
+        it 'requests an open annotation by ID, with content type "application/trix"' do
+          request_anno_with_content_type("application/trix")
+        end
+        it 'cannot get an open annotation by ID, with content type "application/trix"' do
+          cannot_get_anno_with_content_type("application/trix")
         end
       end
       context 'without content_type' do
