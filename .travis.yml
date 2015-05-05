@@ -5,7 +5,7 @@ install: ./bin/setup.sh
 script: ./bin/test.sh
 
 notifications:
-  email: dweber.consulting@gmail.com
+  email: triannon-commits@lists.stanford.edu
 
 rvm:
   - 2.0.0
