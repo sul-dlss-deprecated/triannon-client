@@ -27,6 +27,7 @@ module TriannonClient
       # Configure triannon-app service
       @config = ::TriannonClient.configuration
       host ||= @config.host
+      host.chomp!('/') if host.end_with?('/')
       user ||= @config.user
       pass ||= @config.pass
       @site = RestClient::Resource.new(
@@ -37,7 +38,8 @@ module TriannonClient
         read_timeout: 30
       )
       container ||= @config.container
-      container += '/' unless container.end_with? '/'
+      container = "/#{container}"  unless container.start_with?('/')
+      container =  "#{container}/" unless container.end_with?('/')
       @container = @site[container]
     end
 
