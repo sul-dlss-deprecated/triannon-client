@@ -18,7 +18,7 @@ module TriannonClient
       @user = ENV['TRIANNON_USER'] || ''
       @pass = ENV['TRIANNON_PASS'] || ''
       @container = ENV['TRIANNON_CONTAINER'] || ''
-      @container += '/' unless @container.end_with? '/'
+      @container += '/' unless(@container.empty? || @container.end_with?('/'))
 
       # logger
       log_file = ENV['TRIANNON_LOG_FILE'] || 'triannon_client.log'
