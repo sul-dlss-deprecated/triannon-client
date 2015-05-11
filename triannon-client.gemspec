@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'triannon-client'
-  s.version     = '0.2.0-0.rc1'
+  s.version     = '0.2.1-0.rc1'
   s.licenses    = ['Apache-2.0']
   s.platform    = Gem::Platform::RUBY
 
@@ -20,9 +20,8 @@ Gem::Specification.new do |s|
   # Use ENV for config
   s.add_dependency 'dotenv'
   # HTTP and RDF clients
-  s.add_dependency 'rest-client', '~> 1.7'
-  s.add_dependency 'linkeddata', '~> 1.0'
-  s.add_dependency 'rdf-vocab', '~> 0.5'
+  s.add_dependency 'rest-client'
+  s.add_dependency 'linkeddata'
   # Use pry for console and debugging
   s.add_dependency 'pry'
   s.add_dependency 'pry-doc'

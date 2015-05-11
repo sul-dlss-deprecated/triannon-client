@@ -31,31 +31,31 @@ http_interactions:
       Content-Type:
       - application/ld+json; charset=utf-8
       Etag:
-      - W/"987add646321641e18261557fa9a8eaf"
+      - W/"bfeb974bd3e10610ac57b5dbae7878a2"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f99d1a27-e36f-422a-b5d1-b70ac4824c88
+      - 2fa77406-f2e5-427b-b2fc-47e878fdf8d7
       X-Runtime:
-      - '1.634018'
+      - '6.421137'
       Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Tue, 05 May 2015 19:18:10 GMT
+      - Mon, 11 May 2015 21:28:48 GMT
       Content-Length:
-      - '431'
+      - '443'
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=OHY1MDY1Yjlqek9GLzlKVDZEZ1U3RnBVcnhxeTRaWEM1TXh6VjBqcnhJVHU3WXQ5anRDNzVzZjVaUmNsdTJsa1N6RklGRU5SbjhvRlNZYXNGMEFWWC9nbjA4NG9vUzdCZjQ2K2JoN3lnU0ZobWdvWTZpRkFETW9HMkFiTzMvODhCTHIzQmg3YkRaU3ZPSW53WnZmTUg3UVByS01ISGxuS2ZQZUF0V2ZKMTRycFQ5bnJXUGF6RStWUlVxM1R4V2tERTNEVXMvRVpJdEljNzYzOFJWWm5hVDBzdUQzNk9PM1lHYlFaSUc5a0x2OD0tLXZOQzN4UGljYklMeGlsRU42bVhxQlE9PQ%3D%3D--3b20bc8500096999c53432f31a8751dd39039592;
+      - _internal_session=VmZ6cXZoWFdZb045ZFcvTWFTam93ZFlaMXZNWkI2SCtBYzhmeUk0YmgzQXZ4YnUvNlR4TS9mT2VvWGtZL2NDSU1HSHlZZThxZi9IUnFtRXp4c2tEQXRjWlNPc0hxMUVDSXhFOTFHYW1abXlST0lqc1VaRlRpTEwwbHA3UXltTGpRZ09valNyR3hsclFlL0dXSG1sWWM0VUJvbmgwbXhWQWlnZW9WNlNwWFNxaURSREVneEhWY1FLamRISVZ6ZHNDV0c2bkovdERDbFV3OEEwYjMvQ2l1RTI0NzlOdHdlM2pYNkFlcTZmVGdXdThGNFVsU2lJVCtTNTlvZXRsa3JYTy0tN0ZNYWZLSFl2UXEzN2RxMTdXeFlNQT09--c2ce2a701dcba718d997be30d9cee9548ba83db6;
         path=/; HttpOnly
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g70090571229640","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
-        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/f1993436-238a-4337-9c3c-9d5aac853138","@type":"oa:Annotation","hasBody":"_:g70090571229640","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
+      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g69902320984480","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
+        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/e6/c5/30/1c/e6c5301c-be03-4e03-985d-38b4f2eee0de","@type":"oa:Annotation","hasBody":"_:g69902320984480","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
     http_version: 
-  recorded_at: Tue, 05 May 2015 19:18:10 GMT
+  recorded_at: Mon, 11 May 2015 21:28:48 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -75,7 +75,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Tue, 05 May 2015 19:18:10 GMT
+      - Mon, 11 May 2015 21:28:48 GMT
       Server:
       - Apache/2
       Location:
@@ -83,7 +83,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Wed, 06 May 2015 01:18:10 GMT
+      - Tue, 12 May 2015 03:28:48 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -99,7 +99,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Tue, 05 May 2015 19:18:10 GMT
+  recorded_at: Mon, 11 May 2015 21:28:48 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -121,7 +121,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 05 May 2015 19:18:10 GMT
+      - Mon, 11 May 2015 21:28:49 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -135,7 +135,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Wed, 06 May 2015 01:18:10 GMT
+      - Tue, 12 May 2015 03:28:49 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Access-Control-Allow-Origin:
@@ -1253,7 +1253,7 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Tue, 05 May 2015 19:18:11 GMT
+  recorded_at: Mon, 11 May 2015 21:28:49 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -1273,7 +1273,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Tue, 05 May 2015 19:18:11 GMT
+      - Mon, 11 May 2015 21:28:49 GMT
       Server:
       - Apache/2
       Location:
@@ -1281,7 +1281,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Wed, 06 May 2015 01:18:11 GMT
+      - Tue, 12 May 2015 03:28:49 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -1297,7 +1297,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Tue, 05 May 2015 19:18:11 GMT
+  recorded_at: Mon, 11 May 2015 21:28:49 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -1319,7 +1319,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 05 May 2015 19:18:11 GMT
+      - Mon, 11 May 2015 21:28:49 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -1333,7 +1333,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Wed, 06 May 2015 01:18:11 GMT
+      - Tue, 12 May 2015 03:28:49 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Access-Control-Allow-Origin:
@@ -2451,10 +2451,10 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Tue, 05 May 2015 19:18:11 GMT
+  recorded_at: Mon, 11 May 2015 21:28:49 GMT
 - request:
     method: get
-    uri: http://localhost:3000/annotations/f1993436-238a-4337-9c3c-9d5aac853138
+    uri: http://localhost:3000/annotations/e6%2Fc5%2F30%2F1c%2Fe6c5301c-be03-4e03-985d-38b4f2eee0de
     body:
       encoding: US-ASCII
       string: ''
@@ -2473,15 +2473,15 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '129098'
+      - '129086'
       X-Request-Id:
-      - 3d8435bc-798f-4b08-888f-4169086ab9fd
+      - 511dc547-aaba-4c63-ba7d-c0b911010456
       X-Runtime:
-      - '0.243707'
+      - '0.246075'
       Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Tue, 05 May 2015 19:18:12 GMT
+      - Mon, 11 May 2015 21:28:50 GMT
       Connection:
       - Keep-Alive
     body:
@@ -2540,11 +2540,11 @@ http_interactions:
         \           <td>\n              <pre class=\"line_numbers\">\n<span>19</span>\n<span>20</span>\n<span>21</span>\n<span>22</span>\n<span>23</span>\n<span>24</span>\n
         \             </pre>\n            </td>\n<td width=\"100%\">\n<pre>\n<div
         class=\"line\">    def show\n</div><div class=\"line\">      # TODO:  json.set!
-        &quot;@context&quot;, Triannon::JsonldContext::OA_DATED_CONTEXT_URL - would
-        this work?\n</div><div class=\"line active\">      respond_to do |format|\n</div><div
-        class=\"line\">        format.jsonld {\n</div><div class=\"line\">          context_url
-        = context_url_from_accept ? context_url_from_accept : context_url_from_link\n</div><div
-        class=\"line\">          if context_url &amp;&amp; context_url == Triannon::JsonldContext::IIIF_CONTEXT_URL\n</div>\n</pre>\n</td>\n
+        &quot;@context&quot;, OA::Graph::OA_DATED_CONTEXT_URL - would this work?\n</div><div
+        class=\"line active\">      respond_to do |format|\n</div><div class=\"line\">
+        \       format.jsonld {\n</div><div class=\"line\">          context_url =
+        context_url_from_accept ? context_url_from_accept : context_url_from_link\n</div><div
+        class=\"line\">          if context_url &amp;&amp; context_url == OA::Graph::IIIF_CONTEXT_URL\n</div>\n</pre>\n</td>\n
         \         </tr>\n        </table>\n      </div>\n    </div>\n    <div class=\"source
         hidden\" id=\"frame-source-2\">\n      <div class=\"info\">\n        Extracted
         source (around line <strong>#4</strong>):\n      </div>\n      <div class=\"data\">\n
@@ -3370,9 +3370,9 @@ http_interactions:
         \           <td>\n              <pre class=\"line_numbers\">\n<span>16</span>\n<span>17</span>\n<span>18</span>\n<span>19</span>\n<span>20</span>\n<span>21</span>\n
         \             </pre>\n            </td>\n<td width=\"100%\">\n<pre>\n<div
         class=\"line\">    def call(env)\n</div><div class=\"line\">      start_time
-        = Time.now\n</div><div class=\"line active\">      status, headers, body =
-        @app.call(env)\n</div><div class=\"line\">      request_time = Time.now -
-        start_time\n</div><div class=\"line\">\n</div><div class=\"line\">      if
+        = clock_time\n</div><div class=\"line active\">      status, headers, body
+        = @app.call(env)\n</div><div class=\"line\">      request_time = clock_time
+        - start_time\n</div><div class=\"line\">\n</div><div class=\"line\">      if
         !headers.has_key?(@header_name)\n</div>\n</pre>\n</td>\n          </tr>\n
         \       </table>\n      </div>\n    </div>\n    <div class=\"source hidden\"
         id=\"frame-source-82\">\n      <div class=\"info\">\n        Extracted source
@@ -3491,9 +3491,9 @@ http_interactions:
         class=\"line\">        rescue HTTPStatus::Error =&gt; ex\n</div>\n</pre>\n</td>\n
         \         </tr>\n        </table>\n      </div>\n    </div>\n    <div class=\"source
         hidden\" id=\"frame-source-93\">\n      <div class=\"info\">\n        Extracted
-        source (around line <strong>#295</strong>):\n      </div>\n      <div class=\"data\">\n
+        source (around line <strong>#294</strong>):\n      </div>\n      <div class=\"data\">\n
         \       <table cellpadding=\"0\" cellspacing=\"0\" class=\"lines\">\n          <tr>\n
-        \           <td>\n              <pre class=\"line_numbers\">\n<span>293</span>\n<span>294</span>\n<span>295</span>\n<span>296</span>\n<span>297</span>\n<span>298</span>\n
+        \           <td>\n              <pre class=\"line_numbers\">\n<span>292</span>\n<span>293</span>\n<span>294</span>\n<span>295</span>\n<span>296</span>\n<span>297</span>\n
         \             </pre>\n            </td>\n<td width=\"100%\">\n<pre>\n<div
         class=\"line\">          end\n</div><div class=\"line\">          call_callback(:AcceptCallback,
         sock)\n</div><div class=\"line active\">          block ? block.call(sock)
@@ -3595,17 +3595,17 @@ http_interactions:
         data-frame-id=\"49\" href=\"#\">actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in
         `serve&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"50\" href=\"#\">actionpack
         (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call&#39;</a><br><a
-        class=\"trace-frames\" data-frame-id=\"51\" href=\"#\">rack (1.6.0) lib/rack/etag.rb:24:in
+        class=\"trace-frames\" data-frame-id=\"51\" href=\"#\">rack (1.6.1) lib/rack/etag.rb:24:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"52\" href=\"#\">rack
-        (1.6.0) lib/rack/conditionalget.rb:25:in `call&#39;</a><br><a class=\"trace-frames\"
-        data-frame-id=\"53\" href=\"#\">rack (1.6.0) lib/rack/head.rb:13:in `call&#39;</a><br><a
+        (1.6.1) lib/rack/conditionalget.rb:25:in `call&#39;</a><br><a class=\"trace-frames\"
+        data-frame-id=\"53\" href=\"#\">rack (1.6.1) lib/rack/head.rb:13:in `call&#39;</a><br><a
         class=\"trace-frames\" data-frame-id=\"54\" href=\"#\">actionpack (4.2.0)
         lib/action_dispatch/middleware/params_parser.rb:27:in `call&#39;</a><br><a
         class=\"trace-frames\" data-frame-id=\"55\" href=\"#\">actionpack (4.2.0)
         lib/action_dispatch/middleware/flash.rb:260:in `call&#39;</a><br><a class=\"trace-frames\"
-        data-frame-id=\"56\" href=\"#\">rack (1.6.0) lib/rack/session/abstract/id.rb:225:in
+        data-frame-id=\"56\" href=\"#\">rack (1.6.1) lib/rack/session/abstract/id.rb:225:in
         `context&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"57\" href=\"#\">rack
-        (1.6.0) lib/rack/session/abstract/id.rb:220:in `call&#39;</a><br><a class=\"trace-frames\"
+        (1.6.1) lib/rack/session/abstract/id.rb:220:in `call&#39;</a><br><a class=\"trace-frames\"
         data-frame-id=\"58\" href=\"#\">actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"59\" href=\"#\">activerecord
         (4.2.0) lib/active_record/query_cache.rb:36:in `call&#39;</a><br><a class=\"trace-frames\"
@@ -3642,25 +3642,25 @@ http_interactions:
         class=\"trace-frames\" data-frame-id=\"78\" href=\"#\">railties (4.2.0) lib/rails/rack/logger.rb:20:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"79\" href=\"#\">actionpack
         (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call&#39;</a><br><a
-        class=\"trace-frames\" data-frame-id=\"80\" href=\"#\">rack (1.6.0) lib/rack/methodoverride.rb:22:in
+        class=\"trace-frames\" data-frame-id=\"80\" href=\"#\">rack (1.6.1) lib/rack/methodoverride.rb:22:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"81\" href=\"#\">rack
-        (1.6.0) lib/rack/runtime.rb:18:in `call&#39;</a><br><a class=\"trace-frames\"
+        (1.6.1) lib/rack/runtime.rb:18:in `call&#39;</a><br><a class=\"trace-frames\"
         data-frame-id=\"82\" href=\"#\">activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"83\" href=\"#\">rack
-        (1.6.0) lib/rack/lock.rb:17:in `call&#39;</a><br><a class=\"trace-frames\"
+        (1.6.1) lib/rack/lock.rb:17:in `call&#39;</a><br><a class=\"trace-frames\"
         data-frame-id=\"84\" href=\"#\">actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"85\" href=\"#\">rack
-        (1.6.0) lib/rack/sendfile.rb:113:in `call&#39;</a><br><a class=\"trace-frames\"
+        (1.6.1) lib/rack/sendfile.rb:113:in `call&#39;</a><br><a class=\"trace-frames\"
         data-frame-id=\"86\" href=\"#\">railties (4.2.0) lib/rails/engine.rb:518:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"87\" href=\"#\">railties
         (4.2.0) lib/rails/application.rb:164:in `call&#39;</a><br><a class=\"trace-frames\"
-        data-frame-id=\"88\" href=\"#\">rack (1.6.0) lib/rack/lock.rb:17:in `call&#39;</a><br><a
-        class=\"trace-frames\" data-frame-id=\"89\" href=\"#\">rack (1.6.0) lib/rack/content_length.rb:15:in
+        data-frame-id=\"88\" href=\"#\">rack (1.6.1) lib/rack/lock.rb:17:in `call&#39;</a><br><a
+        class=\"trace-frames\" data-frame-id=\"89\" href=\"#\">rack (1.6.1) lib/rack/content_length.rb:15:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"90\" href=\"#\">rack
-        (1.6.0) lib/rack/handler/webrick.rb:89:in `service&#39;</a><br><a class=\"trace-frames\"
-        data-frame-id=\"91\" href=\"#\">/home/dlweber/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in
-        `service&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"92\" href=\"#\">/home/dlweber/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in
-        `run&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"93\" href=\"#\">/home/dlweber/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in
+        (1.6.1) lib/rack/handler/webrick.rb:89:in `service&#39;</a><br><a class=\"trace-frames\"
+        data-frame-id=\"91\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in
+        `service&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"92\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in
+        `run&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"93\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in
         `block in start_thread&#39;</a><br></code></pre>\n    </div>\n    <div id=\"Full-Trace\"
         style=\"display: block;\">\n      <pre><code><a class=\"trace-frames\" data-frame-id=\"0\"
         href=\"#\">actionpack (4.2.0) lib/action_controller/metal/mime_responds.rb:218:in
@@ -3750,17 +3750,17 @@ http_interactions:
         data-frame-id=\"49\" href=\"#\">actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in
         `serve&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"50\" href=\"#\">actionpack
         (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call&#39;</a><br><a
-        class=\"trace-frames\" data-frame-id=\"51\" href=\"#\">rack (1.6.0) lib/rack/etag.rb:24:in
+        class=\"trace-frames\" data-frame-id=\"51\" href=\"#\">rack (1.6.1) lib/rack/etag.rb:24:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"52\" href=\"#\">rack
-        (1.6.0) lib/rack/conditionalget.rb:25:in `call&#39;</a><br><a class=\"trace-frames\"
-        data-frame-id=\"53\" href=\"#\">rack (1.6.0) lib/rack/head.rb:13:in `call&#39;</a><br><a
+        (1.6.1) lib/rack/conditionalget.rb:25:in `call&#39;</a><br><a class=\"trace-frames\"
+        data-frame-id=\"53\" href=\"#\">rack (1.6.1) lib/rack/head.rb:13:in `call&#39;</a><br><a
         class=\"trace-frames\" data-frame-id=\"54\" href=\"#\">actionpack (4.2.0)
         lib/action_dispatch/middleware/params_parser.rb:27:in `call&#39;</a><br><a
         class=\"trace-frames\" data-frame-id=\"55\" href=\"#\">actionpack (4.2.0)
         lib/action_dispatch/middleware/flash.rb:260:in `call&#39;</a><br><a class=\"trace-frames\"
-        data-frame-id=\"56\" href=\"#\">rack (1.6.0) lib/rack/session/abstract/id.rb:225:in
+        data-frame-id=\"56\" href=\"#\">rack (1.6.1) lib/rack/session/abstract/id.rb:225:in
         `context&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"57\" href=\"#\">rack
-        (1.6.0) lib/rack/session/abstract/id.rb:220:in `call&#39;</a><br><a class=\"trace-frames\"
+        (1.6.1) lib/rack/session/abstract/id.rb:220:in `call&#39;</a><br><a class=\"trace-frames\"
         data-frame-id=\"58\" href=\"#\">actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"59\" href=\"#\">activerecord
         (4.2.0) lib/active_record/query_cache.rb:36:in `call&#39;</a><br><a class=\"trace-frames\"
@@ -3797,25 +3797,25 @@ http_interactions:
         class=\"trace-frames\" data-frame-id=\"78\" href=\"#\">railties (4.2.0) lib/rails/rack/logger.rb:20:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"79\" href=\"#\">actionpack
         (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call&#39;</a><br><a
-        class=\"trace-frames\" data-frame-id=\"80\" href=\"#\">rack (1.6.0) lib/rack/methodoverride.rb:22:in
+        class=\"trace-frames\" data-frame-id=\"80\" href=\"#\">rack (1.6.1) lib/rack/methodoverride.rb:22:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"81\" href=\"#\">rack
-        (1.6.0) lib/rack/runtime.rb:18:in `call&#39;</a><br><a class=\"trace-frames\"
+        (1.6.1) lib/rack/runtime.rb:18:in `call&#39;</a><br><a class=\"trace-frames\"
         data-frame-id=\"82\" href=\"#\">activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"83\" href=\"#\">rack
-        (1.6.0) lib/rack/lock.rb:17:in `call&#39;</a><br><a class=\"trace-frames\"
+        (1.6.1) lib/rack/lock.rb:17:in `call&#39;</a><br><a class=\"trace-frames\"
         data-frame-id=\"84\" href=\"#\">actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"85\" href=\"#\">rack
-        (1.6.0) lib/rack/sendfile.rb:113:in `call&#39;</a><br><a class=\"trace-frames\"
+        (1.6.1) lib/rack/sendfile.rb:113:in `call&#39;</a><br><a class=\"trace-frames\"
         data-frame-id=\"86\" href=\"#\">railties (4.2.0) lib/rails/engine.rb:518:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"87\" href=\"#\">railties
         (4.2.0) lib/rails/application.rb:164:in `call&#39;</a><br><a class=\"trace-frames\"
-        data-frame-id=\"88\" href=\"#\">rack (1.6.0) lib/rack/lock.rb:17:in `call&#39;</a><br><a
-        class=\"trace-frames\" data-frame-id=\"89\" href=\"#\">rack (1.6.0) lib/rack/content_length.rb:15:in
+        data-frame-id=\"88\" href=\"#\">rack (1.6.1) lib/rack/lock.rb:17:in `call&#39;</a><br><a
+        class=\"trace-frames\" data-frame-id=\"89\" href=\"#\">rack (1.6.1) lib/rack/content_length.rb:15:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"90\" href=\"#\">rack
-        (1.6.0) lib/rack/handler/webrick.rb:89:in `service&#39;</a><br><a class=\"trace-frames\"
-        data-frame-id=\"91\" href=\"#\">/home/dlweber/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in
-        `service&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"92\" href=\"#\">/home/dlweber/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in
-        `run&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"93\" href=\"#\">/home/dlweber/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in
+        (1.6.1) lib/rack/handler/webrick.rb:89:in `service&#39;</a><br><a class=\"trace-frames\"
+        data-frame-id=\"91\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in
+        `service&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"92\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in
+        `run&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"93\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in
         `block in start_thread&#39;</a><br></code></pre>\n    </div>\n\n  <script
         type=\"text/javascript\">\n    var traceFrames = document.getElementsByClassName('trace-frames');\n
         \   var selectedFrame, currentSource = document.getElementById('frame-source-0');\n\n
@@ -3830,7 +3830,7 @@ http_interactions:
         && el) {\n          currentSource.className += \" hidden\";\n          el.className
         = el.className.replace(\" hidden\", \"\");\n          currentSource = el;\n
         \       }\n      }\n    }\n  </script>\n</div>\n\n  \n\n<h2 style=\"margin-top:
-        30px\">Request</h2>\n<p><b>Parameters</b>:</p> <pre>{&quot;id&quot;=&gt;&quot;f1993436-238a-4337-9c3c-9d5aac853138&quot;}</pre>\n\n<div
+        30px\">Request</h2>\n<p><b>Parameters</b>:</p> <pre>{&quot;id&quot;=&gt;&quot;e6/c5/30/1c/e6c5301c-be03-4e03-985d-38b4f2eee0de&quot;}</pre>\n\n<div
         class=\"details\">\n  <div class=\"summary\"><a href=\"#\" onclick=\"return
         toggleSessionDump()\">Toggle session dump</a></div>\n  <div id=\"session_dump\"
         style=\"display:none\"><pre></pre></div>\n</div>\n\n<div class=\"details\">\n
@@ -3840,7 +3840,7 @@ http_interactions:
         &quot;gzip, deflate&quot;\nREMOTE_ADDR: &quot;127.0.0.1&quot;\nREMOTE_HOST:
         &quot;127.0.0.1&quot;\nSERVER_NAME: &quot;localhost&quot;\nSERVER_PROTOCOL:
         &quot;HTTP/1.1&quot;</pre></div>\n</div>\n\n<h2 style=\"margin-top: 30px\">Response</h2>\n<p><b>Headers</b>:</p>
-        <pre>None</pre>\n\n</div>\n\n\n</body>\n</html>\n<div id=\"console\"\n  data-remote-path='console/repl_sessions/a7fc27ee79b01464afef1eeb256864b9'\n
+        <pre>None</pre>\n\n</div>\n\n\n</body>\n</html>\n<div id=\"console\"\n  data-remote-path='console/repl_sessions/05204c3f7a3b7c8b679d0044f9f4c1ee'\n
         \ data-initial-prompt='>> '>\n</div>\n\n\n<script type=\"text/javascript\">\n(function()
         {\n  // DOM helpers\nfunction hasClass(el, className) {\n  var regex = new
         RegExp('(?:^|\\\\s)' + className + '(?!\\\\S)', 'g');\n  return el.className.match(regex);\n}\n\nfunction
@@ -4037,10 +4037,10 @@ http_interactions:
         \   resizerElement.addEventListener('mouseup', recordConsoleElementHeight);\n
         \ });\n});\n\n}).call(this);\n</script>\n\n"
     http_version: 
-  recorded_at: Tue, 05 May 2015 19:18:12 GMT
+  recorded_at: Mon, 11 May 2015 21:28:50 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/annotations/f1993436-238a-4337-9c3c-9d5aac853138
+    uri: http://localhost:3000/annotations/e6%2Fc5%2F30%2F1c%2Fe6c5301c-be03-4e03-985d-38b4f2eee0de
     body:
       encoding: US-ASCII
       string: ''
@@ -4067,22 +4067,22 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 72428e66-ea3c-4547-8337-23aca8cdf4a9
+      - 8373fda5-4d25-4987-997f-ca5126b735c6
       X-Runtime:
-      - '0.145444'
+      - '0.169695'
       Server:
-      - WEBrick/1.3.1 (Ruby/2.1.5/2014-11-13)
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Tue, 05 May 2015 19:18:12 GMT
+      - Mon, 11 May 2015 21:28:50 GMT
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=Z0h3bmI0RjlvVitNcGFsZyt6TlVZTm04aTlMVXhBSU1xVGVEZVRYajRpZG4wRWhxZDlQVHlpTHhBK29ydEV6bkozSTZGaWdVR3ZDSDRKbWZqKzErd1lxbXI3STQyZkc3U0xQT3MrcThEQWpOdGo0UUV4b3N0bWNNcXhLSHhHSWcwZ0NWNmtzRklqRWtjTDNrU2l1SjZTNkcrT2U3R3ZYTFY3QjFUbHBndGc5cy9aRVR2aWNadzJ3R2VpM3dIU0JDLS1pQWk2ZXhZU2F3a3RoeWJhMWthYzZnPT0%3D--331cbfd6b3207e3c13ee20feb66094c3852bfd52;
+      - _internal_session=bE5zaXNST0gvdWNhMWg2Y0krVDBET2MvdzlWNkwwSzNEcFNoWE44aFpoV0c3aVpHNEcySEdINUdMMWR5S2hlRUxHUUZCVktjeFVBV0RGeE14bFg5ZVZUV1U4czFmWXE0ZnM2d216RzBUYzdiK09ZOE9pOFZvck9yVjUzdmE2Y0ZjckRtZFZCeDd1emlYMGdSeG1DNkw3VWlCWFVVY3VUcVlzNkx2MUhsOUw3b0Fld1J6eHp1TTJMUWtnb08vUm0wLS1EcTE2dG1kbXd5cm54SjRoOW12TjNBPT0%3D--90f3faee2e10f18c95af06db1a192eca3226a9d9;
         path=/; HttpOnly
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 05 May 2015 19:18:12 GMT
+  recorded_at: Mon, 11 May 2015 21:28:50 GMT
 recorded_with: VCR 2.9.3

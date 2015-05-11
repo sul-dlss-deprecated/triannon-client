@@ -40,7 +40,7 @@ module TriannonClient
       it 'default value is an empty string' do
         ENV['TRIANNON_USER'] = nil
         config = Configuration.new
-        expect(config.user.empty?).to be_truthy
+        expect(config.user).to be_empty
       end
     end
 
@@ -56,7 +56,7 @@ module TriannonClient
       it 'default value is an empty string' do
         ENV['TRIANNON_PASS'] = nil
         config = Configuration.new
-        expect(config.pass.empty?).to be_truthy
+        expect(config.pass).to be_empty
       end
     end
 
@@ -65,6 +65,22 @@ module TriannonClient
         config = Configuration.new
         config.pass = 'secret'
         expect(config.pass).to eql('secret')
+      end
+    end
+
+    describe '#container' do
+      it 'default value is an empty string' do
+        ENV['TRIANNON_CONTAINER'] = nil
+        config = Configuration.new
+        expect(config.container).to be_empty
+      end
+    end
+
+    describe '#container=' do
+      it 'can set value' do
+        config = Configuration.new
+        config.container = 'secret'
+        expect(config.container).to eql('secret')
       end
     end
 
