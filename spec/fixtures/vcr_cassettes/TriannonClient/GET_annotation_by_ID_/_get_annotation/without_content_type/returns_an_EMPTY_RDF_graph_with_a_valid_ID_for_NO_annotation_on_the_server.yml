@@ -2617,4 +2617,299 @@ http_interactions:
         \                                               \n<br/>                                                \n\n</body>\n</html>\n"
     http_version: 
   recorded_at: Mon, 11 May 2015 21:50:08 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/annotations/62bd9bfa-afb3-4a91-8cdc-1088235a29a8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/ld+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: 'Not Found '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 2a3794c8-cba4-4168-a809-92b0da074e3a
+      X-Runtime:
+      - '0.015693'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Mon, 11 May 2015 21:52:46 GMT
+      Content-Length:
+      - '1486'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: "<h2>error getting 62bd9bfa-afb3-4a91-8cdc-1088235a29a8 from LDP</h2><html>\n<head>\n<meta
+        http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\"/>\n<title>Error
+        404 Not Found</title>\n</head>\n<body><h2>HTTP ERROR 404</h2>\n<p>Problem
+        accessing /fedora/rest/anno/62bd9bfa-afb3-4a91-8cdc-1088235a29a8. Reason:\n<pre>
+        \   Not Found</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 11 May 2015 21:52:46 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/annotations/3b7be921-2fda-41d1-891c-f729b47d2b57
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/ld+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: 'Not Found '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - af4d98b9-b3bc-4d6b-bd65-8cd97003a81c
+      X-Runtime:
+      - '0.016582'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Mon, 11 May 2015 21:56:34 GMT
+      Content-Length:
+      - '1486'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: "<h2>error getting 3b7be921-2fda-41d1-891c-f729b47d2b57 from LDP</h2><html>\n<head>\n<meta
+        http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\"/>\n<title>Error
+        404 Not Found</title>\n</head>\n<body><h2>HTTP ERROR 404</h2>\n<p>Problem
+        accessing /fedora/rest/anno/3b7be921-2fda-41d1-891c-f729b47d2b57. Reason:\n<pre>
+        \   Not Found</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 11 May 2015 21:56:34 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/annotations/d68e3225-643d-4918-88ee-c2a59f6cdf1a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/ld+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: 'Not Found '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 4c1aac04-9ef0-4169-9b71-b27462c2eea2
+      X-Runtime:
+      - '0.018669'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Mon, 11 May 2015 21:58:14 GMT
+      Content-Length:
+      - '1486'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: "<h2>error getting d68e3225-643d-4918-88ee-c2a59f6cdf1a from LDP</h2><html>\n<head>\n<meta
+        http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\"/>\n<title>Error
+        404 Not Found</title>\n</head>\n<body><h2>HTTP ERROR 404</h2>\n<p>Problem
+        accessing /fedora/rest/anno/d68e3225-643d-4918-88ee-c2a59f6cdf1a. Reason:\n<pre>
+        \   Not Found</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 11 May 2015 21:58:14 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/annotations/a1421b7a-b54f-4ea6-90ad-36af7a1097b5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/ld+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: 'Not Found '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - aa4b8f25-c70e-49a5-952a-a733c7ca6914
+      X-Runtime:
+      - '0.020658'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Mon, 11 May 2015 22:11:54 GMT
+      Content-Length:
+      - '1486'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: "<h2>error getting a1421b7a-b54f-4ea6-90ad-36af7a1097b5 from LDP</h2><html>\n<head>\n<meta
+        http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\"/>\n<title>Error
+        404 Not Found</title>\n</head>\n<body><h2>HTTP ERROR 404</h2>\n<p>Problem
+        accessing /fedora/rest/anno/a1421b7a-b54f-4ea6-90ad-36af7a1097b5. Reason:\n<pre>
+        \   Not Found</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 11 May 2015 22:11:54 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/annotations/f75cc32a-a650-4469-bc9a-ecabe9ffeae8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/ld+json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: 'Not Found '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - f2d1d26a-7de3-410b-b7eb-139e5d4b656d
+      X-Runtime:
+      - '0.016485'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Mon, 11 May 2015 22:14:30 GMT
+      Content-Length:
+      - '1486'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: "<h2>error getting f75cc32a-a650-4469-bc9a-ecabe9ffeae8 from LDP</h2><html>\n<head>\n<meta
+        http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\"/>\n<title>Error
+        404 Not Found</title>\n</head>\n<body><h2>HTTP ERROR 404</h2>\n<p>Problem
+        accessing /fedora/rest/anno/f75cc32a-a650-4469-bc9a-ecabe9ffeae8. Reason:\n<pre>
+        \   Not Found</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 11 May 2015 22:14:30 GMT
 recorded_with: VCR 2.9.3
