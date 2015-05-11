@@ -4,13 +4,7 @@ require 'spec_helper'
 
 describe TriannonClient, :vcr do
 
-  before :all do
-    Dotenv.load
-    @oa_jsonld = '{"@context":"http://iiif.io/api/presentation/2/context.json","@graph":[{"@id":"_:g70349699654640","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I love this!","format":"text/plain","language":"en"},{"@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":"_:g70349699654640"}]}'
-  end
-
   let(:tc) { TriannonClient::TriannonClient.new }
-
   # Note: not using `let` approach for these methods because it
   # makes it very difficult to delete any annotations created by
   # the `tc.post_annotation`; so the `create_annotation` and the
@@ -20,6 +14,20 @@ describe TriannonClient, :vcr do
   # let(:anno_graph) { tc.response2graph(post_response) }
   # let(:anno_uri) { tc.annotation_uri(anno_graph) }
   # let(:anno_id) { tc.annotation_id(anno_uri) }
+
+  before :all do
+    Dotenv.load
+    @oa_jsonld = '{"@context":"http://iiif.io/api/presentation/2/context.json","@graph":[{"@id":"_:g70349699654640","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I love this!","format":"text/plain","language":"en"},{"@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":"_:g70349699654640"}]}'
+    clear_annotations
+  end
+
+  def clear_annotations
+    client = TriannonClient::TriannonClient.new
+    annos = client.get_annotations
+    q = [nil, RDF.type, RDF::Vocab::OA.Annotation]
+    anno_ids = annos.query(q).each_subject.collect {|s| tc.annotation_id(s)}
+    anno_ids.each {|id| client.delete_annotation(id) }
+  end
 
   def create_annotation
     r = tc.post_annotation(@oa_jsonld)
