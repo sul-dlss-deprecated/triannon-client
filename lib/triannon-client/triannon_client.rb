@@ -14,17 +14,31 @@ module TriannonClient
 
     attr_reader :config
     attr_accessor :site
+    attr_accessor :container
 
-    def initialize
+    # Initialize a new triannon client
+    # All params are optional, the defaults are set in
+    # the ::TriannonClient.configuration
+    # @param host [String] HTTP URI for triannon server
+    # @param user [String] Authorized username for access to triannon server
+    # @param pass [String] Authorized password for access to triannon server
+    # @param container [String] The container path on the triannon server
+    def initialize(host=nil, user=nil, pass=nil, container=nil)
       # Configure triannon-app service
       @config = ::TriannonClient.configuration
+      host ||= @config.host
+      user ||= @config.user
+      pass ||= @config.pass
       @site = RestClient::Resource.new(
-        @config.host,
-        user: @config.user,
-        password: @config.pass,
+        host,
+        user: user,
+        password: pass,
         open_timeout: 5,
         read_timeout: 30
       )
+      container ||= @config.container
+      container += '/' unless container.end_with? '/'
+      @container = @site[container]
     end
 
     # Delete an annotation
@@ -33,7 +47,7 @@ module TriannonClient
     def delete_annotation(id)
       check_id(id)
       begin
-        response = @site["/annotations/#{id}"].delete
+        response = @container[id].delete
         # HTTP DELETE response codes: A successful response SHOULD be
         # 200 (OK) if the response includes an entity describing the status,
         # 202 (Accepted) if the action has not yet been enacted, or
@@ -60,7 +74,7 @@ module TriannonClient
       begin
         tries += 1
         # TODO: add Accept content type, somehow?
-        response = @site["/annotations/"].post post_data, :content_type => JSONLD_TYPE, :accept => JSONLD_TYPE
+        response = @container.post post_data, :content_type => JSONLD_TYPE, :accept => JSONLD_TYPE
       rescue => e
         sleep 1*tries
         retry if tries < 3
@@ -77,7 +91,7 @@ module TriannonClient
     def get_annotations(content_type=JSONLD_TYPE)
       check_content_type(content_type)
       begin
-        response = @site['/annotations'].get({:accept => content_type})
+        response = @container.get({:accept => content_type})
         # TODO: switch yard for different response.code?
         # TODO: log a failure for a response.code == 404
         response2graph(response)
@@ -95,9 +109,8 @@ module TriannonClient
     def get_annotation(id, content_type=JSONLD_TYPE)
       check_id(id)
       check_content_type(content_type)
-      uri = "/annotations/#{id}"
       begin
-        response = @site[uri].get({:accept => content_type})
+        response = @container[id].get({:accept => content_type})
         # TODO: switch yard for different response.code?
         response2graph(response)
       rescue => e
@@ -158,7 +171,8 @@ module TriannonClient
     # @response id [String|nil] An ID for an annotation
     def annotation_id(uri)
       raise ArgumentError, 'uri is not an RDF::URI' unless uri.instance_of? RDF::URI
-      uri.path.split('/').last
+      path = uri.path.split(@config.container).last
+      CGI::escape(path)
     end
 
 

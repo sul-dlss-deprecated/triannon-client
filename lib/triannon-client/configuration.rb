@@ -9,6 +9,7 @@ module TriannonClient
     attr_accessor :host
     attr_accessor :user
     attr_accessor :pass
+    attr_accessor :container
 
     def initialize
       @debug = env_boolean('DEBUG')
@@ -16,6 +17,8 @@ module TriannonClient
       @host = ENV['TRIANNON_HOST'] || 'http://localhost:3000'
       @user = ENV['TRIANNON_USER'] || ''
       @pass = ENV['TRIANNON_PASS'] || ''
+      @container = ENV['TRIANNON_CONTAINER'] || ''
+      @container += '/' unless @container.end_with? '/'
 
       # logger
       log_file = ENV['TRIANNON_LOG_FILE'] || 'triannon_client.log'
