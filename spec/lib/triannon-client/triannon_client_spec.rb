@@ -32,7 +32,7 @@ describe TriannonClient, :vcr do
   def create_annotation
     r = tc.post_annotation(@oa_jsonld)
     g = tc.response2graph(r)
-    uri = tc.annotation_uri(g)
+    uri = tc.annotation_uris(g).first
     id = tc.annotation_id(uri)
     {
       response: r,
@@ -124,8 +124,8 @@ describe TriannonClient, :vcr do
     it 'annotation_id' do
       expect(tc).to respond_to(:annotation_id)
     end
-    it 'annotation_uri' do
-      expect(tc).to respond_to(:annotation_uri)
+    it 'annotation_uris' do
+      expect(tc).to respond_to(:annotation_uris)
     end
   end
 
@@ -437,7 +437,7 @@ describe TriannonClient, :vcr do
       # Double check the POST by deleting the annotation.
       # If the POST was successful, the DELETE should work too.
       graph = tc.response2graph(response)
-      uri = tc.annotation_uri(graph)
+      uri = tc.annotation_uris(graph).first
       id = tc.annotation_id(uri)
       expect(tc.delete_annotation(id)).to be true
     end
@@ -482,9 +482,10 @@ describe TriannonClient, :vcr do
       end
     end
 
-    describe "#annotation_uri" do
-      it "returns an RDF::URI from an RDF::Graph of an annotation" do
+    describe "#annotation_uris" do
+      it "returns an array of RDF::URI from an RDF::Graph of an annotation" do
         expect(@anno[:graph]).to be_instance_of RDF::Graph
+        expect(tc.annotation_uris(@anno[:graph])).to be_instance_of Array
         expect(@anno[:uri]).to be_instance_of RDF::URI
       end
       it "returns an RDF::URI that is a valid URI" do

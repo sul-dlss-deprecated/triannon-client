@@ -161,11 +161,11 @@ module TriannonClient
 
     # query an annotation graph to extract a URI for the first open annotation
     # @param graph [RDF::Graph] An RDF::Graph of an open annotation
-    # @response uri [RDF::URI|nil] A URI for an open annotation
-    def annotation_uri(graph)
+    # @response uri [Array<RDF::URI>] An array of URIs for open annotations
+    def annotation_uris(graph)
       raise ArgumentError, 'graph is not an RDF::Graph' unless graph.instance_of? RDF::Graph
       q = [:s, RDF.type, RDF::Vocab::OA.Annotation]
-      graph.query(q).collect {|s| s.subject }.first
+      graph.query(q).collect {|s| s.subject }
     end
 
     # extract an annotation ID from the URI

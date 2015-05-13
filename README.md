@@ -54,6 +54,8 @@ tc = TriannonClient::TriannonClient.new
 ```ruby
 # return an RDF::Graph
 graph = tc.get_annotations
+anno_uris = tc.annotation_uris(graph)
+anno_ids = anno_uris.collect {|uri| tc.annotation_id(uri) }
 ```
 
 ### Get a particular annotation
@@ -83,10 +85,18 @@ tc.post_annotation(open_annotation_jsonld)
 ### Delete an annotation
 
 ```ruby
-uri = RDF::URI.parse('http://your.triannon-server.com/annotations/5314746b-f1eb-473a-a273-46c1afe5f530')
-id = tc.annotation_id(uri)  #=> 5314746b-f1eb-473a-a273-46c1afe5f530
+uri = RDF::URI.new("http://your.triannon-server.com/annotations/45/4a/c0/93/454ac093-b37d-4580-bebd-449f8dabddc9")
+tc.annotation_id(uri) #=> "45%2F4a%2Fc0%2F93%2F454ac093-b37d-4580-bebd-449f8dabddc9"
 tc.delete_annotation(id)
 ```
+
+Note that the annotation URI contains a pair-tree path that is created by
+the Fedora 4 instance that triannon server works on.  The annotation ID is
+the entire pair-tree path after it is URI escaped.  This makes it easier to
+work with the ID for tc.get_annotation(id) and tc.delete_annotation(id).
+For more information on object storage using pair-trees, see
+http://www.slideshare.net/jakkbl/dcc-pair-posterppt
+https://wiki.ucop.edu/display/Curation/PairTree
 
 ## Development
 
