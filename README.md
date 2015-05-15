@@ -40,6 +40,7 @@ require 'triannon-client'
   config.host = 'http://triannon.example.org:8080'
   config.user = 'authUser'
   config.pass = 'secret'
+  container   = '/annotations/'
 end
 ```
 
