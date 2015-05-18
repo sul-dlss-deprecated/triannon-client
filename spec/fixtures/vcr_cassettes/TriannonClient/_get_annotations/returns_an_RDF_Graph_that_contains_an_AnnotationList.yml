@@ -31,13 +31,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 9a75223d-f0c7-4007-a873-5f5d6a8edd28
+      - 364b2de7-7cd3-4ae5-a7f9-708969e350ff
       X-Runtime:
-      - '0.002780'
+      - '0.003035'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Wed, 13 May 2015 22:29:45 GMT
+      - Mon, 18 May 2015 20:06:14 GMT
       Content-Length:
       - '94'
       Connection:
@@ -46,7 +46,7 @@ http_interactions:
       encoding: UTF-8
       string: <html><body>You are being <a href="http://localhost:3000/search">redirected</a>.</body></html>
     http_version: 
-  recorded_at: Wed, 13 May 2015 22:29:45 GMT
+  recorded_at: Mon, 18 May 2015 20:06:14 GMT
 - request:
     method: get
     uri: http://localhost:3000/search
@@ -80,13 +80,13 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 57173340-9679-476e-a463-1c4a3392587c
+      - 25b92e22-ece9-4d73-a56a-12734a773716
       X-Runtime:
-      - '0.008884'
+      - '0.012135'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Wed, 13 May 2015 22:29:45 GMT
+      - Mon, 18 May 2015 20:06:14 GMT
       Content-Length:
       - '181'
       Connection:
@@ -95,7 +95,7 @@ http_interactions:
       encoding: UTF-8
       string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:AnnotationList","within":{"@type":"sc:Layer","total":0},"resources":[],"@id":"http://localhost:3000/search"}'
     http_version: 
-  recorded_at: Wed, 13 May 2015 22:29:45 GMT
+  recorded_at: Mon, 18 May 2015 20:06:14 GMT
 - request:
     method: get
     uri: http://iiif.io/api/presentation/2/context.json
@@ -115,7 +115,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 13 May 2015 22:32:26 GMT
+      - Mon, 18 May 2015 20:09:02 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Last-Modified:
@@ -127,7 +127,7 @@ http_interactions:
       Cache-Control:
       - max-age=86400
       Expires:
-      - Thu, 14 May 2015 22:32:26 GMT
+      - Tue, 19 May 2015 20:09:02 GMT
       Content-Type:
       - application/ld+json
       Access-Control-Allow-Origin:
@@ -193,7 +193,7 @@ http_interactions:
         \   \"language\":    {\"@id\": \"dc:language\"},\n\t\t    \"value\":       {\"@id\":
         \"rdf:value\"},\n\t\t    \"label\":       {\"@id\": \"rdfs:label\"}\n\t\t}\n\t]\n}"
     http_version: 
-  recorded_at: Wed, 13 May 2015 22:29:45 GMT
+  recorded_at: Mon, 18 May 2015 20:06:14 GMT
 - request:
     method: get
     uri: http://iiif.io/api/presentation/2/context.json
@@ -213,7 +213,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 13 May 2015 22:32:26 GMT
+      - Mon, 18 May 2015 20:09:02 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Last-Modified:
@@ -225,7 +225,7 @@ http_interactions:
       Cache-Control:
       - max-age=86400
       Expires:
-      - Thu, 14 May 2015 22:32:26 GMT
+      - Tue, 19 May 2015 20:09:02 GMT
       Content-Type:
       - application/ld+json
       Access-Control-Allow-Origin:
@@ -291,5 +291,5 @@ http_interactions:
         \   \"language\":    {\"@id\": \"dc:language\"},\n\t\t    \"value\":       {\"@id\":
         \"rdf:value\"},\n\t\t    \"label\":       {\"@id\": \"rdfs:label\"}\n\t\t}\n\t]\n}"
     http_version: 
-  recorded_at: Wed, 13 May 2015 22:29:45 GMT
+  recorded_at: Mon, 18 May 2015 20:06:14 GMT
 recorded_with: VCR 2.9.3

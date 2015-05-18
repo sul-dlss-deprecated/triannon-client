@@ -31,31 +31,31 @@ http_interactions:
       Content-Type:
       - application/ld+json; charset=utf-8
       Etag:
-      - W/"8f8df37d15aa1d0f88aee7cc98fae9c9"
+      - W/"3693f746f7f82271c0e1eaa0a6cb8586"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c0e914fc-9c99-4ace-91b2-f84548e645e5
+      - 17a87e35-68f1-4977-8f0a-15c5b0c0f4e4
       X-Runtime:
-      - '1.391616'
+      - '1.625174'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Wed, 13 May 2015 22:31:08 GMT
+      - Mon, 18 May 2015 20:07:54 GMT
       Content-Length:
       - '443'
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=b3RJalQxbHoxNzNuWlg2QUExYTBaeUdCZHVQMjZ0WTNOVm1TV0M4ak9VZUV0dFUvYXNhbkYzZzJMOW5neDdqYjZrc1A2aG5jT3gybklyYXRlZ1lNcFJVSVBoT1d2YXRCYVh5SHdVdWtUMm9qVnJaUTcyZndsS3h2NUhzWmFFVTZNK2F2WFpJUHlLb0lpR21YSWVzc0NjcUwraFhjQStLKzNWQ3hQUkhVUzRJc2I1NWxFTEJSOVRwREJacFhqU2xTZ01WSzFsRDdHbjZvSVJ3RWZaOFl5NXVKTklYODJwWUJ3WHAwMTBwcFRLY1doaXZFdWNXTkNMTmI0bm0zRjllMi0tMXZQR2FVMkp2cTIyd3lCTzlVdTBxZz09--9ccb4bcbeb7a57d8615dfd2ed013177d9ec5f518;
+      - _internal_session=ZXo1UnFac0VKUmFYRjdZTXBnaEU4ZXpFWEoyZ3g0VE9MalFYK0d3NU1kYjlvWms0Q09Fa1htcWVRcno0YStxOENzdTZidVRQak12YUZjR01DbVV2Q1NYWlB0Y0k5OTdJeUtTUGZnS0ducmR5WGRwWjdDV1JiM1Yxd21welZ6NGJicDNWZTlFMmxscll4VkljcFppWXEwMWwzR0pTdS92MTg0YU9obGlTNEQ3cU5FczRXZ3VYY1kvZVJmYitVWTdRS2ZtdmVmLzgrRXU2dDBRUVdMMS9hbEVoRlBISE96Q1FiWjk2c0NEUHE5WGxWS2VTRUJrVER6OEp0ZUtYUVJqZi0taDZHWjI3aXEvTkU1Z0pwb3FZTjdBQT09--b347e6e63fc11833326c5fcf868da9499992df3e;
         path=/; HttpOnly
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g70052527030620","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
-        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/12/27/8d/7e/12278d7e-405a-4372-9527-63d130721bbb","@type":"oa:Annotation","hasBody":"_:g70052527030620","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
+      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g70310858814460","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
+        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/c9/22/0e/65/c9220e65-33ed-4115-b069-1734d94a1f80","@type":"oa:Annotation","hasBody":"_:g70310858814460","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
     http_version: 
-  recorded_at: Wed, 13 May 2015 22:31:08 GMT
+  recorded_at: Mon, 18 May 2015 20:07:54 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -75,7 +75,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Wed, 13 May 2015 22:31:08 GMT
+      - Mon, 18 May 2015 20:07:55 GMT
       Server:
       - Apache/2
       Location:
@@ -83,7 +83,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Thu, 14 May 2015 04:31:08 GMT
+      - Tue, 19 May 2015 02:07:55 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -99,7 +99,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Wed, 13 May 2015 22:31:08 GMT
+  recorded_at: Mon, 18 May 2015 20:07:55 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -121,7 +121,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 13 May 2015 22:31:08 GMT
+      - Mon, 18 May 2015 20:07:55 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -135,7 +135,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Thu, 14 May 2015 04:31:08 GMT
+      - Tue, 19 May 2015 02:07:55 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Access-Control-Allow-Origin:
@@ -1253,7 +1253,7 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Wed, 13 May 2015 22:31:08 GMT
+  recorded_at: Mon, 18 May 2015 20:07:55 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -1273,7 +1273,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Wed, 13 May 2015 22:31:08 GMT
+      - Mon, 18 May 2015 20:07:55 GMT
       Server:
       - Apache/2
       Location:
@@ -1281,7 +1281,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Thu, 14 May 2015 04:31:08 GMT
+      - Tue, 19 May 2015 02:07:55 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -1297,7 +1297,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Wed, 13 May 2015 22:31:08 GMT
+  recorded_at: Mon, 18 May 2015 20:07:55 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -1319,7 +1319,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 13 May 2015 22:31:09 GMT
+      - Mon, 18 May 2015 20:07:55 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -1333,7 +1333,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Thu, 14 May 2015 04:31:09 GMT
+      - Tue, 19 May 2015 02:07:55 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Access-Control-Allow-Origin:
@@ -2451,10 +2451,10 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Wed, 13 May 2015 22:31:09 GMT
+  recorded_at: Mon, 18 May 2015 20:07:56 GMT
 - request:
     method: get
-    uri: http://localhost:3000/annotations/12%2F27%2F8d%2F7e%2F12278d7e-405a-4372-9527-63d130721bbb
+    uri: http://localhost:3000/annotations/c9%2F22%2F0e%2F65%2Fc9220e65-33ed-4115-b069-1734d94a1f80
     body:
       encoding: US-ASCII
       string: ''
@@ -2473,15 +2473,15 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '129098'
+      - '128005'
       X-Request-Id:
-      - c8ae68fd-57d2-402f-a927-245c3979d375
+      - 9e050456-1cd0-45ee-a4f5-2794870a5fb9
       X-Runtime:
-      - '0.262155'
+      - '0.350365'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Wed, 13 May 2015 22:31:09 GMT
+      - Mon, 18 May 2015 20:07:56 GMT
       Connection:
       - Keep-Alive
     body:
@@ -3438,17 +3438,7 @@ http_interactions:
         regardless if they changed or not.\n</div>\n</pre>\n</td>\n          </tr>\n
         \       </table>\n      </div>\n    </div>\n    <div class=\"source hidden\"
         id=\"frame-source-88\">\n      <div class=\"info\">\n        Extracted source
-        (around line <strong>#17</strong>):\n      </div>\n      <div class=\"data\">\n
-        \       <table cellpadding=\"0\" cellspacing=\"0\" class=\"lines\">\n          <tr>\n
-        \           <td>\n              <pre class=\"line_numbers\">\n<span>15</span>\n<span>16</span>\n<span>17</span>\n<span>18</span>\n<span>19</span>\n<span>20</span>\n
-        \             </pre>\n            </td>\n<td width=\"100%\">\n<pre>\n<div
-        class=\"line\">      old, env[FLAG] = env[FLAG], false\n</div><div class=\"line\">
-        \     @mutex.lock\n</div><div class=\"line active\">      response = @app.call(env)\n</div><div
-        class=\"line\">      body = BodyProxy.new(response[2]) { @mutex.unlock }\n</div><div
-        class=\"line\">      response[2] = body\n</div><div class=\"line\">      response\n</div>\n</pre>\n</td>\n
-        \         </tr>\n        </table>\n      </div>\n    </div>\n    <div class=\"source
-        hidden\" id=\"frame-source-89\">\n      <div class=\"info\">\n        Extracted
-        source (around line <strong>#15</strong>):\n      </div>\n      <div class=\"data\">\n
+        (around line <strong>#15</strong>):\n      </div>\n      <div class=\"data\">\n
         \       <table cellpadding=\"0\" cellspacing=\"0\" class=\"lines\">\n          <tr>\n
         \           <td>\n              <pre class=\"line_numbers\">\n<span>13</span>\n<span>14</span>\n<span>15</span>\n<span>16</span>\n<span>17</span>\n<span>18</span>\n
         \             </pre>\n            </td>\n<td width=\"100%\">\n<pre>\n<div
@@ -3457,7 +3447,7 @@ http_interactions:
         \     headers = HeaderHash.new(headers)\n</div><div class=\"line\">\n</div><div
         class=\"line\">      if !STATUS_WITH_NO_ENTITY_BODY.include?(status.to_i)
         &amp;&amp;\n</div>\n</pre>\n</td>\n          </tr>\n        </table>\n      </div>\n
-        \   </div>\n    <div class=\"source hidden\" id=\"frame-source-90\">\n      <div
+        \   </div>\n    <div class=\"source hidden\" id=\"frame-source-89\">\n      <div
         class=\"info\">\n        Extracted source (around line <strong>#89</strong>):\n
         \     </div>\n      <div class=\"data\">\n        <table cellpadding=\"0\"
         cellspacing=\"0\" class=\"lines\">\n          <tr>\n            <td>\n              <pre
@@ -3469,7 +3459,7 @@ http_interactions:
         \       begin\n</div><div class=\"line\">          res.status = status.to_i\n</div><div
         class=\"line\">          headers.each { |k, vs|\n</div>\n</pre>\n</td>\n          </tr>\n
         \       </table>\n      </div>\n    </div>\n    <div class=\"source hidden\"
-        id=\"frame-source-91\">\n      <div class=\"info\">\n        Extracted source
+        id=\"frame-source-90\">\n      <div class=\"info\">\n        Extracted source
         (around line <strong>#138</strong>):\n      </div>\n      <div class=\"data\">\n
         \       <table cellpadding=\"0\" cellspacing=\"0\" class=\"lines\">\n          <tr>\n
         \           <td>\n              <pre class=\"line_numbers\">\n<span>136</span>\n<span>137</span>\n<span>138</span>\n<span>139</span>\n<span>140</span>\n<span>141</span>\n
@@ -3479,7 +3469,7 @@ http_interactions:
         class=\"line active\">      si.service(req, res)\n</div><div class=\"line\">
         \   end\n</div><div class=\"line\">\n</div><div class=\"line\">    ##\n</div>\n</pre>\n</td>\n
         \         </tr>\n        </table>\n      </div>\n    </div>\n    <div class=\"source
-        hidden\" id=\"frame-source-92\">\n      <div class=\"info\">\n        Extracted
+        hidden\" id=\"frame-source-91\">\n      <div class=\"info\">\n        Extracted
         source (around line <strong>#94</strong>):\n      </div>\n      <div class=\"data\">\n
         \       <table cellpadding=\"0\" cellspacing=\"0\" class=\"lines\">\n          <tr>\n
         \           <td>\n              <pre class=\"line_numbers\">\n<span>92</span>\n<span>93</span>\n<span>94</span>\n<span>95</span>\n<span>96</span>\n<span>97</span>\n
@@ -3490,7 +3480,7 @@ http_interactions:
         =&gt; ex\n</div><div class=\"line\">          res.set_error(ex)\n</div><div
         class=\"line\">        rescue HTTPStatus::Error =&gt; ex\n</div>\n</pre>\n</td>\n
         \         </tr>\n        </table>\n      </div>\n    </div>\n    <div class=\"source
-        hidden\" id=\"frame-source-93\">\n      <div class=\"info\">\n        Extracted
+        hidden\" id=\"frame-source-92\">\n      <div class=\"info\">\n        Extracted
         source (around line <strong>#294</strong>):\n      </div>\n      <div class=\"data\">\n
         \       <table cellpadding=\"0\" cellspacing=\"0\" class=\"lines\">\n          <tr>\n
         \           <td>\n              <pre class=\"line_numbers\">\n<span>292</span>\n<span>293</span>\n<span>294</span>\n<span>295</span>\n<span>296</span>\n<span>297</span>\n
@@ -3654,13 +3644,12 @@ http_interactions:
         data-frame-id=\"86\" href=\"#\">railties (4.2.0) lib/rails/engine.rb:518:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"87\" href=\"#\">railties
         (4.2.0) lib/rails/application.rb:164:in `call&#39;</a><br><a class=\"trace-frames\"
-        data-frame-id=\"88\" href=\"#\">rack (1.6.1) lib/rack/lock.rb:17:in `call&#39;</a><br><a
-        class=\"trace-frames\" data-frame-id=\"89\" href=\"#\">rack (1.6.1) lib/rack/content_length.rb:15:in
-        `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"90\" href=\"#\">rack
+        data-frame-id=\"88\" href=\"#\">rack (1.6.1) lib/rack/content_length.rb:15:in
+        `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"89\" href=\"#\">rack
         (1.6.1) lib/rack/handler/webrick.rb:89:in `service&#39;</a><br><a class=\"trace-frames\"
-        data-frame-id=\"91\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in
-        `service&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"92\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in
-        `run&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"93\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in
+        data-frame-id=\"90\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in
+        `service&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"91\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in
+        `run&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"92\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in
         `block in start_thread&#39;</a><br></code></pre>\n    </div>\n    <div id=\"Full-Trace\"
         style=\"display: block;\">\n      <pre><code><a class=\"trace-frames\" data-frame-id=\"0\"
         href=\"#\">actionpack (4.2.0) lib/action_controller/metal/mime_responds.rb:218:in
@@ -3809,13 +3798,12 @@ http_interactions:
         data-frame-id=\"86\" href=\"#\">railties (4.2.0) lib/rails/engine.rb:518:in
         `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"87\" href=\"#\">railties
         (4.2.0) lib/rails/application.rb:164:in `call&#39;</a><br><a class=\"trace-frames\"
-        data-frame-id=\"88\" href=\"#\">rack (1.6.1) lib/rack/lock.rb:17:in `call&#39;</a><br><a
-        class=\"trace-frames\" data-frame-id=\"89\" href=\"#\">rack (1.6.1) lib/rack/content_length.rb:15:in
-        `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"90\" href=\"#\">rack
+        data-frame-id=\"88\" href=\"#\">rack (1.6.1) lib/rack/content_length.rb:15:in
+        `call&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"89\" href=\"#\">rack
         (1.6.1) lib/rack/handler/webrick.rb:89:in `service&#39;</a><br><a class=\"trace-frames\"
-        data-frame-id=\"91\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in
-        `service&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"92\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in
-        `run&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"93\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in
+        data-frame-id=\"90\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in
+        `service&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"91\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in
+        `run&#39;</a><br><a class=\"trace-frames\" data-frame-id=\"92\" href=\"#\">/home/dlweber/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in
         `block in start_thread&#39;</a><br></code></pre>\n    </div>\n\n  <script
         type=\"text/javascript\">\n    var traceFrames = document.getElementsByClassName('trace-frames');\n
         \   var selectedFrame, currentSource = document.getElementById('frame-source-0');\n\n
@@ -3830,7 +3818,7 @@ http_interactions:
         && el) {\n          currentSource.className += \" hidden\";\n          el.className
         = el.className.replace(\" hidden\", \"\");\n          currentSource = el;\n
         \       }\n      }\n    }\n  </script>\n</div>\n\n  \n\n<h2 style=\"margin-top:
-        30px\">Request</h2>\n<p><b>Parameters</b>:</p> <pre>{&quot;id&quot;=&gt;&quot;12/27/8d/7e/12278d7e-405a-4372-9527-63d130721bbb&quot;}</pre>\n\n<div
+        30px\">Request</h2>\n<p><b>Parameters</b>:</p> <pre>{&quot;id&quot;=&gt;&quot;c9/22/0e/65/c9220e65-33ed-4115-b069-1734d94a1f80&quot;}</pre>\n\n<div
         class=\"details\">\n  <div class=\"summary\"><a href=\"#\" onclick=\"return
         toggleSessionDump()\">Toggle session dump</a></div>\n  <div id=\"session_dump\"
         style=\"display:none\"><pre></pre></div>\n</div>\n\n<div class=\"details\">\n
@@ -3840,7 +3828,7 @@ http_interactions:
         &quot;gzip, deflate&quot;\nREMOTE_ADDR: &quot;127.0.0.1&quot;\nREMOTE_HOST:
         &quot;127.0.0.1&quot;\nSERVER_NAME: &quot;localhost&quot;\nSERVER_PROTOCOL:
         &quot;HTTP/1.1&quot;</pre></div>\n</div>\n\n<h2 style=\"margin-top: 30px\">Response</h2>\n<p><b>Headers</b>:</p>
-        <pre>None</pre>\n\n</div>\n\n\n</body>\n</html>\n<div id=\"console\"\n  data-remote-path='console/repl_sessions/e9f5563b5904549edd08beb1298efe89'\n
+        <pre>None</pre>\n\n</div>\n\n\n</body>\n</html>\n<div id=\"console\"\n  data-remote-path='console/repl_sessions/a460b424cb0b8e952d2370361c0198d2'\n
         \ data-initial-prompt='>> '>\n</div>\n\n\n<script type=\"text/javascript\">\n(function()
         {\n  // DOM helpers\nfunction hasClass(el, className) {\n  var regex = new
         RegExp('(?:^|\\\\s)' + className + '(?!\\\\S)', 'g');\n  return el.className.match(regex);\n}\n\nfunction
@@ -4037,10 +4025,10 @@ http_interactions:
         \   resizerElement.addEventListener('mouseup', recordConsoleElementHeight);\n
         \ });\n});\n\n}).call(this);\n</script>\n\n"
     http_version: 
-  recorded_at: Wed, 13 May 2015 22:31:09 GMT
+  recorded_at: Mon, 18 May 2015 20:07:56 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/annotations/12%2F27%2F8d%2F7e%2F12278d7e-405a-4372-9527-63d130721bbb
+    uri: http://localhost:3000/annotations/c9%2F22%2F0e%2F65%2Fc9220e65-33ed-4115-b069-1734d94a1f80
     body:
       encoding: US-ASCII
       string: ''
@@ -4067,22 +4055,22 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 68de7636-5675-4dd5-a42e-c755fd64ddcb
+      - 513f819e-5713-437d-834d-560da4b83953
       X-Runtime:
-      - '0.167672'
+      - '0.253853'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Wed, 13 May 2015 22:31:09 GMT
+      - Mon, 18 May 2015 20:07:56 GMT
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=SzVTY1ZDUXdISFdRR1lSRkR3VlVuQ2d6VDdDcDljNmRqRE5NbVpQUndKaGtuMHgxU0hvYkxQNGlCelA1ZnZIa2pEemZqejc4VitHM1hRRWhIdG1qNmhPOGRGRXhZNTNDMTlxcWV0VHlKT0dFNnNxNW5hYnV5NWpmYlZTUUQ5QnNaT2UrQTQwWUtFN05JOGF5clJPeFhtVFFranVjQUYrQVVDTHhubW4zcFUzdnJ3eHBQRmkva0FGeDBpZEN4MldnLS1VbkpNUUtIWFZyNjVEWk1ieUFhS2tBPT0%3D--71575cf2d8ea90ab8d81be2d509aaf23bf24bbc9;
+      - _internal_session=YU9Wd0xEWHRNL2ZxR2tiVVhzTXZQNWRuOHBlV0VPZXk5a3J0ak1oV1htaVBQZmJDODRtbjhNZGRJU2lZMFQ1MWV5NjhrdU80S09hQVFNYzJsYnNXNmJLbS9oeUJBWXp2bnZiRDdSTGpMVStySFp4WXZkZWp0WnNWd1dkNjdEQnZUMFpUUlN4WWtTUWtwaHB2Q3dlTGpPcGRkZ2dJTXBsY1d6R1lQZzhoQU5kTUNHT25lZmVhbHFOYWVnMlBQWS8wLS1wSVp2RDdISUVrMDJPbmRtOGNNQnB3PT0%3D--148c480eb047c240941cc7e658a29ee6d385af1a;
         path=/; HttpOnly
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 13 May 2015 22:31:09 GMT
+  recorded_at: Mon, 18 May 2015 20:07:56 GMT
 recorded_with: VCR 2.9.3

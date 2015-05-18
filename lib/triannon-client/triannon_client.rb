@@ -56,6 +56,13 @@ module TriannonClient
         # 204 (No Content) if the action has been enacted but the response
         # does not include an entity.
         [200, 202, 204].include? response.code
+      rescue RestClient::Exception => e
+        response = e.response
+        # If an annotation doesn't exist, consider the request a 'success'
+        return true if [404, 410].include? response.code
+        binding.pry if @config.debug
+        @config.logger.error("Failed to DELETE annotation: #{id}, #{response.body}")
+        false
       rescue => e
         binding.pry if @config.debug
         @config.logger.error("Failed to DELETE annotation: #{id}, #{e.message}")
@@ -75,14 +82,18 @@ module TriannonClient
       tries = 0
       begin
         tries += 1
-        # TODO: add Accept content type, somehow?
         response = @container.post post_data, :content_type => JSONLD_TYPE, :accept => JSONLD_TYPE
-      rescue => e
+      rescue RestClient::Exception => e
         sleep 1*tries
         retry if tries < 3
         response = e.response
         binding.pry if @config.debug
-        @config.logger.error("Failed to POST annotation: #{response.code}: #{response.body}")
+        @config.logger.error("Failed to POST annotation: #{response.code}, #{response.body}")
+      rescue => e
+        sleep 1*tries
+        retry if tries < 3
+        binding.pry if @config.debug
+        @config.logger.error("Failed to POST annotation: #{e.message}")
       end
       return response
     end
