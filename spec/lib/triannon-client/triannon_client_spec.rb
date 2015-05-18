@@ -478,6 +478,22 @@ describe TriannonClient, :vcr do
       expect(r).to respond_to(:headers)
       delete_annotation(anno[:id]) # cleanup after create_annotation
     end
+    it 'logs exceptions for RestClient::Exception' do
+      exception_response = double()
+      allow(exception_response).to receive(:code).and_return(500)
+      allow(exception_response).to receive(:body).and_return('post_logs_exceptions')
+      allow_any_instance_of(RestClient::Exception).to receive(:response).and_return(exception_response)
+      expect(TriannonClient.configuration.logger).to receive(:error).with(/post_logs_exceptions/)
+      tc.post_annotation('post_logs_exceptions')
+    end
+    it 'logs exceptions' do
+      exception_response = double()
+      allow(exception_response).to receive(:code).and_return(500)
+      allow(exception_response).to receive(:body).and_return('post_logs_exceptions')
+      allow_any_instance_of(RestClient::Exception).to receive(:response).and_return(exception_response)
+      expect(TriannonClient.configuration.logger).to receive(:error).with(/post_logs_exceptions/)
+      tc.post_annotation('post_logs_exceptions')
+    end
   end
 
 

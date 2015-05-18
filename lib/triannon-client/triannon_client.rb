@@ -82,14 +82,18 @@ module TriannonClient
       tries = 0
       begin
         tries += 1
-        # TODO: add Accept content type, somehow?
         response = @container.post post_data, :content_type => JSONLD_TYPE, :accept => JSONLD_TYPE
-      rescue => e
+      rescue RestClient::Exception => e
         sleep 1*tries
         retry if tries < 3
         response = e.response
         binding.pry if @config.debug
-        @config.logger.error("Failed to POST annotation: #{response.code}: #{response.body}")
+        @config.logger.error("Failed to POST annotation: #{response.code}, #{response.body}")
+      rescue => e
+        sleep 1*tries
+        retry if tries < 3
+        binding.pry if @config.debug
+        @config.logger.error("Failed to POST annotation: #{e.message}")
       end
       return response
     end
