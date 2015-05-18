@@ -139,42 +139,31 @@ describe TriannonClient, :vcr do
   end
 
   describe "#delete_annotation" do
-    def test_delete_for_response_code(status, response)
+    def test_delete_for_response_code(anno_id, status, response)
       allow_any_instance_of(RestClient::Response).to receive(:code).and_return(status)
-      expect(tc.delete_annotation('anything_here_is_OK')).to be response
+      expect(tc.delete_annotation(anno_id)).to be response
     end
-    it "returns false for a 500 response to a DELETE request" do
-      test_delete_for_response_code(500, false)
+    it "returns FALSE for a 500 response to a DELETE request" do
+      test_delete_for_response_code('500_is_false', 500, false)
     end
-    it "returns true for a 200 response to a DELETE request" do
-      test_delete_for_response_code(200, true)
+    it "returns TRUE for a 200 response to a DELETE request" do
+      test_delete_for_response_code('200_is_true', 200, true)
     end
-    it "returns true for a 202 response to a DELETE request" do
-      test_delete_for_response_code(202, true)
+    it "returns TRUE for a 202 response to a DELETE request" do
+      test_delete_for_response_code('202_is_true', 202, true)
     end
-    it "returns true for a 204 response to a DELETE request" do
-      test_delete_for_response_code(204, true)
+    it "returns TRUE for a 204 response to a DELETE request" do
+      test_delete_for_response_code('204_is_true', 204, true)
+    end
+    it "returns TRUE for a 404 response to a DELETE request" do
+      test_delete_for_response_code('404_is_true', 404, true)
+    end
+    it "returns TRUE for a 410 response to a DELETE request" do
+      test_delete_for_response_code('410_is_true', 410, true)
     end
     it 'validates the annotation ID' do
       expect(tc).to receive(:check_id)
-      tc.delete_annotation('anything_here_is_OK')
-    end
-    it 'deletes an open annotation that exists' do
-      anno = create_annotation
-      expect( tc.delete_annotation(anno[:id]) ).to be true
-      graph = tc.get_annotation(anno[:id])
-      graph_is_empty(graph)
-    end
-    it 'fails to delete an open annotation that does NOT exist' do
-      id = 'anno_does_not_exist'
-      graph = tc.get_annotation(id)
-      graph_is_empty(graph)
-      expect( tc.delete_annotation(id) ).to be false
-    end
-    it 'logs exceptions' do
-      allow_any_instance_of(RestClient::Resource).to receive(:delete).and_raise('delete_exception')
-      expect(TriannonClient.configuration.logger).to receive(:error).with(/delete_exception/)
-      tc.delete_annotation('raise_delete_exception')
+      tc.delete_annotation('checking_anno_id')
     end
     it 'quits after detecting an invalid annotation ID' do
       expect_any_instance_of(RestClient::Resource).not_to receive(:delete)
@@ -184,6 +173,42 @@ describe TriannonClient, :vcr do
     it 'uses RestClient::Resource.delete to DELETE a valid annotation ID' do
       expect_any_instance_of(RestClient::Resource).to receive(:delete)
       tc.delete_annotation(SecureRandom.uuid)
+    end
+    it 'returns TRUE when deleting an open annotation that exists' do
+      anno = create_annotation
+      expect( tc.delete_annotation(anno[:id]) ).to be true
+      graph = tc.get_annotation(anno[:id])
+      graph_is_empty(graph)
+    end
+    it 'returns TRUE when deleting an open annotation that does NOT exist' do
+      id = 'anno_does_not_exist'
+      graph = tc.get_annotation(id)
+      graph_is_empty(graph)
+      expect( tc.delete_annotation(id) ).to be true
+    end
+    it 'logs exceptions' do
+      exception_response = double()
+      allow(exception_response).to receive(:code).and_return(450)
+      allow(exception_response).to receive(:body).and_return('delete_logs_exceptions')
+      allow_any_instance_of(RestClient::Exception).to receive(:response).and_return(exception_response)
+      expect(TriannonClient.configuration.logger).to receive(:error).with(/delete_logs_exceptions/)
+      tc.delete_annotation('delete_logs_exceptions')
+    end
+    it 'does not log exceptions for missing annotations (404 responses)' do
+      exception_response = double()
+      allow(exception_response).to receive(:code).and_return(404)
+      allow(exception_response).to receive(:body).and_return('delete_does_not_log_404_exceptions')
+      allow_any_instance_of(RestClient::Exception).to receive(:response).and_return(exception_response)
+      expect(TriannonClient.configuration.logger).not_to receive(:error)
+      tc.delete_annotation('delete_does_not_log_404_exceptions')
+    end
+    it 'does not log exceptions for missing annotations (410 responses)' do
+      exception_response = double()
+      allow(exception_response).to receive(:code).and_return(410)
+      allow(exception_response).to receive(:body).and_return('delete_does_not_log_410_exceptions')
+      allow_any_instance_of(RestClient::Exception).to receive(:response).and_return(exception_response)
+      expect(TriannonClient.configuration.logger).not_to receive(:error)
+      tc.delete_annotation('delete_does_not_log_410_exceptions')
     end
   end
 
