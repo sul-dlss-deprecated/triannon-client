@@ -3,7 +3,7 @@
 
 # Under construction!
 
-Use at your own risk!
+Any gem released prior to 1.x may have an unstable API.  As the triannon server and this client are in rapid development (as of 2015), expect new gem releases that could break the API.
 
 
 # Triannon Client
@@ -87,17 +87,16 @@ tc.post_annotation(open_annotation_jsonld)
 
 ```ruby
 uri = RDF::URI.new("http://your.triannon-server.com/annotations/45/4a/c0/93/454ac093-b37d-4580-bebd-449f8dabddc9")
-tc.annotation_id(uri) #=> "45%2F4a%2Fc0%2F93%2F454ac093-b37d-4580-bebd-449f8dabddc9"
+id = tc.annotation_id(uri) #=> "45%2F4a%2Fc0%2F93%2F454ac093-b37d-4580-bebd-449f8dabddc9"
 tc.delete_annotation(id)
 ```
 
-Note that the annotation URI contains a pair-tree path that is created by
-the Fedora 4 instance that triannon server works on.  The annotation ID is
-the entire pair-tree path after it is URI escaped.  This makes it easier to
-work with the ID for tc.get_annotation(id) and tc.delete_annotation(id).
-For more information on object storage using pair-trees, see
-http://www.slideshare.net/jakkbl/dcc-pair-posterppt
-https://wiki.ucop.edu/display/Curation/PairTree
+Note: the annotation URI contains a pair-tree path (created by a Fedora 4 repository for 
+triannon annotations).  The annotation ID is the entire pair-tree path, after a URI escape.
+The URI escape makes it easier to work with the ID for tc.get_annotation(id) and 
+tc.delete_annotation(id).  For more information on object storage using pair-trees, see
+  - http://www.slideshare.net/jakkbl/dcc-pair-posterppt
+  - https://wiki.ucop.edu/display/Curation/PairTree
 
 ## Development
 
