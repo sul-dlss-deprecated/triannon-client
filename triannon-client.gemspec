@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'triannon-client'
-  s.version     = '0.4.0'
+  s.version     = '0.4.1'
   s.licenses    = ['Apache-2.0']
   s.platform    = Gem::Platform::RUBY
 
