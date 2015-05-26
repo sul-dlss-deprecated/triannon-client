@@ -187,26 +187,20 @@ describe TriannonClient, :vcr do
       expect( tc.delete_annotation(id) ).to be true
     end
     it 'logs exceptions' do
-      exception_response = double()
-      allow(exception_response).to receive(:code).and_return(450)
-      allow(exception_response).to receive(:body).and_return('delete_logs_exceptions')
-      allow_any_instance_of(RestClient::Exception).to receive(:response).and_return(exception_response)
+      allow_any_instance_of(RestClient::Response).to receive(:code).and_return(450)
+      allow_any_instance_of(RestClient::Response).to receive(:body).and_return('delete_logs_exceptions')
       expect(TriannonClient.configuration.logger).to receive(:error).with(/delete_logs_exceptions/)
       tc.delete_annotation('delete_logs_exceptions')
     end
     it 'does not log exceptions for missing annotations (404 responses)' do
-      exception_response = double()
-      allow(exception_response).to receive(:code).and_return(404)
-      allow(exception_response).to receive(:body).and_return('delete_does_not_log_404_exceptions')
-      allow_any_instance_of(RestClient::Exception).to receive(:response).and_return(exception_response)
+      allow_any_instance_of(RestClient::Response).to receive(:code).and_return(404)
+      allow_any_instance_of(RestClient::Response).to receive(:body).and_return('delete_does_not_log_404_exceptions')
       expect(TriannonClient.configuration.logger).not_to receive(:error)
       tc.delete_annotation('delete_does_not_log_404_exceptions')
     end
     it 'does not log exceptions for missing annotations (410 responses)' do
-      exception_response = double()
-      allow(exception_response).to receive(:code).and_return(410)
-      allow(exception_response).to receive(:body).and_return('delete_does_not_log_410_exceptions')
-      allow_any_instance_of(RestClient::Exception).to receive(:response).and_return(exception_response)
+      allow_any_instance_of(RestClient::Response).to receive(:code).and_return(410)
+      allow_any_instance_of(RestClient::Response).to receive(:body).and_return('delete_does_not_log_410_exceptions')
       expect(TriannonClient.configuration.logger).not_to receive(:error)
       tc.delete_annotation('delete_does_not_log_410_exceptions')
     end

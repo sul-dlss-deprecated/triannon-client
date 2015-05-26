@@ -55,13 +55,18 @@ module TriannonClient
         # 202 (Accepted) if the action has not yet been enacted, or
         # 204 (No Content) if the action has been enacted but the response
         # does not include an entity.
-        [200, 202, 204].include? response.code
+        [200, 202, 204].include?(response.code)
       rescue RestClient::Exception => e
         response = e.response
-        # If an annotation doesn't exist, consider the request a 'success'
-        return true if [404, 410].include? response.code
+        if response.is_a?(RestClient::Response)
+          # If an annotation doesn't exist, consider the request a 'success'
+          return true if [404, 410].include?(response.code)
+          msg = response.body
+        else
+          msg = e.message
+        end
+        @config.logger.error("Failed to DELETE annotation: #{id}, #{msg}")
         binding.pry if @config.debug
-        @config.logger.error("Failed to DELETE annotation: #{id}, #{response.body}")
         false
       rescue => e
         binding.pry if @config.debug
@@ -127,7 +132,6 @@ module TriannonClient
         # TODO: switch yard for different response.code?
         response2graph(response)
       rescue => e
-        # response = e.response
         binding.pry if @config.debug
         @config.logger.error("Failed to GET annotation: #{id}, #{e.message}")
         RDF::Graph.new # return an empty graph

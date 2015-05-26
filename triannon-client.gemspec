@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'triannon-client'
-  s.version     = '0.4.0'
+  s.version     = '0.4.1'
   s.licenses    = ['Apache-2.0']
   s.platform    = Gem::Platform::RUBY
 
@@ -34,12 +34,11 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'vcr'
   s.add_development_dependency 'webmock'
 
-  s.files   = `git ls-files`.split($/)
+  git_files = `git ls-files`.split($/)
+  bin_files = %w(bin/console bin/ctags.rb bin/setup.sh bin/test.sh)
+  dot_files = %w(.gitignore .travis.yml log/.gitignore)
+  s.files = git_files - (bin_files + dot_files)
   s.executables = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
   s.test_files  = s.files.grep(%r{^(test|spec|features)/})
 
-  dev_files = %w(.gitignore bin/console bin/ctags.rb bin/setup.sh bin/test.sh)
-  dev_files.each {|f| s.files.delete f; s.executables.delete f; }
-
 end
-
