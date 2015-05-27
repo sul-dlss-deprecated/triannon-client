@@ -20,23 +20,45 @@ module TriannonClient
     # All params are optional, the defaults are set in
     # the ::TriannonClient.configuration
     # @param host [String] HTTP URI for triannon server
-    # @param user [String] Authorized username for access to triannon server
-    # @param pass [String] Authorized password for access to triannon server
+    # @param user [String] Authorized username for triannon server
+    # @param pass [String] Authorized password for triannon server
+    # @param secret [String] Authorized OAuth secret key for triannon server
     # @param container [String] The container path on the triannon server
-    def initialize(host=nil, user=nil, pass=nil, container=nil)
+    def initialize(host=nil, user=nil, pass=nil, secret=nil, container=nil)
       # Configure triannon-app service
       @config = ::TriannonClient.configuration
       host ||= @config.host
       host.chomp!('/') if host.end_with?('/')
-      user ||= @config.user
-      pass ||= @config.pass
-      @site = RestClient::Resource.new(
-        host,
-        user: user,
-        password: pass,
-        open_timeout: 5,
-        read_timeout: 30
-      )
+      # Use OAuth, if it's configured.
+      secret ||= @config.oauth_secret
+      unless secret.nil? || secret.empty?
+        # Try to use OAuth
+        consumer = OAuth::Consumer.new("key", secret, {:site => host})
+        request_token = consumer.get_request_token
+        access_token = request_token.get_access_token
+        if access_token
+          RestClient.add_before_execution_proc do |req, params|
+            access_token.sign! req
+          end
+        end
+        @site = RestClient::Resource.new(
+          host,
+          open_timeout: 5,
+          read_timeout: 30
+        )
+      else
+        # Try to use basic auth
+        user ||= @config.user
+        pass ||= @config.pass
+        @site = RestClient::Resource.new(
+          host,
+          user: user,
+          password: pass,
+          open_timeout: 5,
+          read_timeout: 30
+        )
+      end
+      # Create the root container path
       container ||= @config.container
       container = "/#{container}"  unless container.start_with?('/')
       container =  "#{container}/" unless container.end_with?('/')
