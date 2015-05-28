@@ -20,26 +20,28 @@ module TriannonClient
     # All params are optional, the defaults are set in
     # the ::TriannonClient.configuration
     # @param host [String] HTTP URI for triannon server
+    # @param container [String] The container path on the triannon server
     # @param user [String] Authorized username for triannon server
     # @param pass [String] Authorized password for triannon server
-    # @param secret [String] Authorized OAuth secret key for triannon server
-    # @param container [String] The container path on the triannon server
-    def initialize(host=nil, user=nil, pass=nil, secret=nil, container=nil)
+    # @param client [String] Registered OAuth client ID for triannon server
+    # @param secret [String] Authorized OAuth secret for triannon server
+    def initialize(host=nil, container=nil, user=nil, pass=nil, client=nil, secret=nil)
       # Configure triannon-app service
       @config = ::TriannonClient.configuration
       host ||= @config.host
       host.chomp!('/') if host.end_with?('/')
       # Use OAuth, if it's configured.
+      client ||= @config.oauth_client
       secret ||= @config.oauth_secret
-      unless secret.nil? || secret.empty?
-        # Try to use OAuth
-        consumer = OAuth::Consumer.new("key", secret, {:site => host})
+      unless client.nil? || client.empty? || secret.nil? || secret.empty?
+        # Try to use OAuth (don't handle exceptions, let it crash)
+        consumer = OAuth::Consumer.new(client, secret, {:site => host})
         request_token = consumer.get_request_token
+        raise 'Failed to get OAuth request token' unless request_token
         access_token = request_token.get_access_token
-        if access_token
-          RestClient.add_before_execution_proc do |req, params|
-            access_token.sign! req
-          end
+        raise 'Failed to get OAuth access token' unless access_token
+        RestClient.add_before_execution_proc do |req, params|
+          access_token.sign! req
         end
         @site = RestClient::Resource.new(
           host,
