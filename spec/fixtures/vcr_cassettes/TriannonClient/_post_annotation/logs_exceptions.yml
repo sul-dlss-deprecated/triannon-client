@@ -25,15 +25,15 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '152196'
+      - '152203'
       X-Request-Id:
-      - c94bd9c1-6425-44ec-ac33-f856cf247851
+      - 75a664ad-7bc9-45f0-b3c1-ccdcfa0423b2
       X-Runtime:
-      - '0.449579'
+      - '0.239530'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Mon, 18 May 2015 20:25:49 GMT
+      - Thu, 28 May 2015 01:31:03 GMT
       Connection:
       - Keep-Alive
     body:
@@ -77,7 +77,7 @@ http_interactions:
         \   }\n  </script>\n</head>\n<body>\n\n<header>\n  <h1>Template is missing</h1>\n</header>\n\n<div
         id=\"container\">\n  <h2>Missing template triannon/annotations/new, triannon/application/new
         with {:locale=&gt;[:en], :formats=&gt;[:jsonld], :variants=&gt;[], :handlers=&gt;[:erb,
-        :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:\n  * &quot;/data/src/dlss/ld4l_data/annotations/triannon/spec/internal/app/views&quot;\n
+        :builder, :raw, :ruby, :coffee, :jbuilder, :haml]}. Searched in:\n  * &quot;/data/src/dlss/ld4l_data/annotations/triannon/spec/internal/app/views&quot;\n
         \ * &quot;/data/src/dlss/ld4l_data/annotations/triannon/app/views&quot;\n</h2>\n\n
         \     <div class=\"source \" id=\"frame-source-0\">\n      <div class=\"info\">\n
         \       Extracted source (around line <strong>#46</strong>):\n      </div>\n
@@ -1668,7 +1668,7 @@ http_interactions:
         &quot;gzip, deflate&quot;\nREMOTE_ADDR: &quot;127.0.0.1&quot;\nREMOTE_HOST:
         &quot;127.0.0.1&quot;\nSERVER_NAME: &quot;localhost&quot;\nSERVER_PROTOCOL:
         &quot;HTTP/1.1&quot;</pre></div>\n</div>\n\n<h2 style=\"margin-top: 30px\">Response</h2>\n<p><b>Headers</b>:</p>
-        <pre>None</pre>\n\n</div>\n\n\n</body>\n</html>\n<div id=\"console\"\n  data-remote-path='console/repl_sessions/fac52f1b2e9b8ecf497ee799cb6747fe'\n
+        <pre>None</pre>\n\n</div>\n\n\n</body>\n</html>\n<div id=\"console\"\n  data-remote-path='console/repl_sessions/63a8af0397be526a98b861e616fe5e6a'\n
         \ data-initial-prompt='>> '>\n</div>\n\n\n<script type=\"text/javascript\">\n(function()
         {\n  // DOM helpers\nfunction hasClass(el, className) {\n  var regex = new
         RegExp('(?:^|\\\\s)' + className + '(?!\\\\S)', 'g');\n  return el.className.match(regex);\n}\n\nfunction
@@ -1865,7 +1865,7 @@ http_interactions:
         \   resizerElement.addEventListener('mouseup', recordConsoleElementHeight);\n
         \ });\n});\n\n}).call(this);\n</script>\n\n"
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:25:49 GMT
+  recorded_at: Thu, 28 May 2015 01:31:03 GMT
 - request:
     method: post
     uri: http://localhost:3000/annotations/
@@ -1891,15 +1891,15 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '152196'
+      - '152203'
       X-Request-Id:
-      - 619fed3a-3a32-4de5-8c77-2fda13697a56
+      - 9d073325-beaf-43bb-843a-c0c5cfe74123
       X-Runtime:
-      - '0.299375'
+      - '0.213683'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Mon, 18 May 2015 20:25:50 GMT
+      - Thu, 28 May 2015 01:31:04 GMT
       Connection:
       - Keep-Alive
     body:
@@ -1943,7 +1943,7 @@ http_interactions:
         \   }\n  </script>\n</head>\n<body>\n\n<header>\n  <h1>Template is missing</h1>\n</header>\n\n<div
         id=\"container\">\n  <h2>Missing template triannon/annotations/new, triannon/application/new
         with {:locale=&gt;[:en], :formats=&gt;[:jsonld], :variants=&gt;[], :handlers=&gt;[:erb,
-        :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:\n  * &quot;/data/src/dlss/ld4l_data/annotations/triannon/spec/internal/app/views&quot;\n
+        :builder, :raw, :ruby, :coffee, :jbuilder, :haml]}. Searched in:\n  * &quot;/data/src/dlss/ld4l_data/annotations/triannon/spec/internal/app/views&quot;\n
         \ * &quot;/data/src/dlss/ld4l_data/annotations/triannon/app/views&quot;\n</h2>\n\n
         \     <div class=\"source \" id=\"frame-source-0\">\n      <div class=\"info\">\n
         \       Extracted source (around line <strong>#46</strong>):\n      </div>\n
@@ -3534,7 +3534,7 @@ http_interactions:
         &quot;gzip, deflate&quot;\nREMOTE_ADDR: &quot;127.0.0.1&quot;\nREMOTE_HOST:
         &quot;127.0.0.1&quot;\nSERVER_NAME: &quot;localhost&quot;\nSERVER_PROTOCOL:
         &quot;HTTP/1.1&quot;</pre></div>\n</div>\n\n<h2 style=\"margin-top: 30px\">Response</h2>\n<p><b>Headers</b>:</p>
-        <pre>None</pre>\n\n</div>\n\n\n</body>\n</html>\n<div id=\"console\"\n  data-remote-path='console/repl_sessions/ee8912f02a105dda9bd9c022b3caaf01'\n
+        <pre>None</pre>\n\n</div>\n\n\n</body>\n</html>\n<div id=\"console\"\n  data-remote-path='console/repl_sessions/5a12e2b28402bc3e5f132a67bdd46f22'\n
         \ data-initial-prompt='>> '>\n</div>\n\n\n<script type=\"text/javascript\">\n(function()
         {\n  // DOM helpers\nfunction hasClass(el, className) {\n  var regex = new
         RegExp('(?:^|\\\\s)' + className + '(?!\\\\S)', 'g');\n  return el.className.match(regex);\n}\n\nfunction
@@ -3731,7 +3731,7 @@ http_interactions:
         \   resizerElement.addEventListener('mouseup', recordConsoleElementHeight);\n
         \ });\n});\n\n}).call(this);\n</script>\n\n"
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:25:50 GMT
+  recorded_at: Thu, 28 May 2015 01:31:04 GMT
 - request:
     method: post
     uri: http://localhost:3000/annotations/
@@ -3757,15 +3757,15 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Content-Length:
-      - '152196'
+      - '152203'
       X-Request-Id:
-      - a4ce889f-ea70-4db0-851a-06770793b216
+      - 4b4e762c-c45e-41d3-b887-850408f8492b
       X-Runtime:
-      - '0.263309'
+      - '0.255538'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Mon, 18 May 2015 20:25:52 GMT
+      - Thu, 28 May 2015 01:31:07 GMT
       Connection:
       - Keep-Alive
     body:
@@ -3809,7 +3809,7 @@ http_interactions:
         \   }\n  </script>\n</head>\n<body>\n\n<header>\n  <h1>Template is missing</h1>\n</header>\n\n<div
         id=\"container\">\n  <h2>Missing template triannon/annotations/new, triannon/application/new
         with {:locale=&gt;[:en], :formats=&gt;[:jsonld], :variants=&gt;[], :handlers=&gt;[:erb,
-        :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:\n  * &quot;/data/src/dlss/ld4l_data/annotations/triannon/spec/internal/app/views&quot;\n
+        :builder, :raw, :ruby, :coffee, :jbuilder, :haml]}. Searched in:\n  * &quot;/data/src/dlss/ld4l_data/annotations/triannon/spec/internal/app/views&quot;\n
         \ * &quot;/data/src/dlss/ld4l_data/annotations/triannon/app/views&quot;\n</h2>\n\n
         \     <div class=\"source \" id=\"frame-source-0\">\n      <div class=\"info\">\n
         \       Extracted source (around line <strong>#46</strong>):\n      </div>\n
@@ -5400,7 +5400,7 @@ http_interactions:
         &quot;gzip, deflate&quot;\nREMOTE_ADDR: &quot;127.0.0.1&quot;\nREMOTE_HOST:
         &quot;127.0.0.1&quot;\nSERVER_NAME: &quot;localhost&quot;\nSERVER_PROTOCOL:
         &quot;HTTP/1.1&quot;</pre></div>\n</div>\n\n<h2 style=\"margin-top: 30px\">Response</h2>\n<p><b>Headers</b>:</p>
-        <pre>None</pre>\n\n</div>\n\n\n</body>\n</html>\n<div id=\"console\"\n  data-remote-path='console/repl_sessions/87ab03b6260c5ed29f94e6b87d11cc86'\n
+        <pre>None</pre>\n\n</div>\n\n\n</body>\n</html>\n<div id=\"console\"\n  data-remote-path='console/repl_sessions/0280893691edff2061aba16c2fa048df'\n
         \ data-initial-prompt='>> '>\n</div>\n\n\n<script type=\"text/javascript\">\n(function()
         {\n  // DOM helpers\nfunction hasClass(el, className) {\n  var regex = new
         RegExp('(?:^|\\\\s)' + className + '(?!\\\\S)', 'g');\n  return el.className.match(regex);\n}\n\nfunction
@@ -5597,5 +5597,5 @@ http_interactions:
         \   resizerElement.addEventListener('mouseup', recordConsoleElementHeight);\n
         \ });\n});\n\n}).call(this);\n</script>\n\n"
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:25:52 GMT
+  recorded_at: Thu, 28 May 2015 01:31:07 GMT
 recorded_with: VCR 2.9.3

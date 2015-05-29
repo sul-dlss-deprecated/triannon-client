@@ -9,6 +9,8 @@ module TriannonClient
     attr_accessor :host
     attr_accessor :user
     attr_accessor :pass
+    attr_accessor :oauth_client
+    attr_accessor :oauth_secret
     attr_accessor :container
 
     def initialize
@@ -17,6 +19,8 @@ module TriannonClient
       @host = ENV['TRIANNON_HOST'] || 'http://localhost:3000'
       @user = ENV['TRIANNON_USER'] || ''
       @pass = ENV['TRIANNON_PASS'] || ''
+      @oauth_client = ENV['TRIANNON_OAUTH_ID'] || ''
+      @oauth_secret = ENV['TRIANNON_OAUTH_SECRET'] || ''
       @container = ENV['TRIANNON_CONTAINER'] || ''
       @container += '/' unless(@container.empty? || @container.end_with?('/'))
 

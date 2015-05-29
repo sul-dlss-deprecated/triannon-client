@@ -36,6 +36,22 @@ module TriannonClient
       end
     end
 
+    describe '#container' do
+      it 'default value is an empty string' do
+        ENV['TRIANNON_CONTAINER'] = nil
+        config = Configuration.new
+        expect(config.container).to be_empty
+      end
+    end
+
+    describe '#container=' do
+      it 'can set value' do
+        config = Configuration.new
+        config.container = 'secret'
+        expect(config.container).to eql('secret')
+      end
+    end
+
     describe '#user' do
       it 'default value is an empty string' do
         ENV['TRIANNON_USER'] = nil
@@ -68,21 +84,38 @@ module TriannonClient
       end
     end
 
-    describe '#container' do
+    describe '#oauth_client' do
       it 'default value is an empty string' do
-        ENV['TRIANNON_CONTAINER'] = nil
+        ENV['TRIANNON_OAUTH_ID'] = nil
         config = Configuration.new
-        expect(config.container).to be_empty
+        expect(config.oauth_client).to be_empty
       end
     end
 
-    describe '#container=' do
+    describe '#oauth_client=' do
       it 'can set value' do
         config = Configuration.new
-        config.container = 'secret'
-        expect(config.container).to eql('secret')
+        config.oauth_client = 'fred'
+        expect(config.oauth_client).to eql('fred')
       end
     end
+
+    describe '#oauth_secret' do
+      it 'default value is an empty string' do
+        ENV['TRIANNON_OAUTH_SECRET'] = nil
+        config = Configuration.new
+        expect(config.oauth_secret).to be_empty
+      end
+    end
+
+    describe '#oauth_secret=' do
+      it 'can set value' do
+        config = Configuration.new
+        config.oauth_secret = 'secret'
+        expect(config.oauth_secret).to eql('secret')
+      end
+    end
+
 
   end
 end

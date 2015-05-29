@@ -21,6 +21,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'dotenv'
   # HTTP and RDF clients
   s.add_dependency 'rest-client'
+  # Add oauth support using the oauth gem
+  s.add_dependency 'oauth'
   s.add_dependency 'linkeddata'
   # Use pry for console and debugging
   s.add_dependency 'pry'
