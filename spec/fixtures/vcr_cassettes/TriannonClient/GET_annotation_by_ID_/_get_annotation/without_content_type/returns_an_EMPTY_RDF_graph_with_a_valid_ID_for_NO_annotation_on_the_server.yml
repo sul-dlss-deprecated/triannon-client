@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://localhost:3000/annotations/
+    uri: http://localhost:3000/annotations/foo/
     body:
       encoding: US-ASCII
       string: commit=Create%20Annotation&annotation[data]=%7B%22%40context%22%3A%22http%3A%2F%2Fiiif.io%2Fapi%2Fpresentation%2F2%2Fcontext.json%22%2C%22%40graph%22%3A%5B%7B%22%40id%22%3A%22_%3Ag70349699654640%22%2C%22%40type%22%3A%5B%22dctypes%3AText%22%2C%22cnt%3AContentAsText%22%5D%2C%22chars%22%3A%22I%20love%20this!%22%2C%22format%22%3A%22text%2Fplain%22%2C%22language%22%3A%22en%22%7D%2C%7B%22%40type%22%3A%22oa%3AAnnotation%22%2C%22motivation%22%3A%22oa%3Acommenting%22%2C%22on%22%3A%22http%3A%2F%2Fpurl.stanford.edu%2Fkq131cs7229%22%2C%22resource%22%3A%22_%3Ag70349699654640%22%7D%5D%7D
@@ -31,31 +31,31 @@ http_interactions:
       Content-Type:
       - application/ld+json; charset=utf-8
       Etag:
-      - W/"a276b286141bdc1b86ee14ef120fef38"
+      - W/"32dc59a3fcc0a635b899404d74edff93"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 0dfa7212-8223-4e71-a588-0379ff82c76e
+      - 516705ca-9acb-4e77-a42c-c9bf54e34ade
       X-Runtime:
-      - '1.634746'
+      - '2.003141'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Mon, 18 May 2015 20:08:48 GMT
+      - Fri, 19 Jun 2015 18:40:32 GMT
       Content-Length:
-      - '443'
+      - '447'
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=K0ZrWTF3MERqZkFTMDdPangrelNDbFA4Z05MbzhHa2J0bHl0eUFmVmV5ei94MWxaZWM0YzNRU0FNYlF6VVFiOWpOVnpBNkZMbXlzcHp3M1RWaDFVUVRZQllQWmFiL1dHdHhMb3FiYTI3dC9lMkNaWDhvTSt1M0lFbVdMWjlvSnFtdkJRTkwvWHNYOUFKbkxCV0ZSR0tFdUJGNWtNQXBLdGtCemRtUW93Uis5WUwwMnhqM0Y3YjloUjdIbVZraFhRelp6NDNGT0l6dzJkV0pYL2RhZGdJS1BkNElnRHFCQ0g1a1FEbkFOOHhlSVE0MENjZ2UyZWcwM0p5TC9uZndWMi0tMm9OL2pkV2ZRQmdVT0lPR2pWai9TUT09--a7aa36801200aa17a47c73a53673cd82c3acc0fe;
+      - _internal_session=L0c4azFjbFhKZFQ1U2xzSHJJWjRjb3daQmZWWlpwK29OM1RibmRqeU9jeXhhbXhuSVJPbWZaemlXUjFabnhIdlNWYk1UeUtobXBHVS96ZjRUaG0vRnV1RjgvSlVQNjdPYzZVV0Z2dXRXTVVtd3RRNWovajFKQXUwZ1dDZ0NiZEw2NUxEcFdQdE5xWFBaQTJPZi85UlM3QmtNakcxRzVKTGl2c0cxUXhrS0xZQ1RERzRFd3lSQmNwd04vTDZEWElObmxEQ2YvYmF0NjVsRXp0dWZTTFM0SE91S3kyaWZheFU1Ri9KVEJ4cENTck4rWVF4U2xaNCtaR0krT2oveUNiSS0tOGdRVThDRUpBTlo3RkpTZGtYd1hrdz09--a401ff56ce4c4264c60e36fdace018c8d326e0cc;
         path=/; HttpOnly
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g70310860274000","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
-        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/52/5f/e3/85/525fe385-f54a-4c4e-9f71-5730ca559c75","@type":"oa:Annotation","hasBody":"_:g70310860274000","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
+      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g70154575766760","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
+        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/foo/dd/34/e5/09/dd34e509-f8af-48a9-b013-16a2c5e484fe","@type":"oa:Annotation","hasBody":"_:g70154575766760","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:08:48 GMT
+  recorded_at: Fri, 19 Jun 2015 18:40:32 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -75,7 +75,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Mon, 18 May 2015 20:08:48 GMT
+      - Fri, 19 Jun 2015 18:40:32 GMT
       Server:
       - Apache/2
       Location:
@@ -83,7 +83,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Tue, 19 May 2015 02:08:48 GMT
+      - Sat, 20 Jun 2015 00:40:32 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -99,7 +99,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:08:49 GMT
+  recorded_at: Fri, 19 Jun 2015 18:40:32 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -121,7 +121,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 18 May 2015 20:08:49 GMT
+      - Fri, 19 Jun 2015 18:40:33 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -135,7 +135,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Tue, 19 May 2015 02:08:49 GMT
+      - Sat, 20 Jun 2015 00:40:33 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Access-Control-Allow-Origin:
@@ -1253,7 +1253,7 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:08:49 GMT
+  recorded_at: Fri, 19 Jun 2015 18:40:33 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -1273,7 +1273,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Mon, 18 May 2015 20:08:49 GMT
+      - Fri, 19 Jun 2015 18:40:33 GMT
       Server:
       - Apache/2
       Location:
@@ -1281,7 +1281,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Tue, 19 May 2015 02:08:49 GMT
+      - Sat, 20 Jun 2015 00:40:33 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -1297,7 +1297,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:08:49 GMT
+  recorded_at: Fri, 19 Jun 2015 18:40:33 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -1319,7 +1319,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 18 May 2015 20:08:49 GMT
+      - Fri, 19 Jun 2015 18:40:33 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -1333,7 +1333,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Tue, 19 May 2015 02:08:49 GMT
+      - Sat, 20 Jun 2015 00:40:33 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Access-Control-Allow-Origin:
@@ -2451,10 +2451,10 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:08:50 GMT
+  recorded_at: Fri, 19 Jun 2015 18:40:33 GMT
 - request:
     method: get
-    uri: http://localhost:3000/annotations/6214ad9d-cb6d-465a-af75-3095ce9c9185
+    uri: http://localhost:3000/annotations/foo/0cd54f9b-2d1c-4cf4-acb6-562c9cec68a4
     body:
       encoding: US-ASCII
       string: ''
@@ -2481,23 +2481,23 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - bcfa2c6d-dfb1-4df6-97f7-96af369d560e
+      - 78b298b6-89d6-40e1-9aae-ddd5d2ae5296
       X-Runtime:
-      - '0.018253'
+      - '0.019212'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Mon, 18 May 2015 20:08:50 GMT
+      - Fri, 19 Jun 2015 18:40:34 GMT
       Content-Length:
-      - '1486'
+      - '1494'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: "<h2>error getting 6214ad9d-cb6d-465a-af75-3095ce9c9185 from LDP</h2><html>\n<head>\n<meta
+      string: "<h2>error getting foo/0cd54f9b-2d1c-4cf4-acb6-562c9cec68a4 from LDP</h2><html>\n<head>\n<meta
         http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\"/>\n<title>Error
         404 Not Found</title>\n</head>\n<body><h2>HTTP ERROR 404</h2>\n<p>Problem
-        accessing /fedora/rest/anno/6214ad9d-cb6d-465a-af75-3095ce9c9185. Reason:\n<pre>
+        accessing /fedora/rest/anno/foo/0cd54f9b-2d1c-4cf4-acb6-562c9cec68a4. Reason:\n<pre>
         \   Not Found</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>
         \                                               \n<br/>                                                \n<br/>
         \                                               \n<br/>                                                \n<br/>
@@ -2510,10 +2510,10 @@ http_interactions:
         \                                               \n<br/>                                                \n<br/>
         \                                               \n<br/>                                                \n\n</body>\n</html>\n"
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:08:50 GMT
+  recorded_at: Fri, 19 Jun 2015 18:40:34 GMT
 - request:
     method: delete
-    uri: http://localhost:3000/annotations/52%2F5f%2Fe3%2F85%2F525fe385-f54a-4c4e-9f71-5730ca559c75
+    uri: http://localhost:3000/annotations/foo/dd%2F34%2Fe5%2F09%2Fdd34e509-f8af-48a9-b013-16a2c5e484fe
     body:
       encoding: US-ASCII
       string: ''
@@ -2536,144 +2536,26 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Location:
-      - http://localhost:3000/annotations
+      - http://localhost:3000/annotations?anno_root=foo
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - dc79a40f-e875-4c2a-8478-fc4f665ebd52
+      - ec2dec28-5f28-4af3-bc97-e57830d7508f
       X-Runtime:
-      - '0.201602'
+      - '0.214787'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Mon, 18 May 2015 20:08:50 GMT
+      - Fri, 19 Jun 2015 18:40:34 GMT
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=eWV1Y0dwcngwT2VTdnErN3hKY0ljYVRlUGlFZFZWazM5SDBZWURMSGhoZ1hMWXJkbnk5d1ZkOERMSnZ5Q0dwS2VtYW5mdEloeDN0eW9pa3h6OThsUlVraEp4OUtSWnRMNWE3K000d3dMRHllSlhCcll3NzZrVnliaEhscVdMMlZxS3RuaVJyMDlweS9wK3VKb1FuNUV1N3Y5R1N0ZDNmaU5jMk1sT0o4TERBUDJUSGVBdndBSi9SNFIvT3VDUXZmLS1RTDV4dkRJUG52YU9JTTR0RTJTYWRnPT0%3D--ed2ddddad750485fd0aa023f0ae155fe60ae973e;
+      - _internal_session=MGo0M0FtNkxEVTlqVGFYNlFxOXoraHoxQS9JRENIWWJ1dVhuMm02M3FxWmtMTndXL3lnRmhTU1NnUUJEVWpTT3MrWjFHQU5UTUdaNDFNb3Y3bGsxRDZva0Vaem4yei94OGdFeGxOQnNaOFg5dXFuQWZoaXh6ejhvMlVyMUVoVlJpZUtnanhiVTdwUkR6MTJ2a3ljWFNJVW10N2t5QTllaG5UU2xQSTlSTEdqNlV5eEdqVEVEYmJtZnBhemlCOXIyLS16VnY0Vm40YzF4U3lid0I4Qi9HY3p3PT0%3D--ed83cd34d62ae53800e98a64718078438ffde753;
         path=/; HttpOnly
       - request_method=DELETE; path=/
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:08:50 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/5d734f85-1021-4e2c-8741-12078844321a
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 404
-      message: 'Not Found '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - text/html; charset=utf-8
-      Cache-Control:
-      - no-cache
-      X-Request-Id:
-      - 8806df22-8c39-4b50-b838-73fb5c7f74b2
-      X-Runtime:
-      - '0.046614'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
-      Date:
-      - Mon, 18 May 2015 20:25:48 GMT
-      Content-Length:
-      - '1486'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: "<h2>error getting 5d734f85-1021-4e2c-8741-12078844321a from LDP</h2><html>\n<head>\n<meta
-        http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\"/>\n<title>Error
-        404 Not Found</title>\n</head>\n<body><h2>HTTP ERROR 404</h2>\n<p>Problem
-        accessing /fedora/rest/anno/5d734f85-1021-4e2c-8741-12078844321a. Reason:\n<pre>
-        \   Not Found</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n\n</body>\n</html>\n"
-    http_version: 
-  recorded_at: Mon, 18 May 2015 20:25:48 GMT
-- request:
-    method: get
-    uri: http://localhost:3000/annotations/ccd58cc7-2381-4532-9b58-7bf8d8ee80c0
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/ld+json
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 404
-      message: 'Not Found '
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      Content-Type:
-      - text/html; charset=utf-8
-      Cache-Control:
-      - no-cache
-      X-Request-Id:
-      - 6f3e1a8f-52c6-46b9-8c5c-6e5805700380
-      X-Runtime:
-      - '0.047557'
-      Server:
-      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
-      Date:
-      - Mon, 18 May 2015 20:30:55 GMT
-      Content-Length:
-      - '1486'
-      Connection:
-      - Keep-Alive
-    body:
-      encoding: UTF-8
-      string: "<h2>error getting ccd58cc7-2381-4532-9b58-7bf8d8ee80c0 from LDP</h2><html>\n<head>\n<meta
-        http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\"/>\n<title>Error
-        404 Not Found</title>\n</head>\n<body><h2>HTTP ERROR 404</h2>\n<p>Problem
-        accessing /fedora/rest/anno/ccd58cc7-2381-4532-9b58-7bf8d8ee80c0. Reason:\n<pre>
-        \   Not Found</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n<br/>
-        \                                               \n<br/>                                                \n\n</body>\n</html>\n"
-    http_version: 
-  recorded_at: Mon, 18 May 2015 20:30:55 GMT
+  recorded_at: Fri, 19 Jun 2015 18:40:34 GMT
 recorded_with: VCR 2.9.3
