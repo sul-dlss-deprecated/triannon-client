@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/annotations/
+    uri: http://localhost:3000/annotations/foo/
     body:
       encoding: US-ASCII
       string: ''
@@ -25,31 +25,31 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Location:
-      - http://localhost:3000/search
+      - http://localhost:3000/foo/search
       Content-Type:
       - text/html; charset=utf-8
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 364b2de7-7cd3-4ae5-a7f9-708969e350ff
+      - 1e1256d4-32bf-457d-8c1e-f7b5244dcacc
       X-Runtime:
-      - '0.003035'
+      - '0.003007'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Mon, 18 May 2015 20:06:14 GMT
+      - Fri, 19 Jun 2015 18:37:46 GMT
       Content-Length:
-      - '94'
+      - '98'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: <html><body>You are being <a href="http://localhost:3000/search">redirected</a>.</body></html>
+      string: <html><body>You are being <a href="http://localhost:3000/foo/search">redirected</a>.</body></html>
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:06:14 GMT
+  recorded_at: Fri, 19 Jun 2015 18:37:46 GMT
 - request:
     method: get
-    uri: http://localhost:3000/search
+    uri: http://localhost:3000/foo/search
     body:
       encoding: US-ASCII
       string: ''
@@ -76,26 +76,26 @@ http_interactions:
       Content-Type:
       - application/ld+json; charset=utf-8
       Etag:
-      - W/"142b5b57e954e5889d787015364100f1"
+      - W/"2cd0a171b9c9cffab65bf4dc9dc7a67f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 25b92e22-ece9-4d73-a56a-12734a773716
+      - 91e81cae-08b9-4ec4-9e71-7ff96b34f2a6
       X-Runtime:
-      - '0.012135'
+      - '0.013654'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Mon, 18 May 2015 20:06:14 GMT
+      - Fri, 19 Jun 2015 18:37:46 GMT
       Content-Length:
-      - '181'
+      - '185'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:AnnotationList","within":{"@type":"sc:Layer","total":0},"resources":[],"@id":"http://localhost:3000/search"}'
+      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:AnnotationList","within":{"@type":"sc:Layer","total":0},"resources":[],"@id":"http://localhost:3000/foo/search"}'
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:06:14 GMT
+  recorded_at: Fri, 19 Jun 2015 18:37:46 GMT
 - request:
     method: get
     uri: http://iiif.io/api/presentation/2/context.json
@@ -115,11 +115,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 18 May 2015 20:09:02 GMT
+      - Fri, 19 Jun 2015 18:41:21 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Last-Modified:
-      - Wed, 13 May 2015 19:46:47 GMT
+      - Thu, 18 Jun 2015 18:49:34 GMT
       Accept-Ranges:
       - bytes
       Content-Length:
@@ -127,7 +127,7 @@ http_interactions:
       Cache-Control:
       - max-age=86400
       Expires:
-      - Tue, 19 May 2015 20:09:02 GMT
+      - Sat, 20 Jun 2015 18:41:21 GMT
       Content-Type:
       - application/ld+json
       Access-Control-Allow-Origin:
@@ -193,7 +193,7 @@ http_interactions:
         \   \"language\":    {\"@id\": \"dc:language\"},\n\t\t    \"value\":       {\"@id\":
         \"rdf:value\"},\n\t\t    \"label\":       {\"@id\": \"rdfs:label\"}\n\t\t}\n\t]\n}"
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:06:14 GMT
+  recorded_at: Fri, 19 Jun 2015 18:37:46 GMT
 - request:
     method: get
     uri: http://iiif.io/api/presentation/2/context.json
@@ -213,11 +213,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 18 May 2015 20:09:02 GMT
+      - Fri, 19 Jun 2015 18:41:21 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Last-Modified:
-      - Wed, 13 May 2015 19:46:47 GMT
+      - Thu, 18 Jun 2015 18:49:34 GMT
       Accept-Ranges:
       - bytes
       Content-Length:
@@ -225,7 +225,7 @@ http_interactions:
       Cache-Control:
       - max-age=86400
       Expires:
-      - Tue, 19 May 2015 20:09:02 GMT
+      - Sat, 20 Jun 2015 18:41:21 GMT
       Content-Type:
       - application/ld+json
       Access-Control-Allow-Origin:
@@ -291,5 +291,5 @@ http_interactions:
         \   \"language\":    {\"@id\": \"dc:language\"},\n\t\t    \"value\":       {\"@id\":
         \"rdf:value\"},\n\t\t    \"label\":       {\"@id\": \"rdfs:label\"}\n\t\t}\n\t]\n}"
     http_version: 
-  recorded_at: Mon, 18 May 2015 20:06:14 GMT
+  recorded_at: Fri, 19 Jun 2015 18:37:47 GMT
 recorded_with: VCR 2.9.3
