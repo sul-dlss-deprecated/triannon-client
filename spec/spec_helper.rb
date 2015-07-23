@@ -1,5 +1,15 @@
+require 'simplecov'
 require 'coveralls'
-Coveralls.wear!
+SimpleCov.profiles.define 'triannon-client' do
+  add_filter 'pkg'
+  add_filter 'spec'
+  add_filter 'vendor'
+end
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+SimpleCov.start 'triannon-client'
 
 require 'triannon-client'
 require 'rspec'
