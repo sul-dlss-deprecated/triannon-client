@@ -17,30 +17,65 @@ module TriannonClient
     attr_accessor :container
 
     # Initialize a new triannon client
-    # All params are optional, the defaults are set in
-    # the ::TriannonClient.configuration
-    # @param host [String] HTTP URI for triannon server
-    # @param user [String] Authorized username for access to triannon server
-    # @param pass [String] Authorized password for access to triannon server
-    # @param container [String] The container path on the triannon server
-    def initialize(host=nil, user=nil, pass=nil, container=nil)
+    # All params are set using ::TriannonClient.configuration
+    def initialize
       # Configure triannon-app service
       @config = ::TriannonClient.configuration
-      host ||= @config.host
+      host = @config.host
       host.chomp!('/') if host.end_with?('/')
-      user ||= @config.user
-      pass ||= @config.pass
+      @cookies = {}
       @site = RestClient::Resource.new(
         host,
-        user: user,
-        password: pass,
+        user: @config.user,
+        password: @config.pass,
+        cookies: @cookies,
+        headers: { :accept => :json, :content_type => :json },
         open_timeout: 5,
         read_timeout: 30
       )
-      container ||= @config.container
+      container = @config.container
       container = "/#{container}"  unless container.start_with?('/')
       container =  "#{container}/" unless container.end_with?('/')
-      @container = @site[container]
+      @container = container
+    end
+
+
+    def authenticate
+      @access_code = nil if @access_expiry.to_i < Time.now.to_i
+      @access_code || begin
+        # 1. Obtain a client authorization code (short-lived token)
+        return false if @config.client_id.empty? && @config.client_pass.empty?
+        client = {
+          clientId: @config.client_id,
+          clientSecret: @config.client_pass
+        }
+        response = @site["/auth/client_identity"].post client.to_json
+        @site.options[:cookies] = response.cookies  # save the cookie data
+        return false unless response.code == 200
+        auth = JSON.parse(response.body)
+        auth_code = auth['authorizationCode']
+        return false if auth_code.nil?
+        # 2. The client POSTs user credentials for a container, which modifies
+        #    content in the cookies.
+        return false if @config.container_user.empty? && @config.container_workgroups.empty?
+        user = {
+          userId: @config.container_user,
+          workgroups: @config.container_workgroups
+        }
+        client_auth = "?code=#{auth_code}"
+        response = @site["/auth/login#{client_auth}"].post user.to_json
+        @site.options[:cookies] = response.cookies  # save the cookie data
+        return false unless response.code == 200
+        # 3. The client, on behalf of user, obtains a long-lived access token.
+        response = @site["/auth/access_token#{client_auth}"].get
+        @site.options[:cookies] = response.cookies  # save the cookie data
+        return false unless response.code == 200
+        access = JSON.parse(response.body)
+        return false if access['accessToken'].nil?
+        @access_code = access['accessToken']
+        @access_expiry = Time.now.to_i + access['expiresIn'].to_i
+        true
+      end
     end
 
     # Delete an annotation
@@ -49,7 +84,12 @@ module TriannonClient
     def delete_annotation(id)
       check_id(id)
       begin
-        response = @container[id].delete
+        response = @site[@container][id].delete
+        if response.code == 401
+          if authenticate
+            response = @site[@container][id].delete
+          end
+        end
         # HTTP DELETE response codes: A successful response SHOULD be
         # 200 (OK) if the response includes an entity describing the status,
         # 202 (Accepted) if the action has not yet been enacted, or
@@ -87,7 +127,14 @@ module TriannonClient
       tries = 0
       begin
         tries += 1
-        response = @container.post post_data, :content_type => JSONLD_TYPE, :accept => JSONLD_TYPE
+        json_content = {content_type: JSONLD_TYPE, accept: JSONLD_TYPE }
+        response = @site[@container].post post_data, json_content
+        if response.code == 401
+          if authenticate
+            response = @site[@container].post post_data, json_content
+          end
+        end
+        return response if response.code == 403
       rescue RestClient::Exception => e
         sleep 1*tries
         retry if tries < 3
@@ -109,7 +156,7 @@ module TriannonClient
     def get_annotations(content_type=JSONLD_TYPE)
       check_content_type(content_type)
       begin
-        response = @container.get({:accept => content_type})
+        response = @site[@container].get({:accept => content_type})
         # TODO: switch yard for different response.code?
         # TODO: log a failure for a response.code == 404
         response2graph(response)
@@ -128,7 +175,7 @@ module TriannonClient
       check_id(id)
       check_content_type(content_type)
       begin
-        response = @container[id].get({:accept => content_type})
+        response = @site[@container][id].get({:accept => content_type})
         # TODO: switch yard for different response.code?
         response2graph(response)
       rescue => e
