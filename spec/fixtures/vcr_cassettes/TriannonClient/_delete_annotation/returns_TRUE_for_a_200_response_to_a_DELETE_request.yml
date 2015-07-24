@@ -8,9 +8,11 @@ http_interactions:
       string: ''
     headers:
       Accept:
-      - "*/*; q=0.5, application/xml"
+      - application/json
       Accept-Encoding:
       - gzip, deflate
+      Content-Type:
+      - application/json
       User-Agent:
       - Ruby
   response:
@@ -29,13 +31,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 0b2e399a-e132-42ff-8b81-22b3cfeee012
+      - b5cf704e-3f8d-459a-99a2-4994e555fc9f
       X-Runtime:
-      - '0.022067'
+      - '0.026459'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Fri, 19 Jun 2015 18:37:41 GMT
+      - Fri, 24 Jul 2015 18:57:01 GMT
       Content-Length:
       - '1444'
       Connection:
@@ -60,5 +62,5 @@ http_interactions:
         \                                               \n<br/>                                                \n<br/>
         \                                               \n\n</body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 19 Jun 2015 18:37:41 GMT
+  recorded_at: Fri, 24 Jul 2015 18:57:01 GMT
 recorded_with: VCR 2.9.3
