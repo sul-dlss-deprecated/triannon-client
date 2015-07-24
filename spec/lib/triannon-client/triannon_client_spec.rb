@@ -4,7 +4,11 @@ require 'spec_helper'
 
 describe TriannonClient, :vcr do
 
-  let(:tc) { TriannonClient::TriannonClient.new }
+  let(:tc) {
+    tc = TriannonClient::TriannonClient.new
+    tc.authenticate
+    tc
+  }
   # Note: not using `let` approach for these methods because it
   # makes it very difficult to delete any annotations created by
   # the `tc.post_annotation`; so the `create_annotation` and the
@@ -23,6 +27,7 @@ describe TriannonClient, :vcr do
 
   def clear_annotations
     client = TriannonClient::TriannonClient.new
+    client.authenticate
     annos = client.get_annotations
     q = [nil, RDF.type, RDF::Vocab::OA.Annotation]
     anno_ids = annos.query(q).each_subject.collect {|s| tc.annotation_id(s)}
@@ -99,6 +104,9 @@ describe TriannonClient, :vcr do
   end
 
   describe 'has public methods:' do
+    it 'authenticate' do
+      expect(tc).to respond_to(:authenticate)
+    end
     it 'delete_annotation' do
       expect(tc).to respond_to(:delete_annotation)
     end
