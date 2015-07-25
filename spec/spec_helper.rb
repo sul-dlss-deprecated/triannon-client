@@ -1,3 +1,5 @@
+require 'pry' # for debugging specs
+
 require 'simplecov'
 require 'coveralls'
 SimpleCov.profiles.define 'triannon-client' do
@@ -11,7 +13,13 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
 ]
 SimpleCov.start 'triannon-client'
 
+# Ensure there are no ENV configuration values.
+FileUtils.mv '.env', '.env_bak', force: true
+config_keys = ENV.keys.select {|k| k =~ /TRIANNON/ }
+config_keys.each {|k| ENV.delete k }
 require 'triannon-client'
+::TriannonClient.reset
+
 require 'rspec'
 RSpec.configure do |config|
 end
@@ -27,4 +35,32 @@ VCR.configure do |c|
     :re_record_interval => cassette_ttl
   }
   c.configure_rspec_metadata!
+end
+
+def triannon_config_no_auth
+  ::TriannonClient.configure do |config|
+    config.debug = false
+    config.host = 'http://localhost:3000'
+    config.user = ''
+    config.pass = ''
+    config.client_id = ''
+    config.client_pass = ''
+    config.container = '/annotations/foo'
+    config.container_user = ''
+    config.container_workgroups = ''
+  end
+end
+
+def triannon_config_auth
+  ::TriannonClient.configure do |config|
+    config.debug = false
+    config.host = 'http://localhost:3000'
+    config.user = ''
+    config.pass = ''
+    config.client_id = 'clientA'
+    config.client_pass = 'secretA'
+    config.container = '/annotations/bar'
+    config.container_user = 'rspec'
+    config.container_workgroups = 'org:wg-A, org:wg-B'
+  end
 end
