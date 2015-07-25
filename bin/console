@@ -1,11 +1,13 @@
 #!/usr/bin/env ruby
 require 'rubygems'
 require 'bundler/setup'
+require 'pry'
 
 require 'triannon-client'
 CONFIG = TriannonClient.configuration
-
+CONFIG.container = 'annotations/foo'  # doesn't require authentication
 tc = TriannonClient::TriannonClient.new
+
 oa_jsonld = '{"@context":"http://iiif.io/api/presentation/2/context.json","@graph":[{"@id":"_:g70349699654640","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I love this!","format":"text/plain","language":"en"},{"@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":"_:g70349699654640"}]}'
 g = RDF::Graph.new
 format = RDF::Format.for(:jsonld)
