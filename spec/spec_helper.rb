@@ -22,6 +22,7 @@ require 'triannon-client'
 
 require 'rspec'
 RSpec.configure do |config|
+  config.fail_fast = true
 end
 
 require 'vcr'
@@ -38,29 +39,35 @@ VCR.configure do |c|
 end
 
 def triannon_config_no_auth
-  ::TriannonClient.configure do |config|
-    config.debug = false
-    config.host = 'http://localhost:3000'
-    config.user = ''
-    config.pass = ''
-    config.client_id = ''
-    config.client_pass = ''
-    config.container = '/annotations/foo'
-    config.container_user = ''
-    config.container_workgroups = ''
+  begin
+    ::TriannonClient.configure do |config|
+      config.debug = false
+      config.host = 'http://localhost:3000'
+      config.client_id = ''
+      config.client_pass = ''
+      config.container = '/annotations/foo'
+      config.container_user = ''
+      config.container_workgroups = ''
+    end
+    true
+  rescue
+    false
   end
 end
 
 def triannon_config_auth
-  ::TriannonClient.configure do |config|
-    config.debug = false
-    config.host = 'http://localhost:3000'
-    config.user = ''
-    config.pass = ''
-    config.client_id = 'clientA'
-    config.client_pass = 'secretA'
-    config.container = '/annotations/bar'
-    config.container_user = 'rspec'
-    config.container_workgroups = 'org:wg-A, org:wg-B'
+  begin
+    ::TriannonClient.configure do |config|
+      config.debug = false
+      config.host = 'http://localhost:3000'
+      config.client_id = 'clientA'
+      config.client_pass = 'secretA'
+      config.container = '/annotations/bar'
+      config.container_user = 'rspec'
+      config.container_workgroups = 'org:wg-A, org:wg-B'
+    end
+    true
+  rescue
+    false
   end
 end

@@ -8,8 +8,8 @@ module TriannonClient
 
     # Parameters for triannon server
     attr_accessor :host
-    attr_accessor :user
-    attr_accessor :pass
+    # attr_accessor :user # triannon doesn't support basic auth
+    # attr_accessor :pass # triannon doesn't support basic auth
 
     # Parameters for triannon container
     attr_accessor :container
@@ -24,8 +24,8 @@ module TriannonClient
       @debug = env_boolean('DEBUG')
 
       @host = ENV['TRIANNON_HOST'] || 'http://localhost:3000'
-      @user = ENV['TRIANNON_USER'] || ''
-      @pass = ENV['TRIANNON_PASS'] || ''
+      # @user = ENV['TRIANNON_USER'] || '' # triannon doesn't support basic auth
+      # @pass = ENV['TRIANNON_PASS'] || '' # triannon doesn't support basic auth
 
       # Parameters for triannon client authentication
       @client_id   = ENV['TRIANNON_CLIENT_ID'] || ''

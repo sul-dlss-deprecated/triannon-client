@@ -38,31 +38,29 @@ module TriannonClient
       end
     end
 
-    describe '#user' do
-      it 'default value is an empty string' do
-        expect(config.user).to be_empty
-      end
-    end
-
-    describe '#user=' do
-      it 'can set value' do
-        config.user = 'fred'
-        expect(config.user).to eql('fred')
-      end
-    end
-
-    describe '#pass' do
-      it 'default value is an empty string' do
-        expect(config.pass).to be_empty
-      end
-    end
-
-    describe '#pass=' do
-      it 'can set value' do
-        config.pass = 'secret'
-        expect(config.pass).to eql('secret')
-      end
-    end
+    # triannon doesn't support basic auth, so disabled these config params.
+    # describe '#user' do
+    #   it 'default value is an empty string' do
+    #     expect(config.user).to be_empty
+    #   end
+    # end
+    # describe '#user=' do
+    #   it 'can set value' do
+    #     config.user = 'fred'
+    #     expect(config.user).to eql('fred')
+    #   end
+    # end
+    # describe '#pass' do
+    #   it 'default value is an empty string' do
+    #     expect(config.pass).to be_empty
+    #   end
+    # end
+    # describe '#pass=' do
+    #   it 'can set value' do
+    #     config.pass = 'secret'
+    #     expect(config.pass).to eql('secret')
+    #   end
+    # end
 
     describe '#client_id' do
       it 'default value is an empty string' do
