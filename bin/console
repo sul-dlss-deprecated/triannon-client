@@ -29,8 +29,6 @@ def triannon_config_auth
     ::TriannonClient.configure do |config|
       config.debug = false
       config.host = 'http://localhost:3000'
-      config.user = ''
-      config.pass = ''
       config.client_id = 'clientA'
       config.client_pass = 'secretA'
       config.container = '/annotations/bar'
@@ -43,9 +41,12 @@ def triannon_config_auth
   end
 end
 
+def oa_jsonld
+  @oa_jsonld ||= '{"@context":"http://iiif.io/api/presentation/2/context.json","@graph":[{"@id":"_:g70349699654640","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I love this!","format":"text/plain","language":"en"},{"@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":"_:g70349699654640"}]}'
+end
+
 def oa_graph
   @oa_graph ||= begin
-    oa_jsonld = '{"@context":"http://iiif.io/api/presentation/2/context.json","@graph":[{"@id":"_:g70349699654640","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I love this!","format":"text/plain","language":"en"},{"@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":"_:g70349699654640"}]}'
     g = RDF::Graph.new
     format = RDF::Format.for(:jsonld)
     format.reader.new(oa_jsonld) {|r| r.each_statement {|s| g << s }}
@@ -53,7 +54,8 @@ def oa_graph
   end
 end
 
-triannon_config_no_auth
+triannon_config_auth
 tc = TriannonClient::TriannonClient.new
+tc.authenticate
 
 binding.pry
