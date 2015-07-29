@@ -38,14 +38,11 @@ module TriannonClient
       @container_workgroups = ENV['TRIANNON_CONTAINER_WORKGROUPS'] || ''
 
       # logger
-      log_file = ENV['TRIANNON_LOG_FILE'] || 'triannon_client.log'
+      log_file = ENV['TRIANNON_LOG_FILE'] || 'log/triannon_client.log'
       log_file = File.absolute_path log_file
       @log_file = log_file
       log_path = File.dirname log_file
-      unless File.directory? log_path
-        # try to create the log directory
-        Dir.mkdir log_path rescue nil
-      end
+      FileUtils.mkdir_p log_path rescue nil
       begin
         log_dev = File.new(@log_file, 'w+')
       rescue
@@ -53,9 +50,8 @@ module TriannonClient
         @log_file = 'STDERR'
       end
       log_dev.sync = true if @debug # skip IO buffering in debug mode
-      @logger = Logger.new(log_dev, 'monthly')
+      @logger = Logger.new(log_dev, 'weekly')
       @logger.level = @debug ? Logger::DEBUG : Logger::INFO
-
     end
 
     def env_boolean(var)
