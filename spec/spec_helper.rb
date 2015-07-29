@@ -72,6 +72,47 @@ def triannon_config_auth
   end
 end
 
+def create_client
+  triannon_config_auth
+  TriannonClient::TriannonClient.new
+end
+
+def clear_annotations(cassette='CRUD/clear_annotations')
+  VCR.use_cassette(cassette) do
+    client = create_client
+    client.authenticate
+    annos = client.get_annotations
+    q = [nil, RDF.type, RDF::Vocab::OA.Annotation]
+    anno_ids = annos.query(q).subjects.collect {|s| client.annotation_id(s)}
+    anno_ids.each {|id| client.delete_annotation(id) }
+  end
+end
+
+def create_annotation(cassette='CRUD/create_annotation')
+  VCR.use_cassette(cassette) do
+    client = create_client
+    client.authenticate
+    r = client.post_annotation(jsonld_oa)
+    g = client.response2graph(r)
+    uris = client.annotation_uris(g)
+    id = client.annotation_id(uris.first)
+    {
+      response: r,
+      graph: g,
+      uris: uris,
+      id: id
+    }
+  end
+end
+
+def delete_annotation(id, cassette='CRUD/delete_annotation')
+  VCR.use_cassette(cassette) do
+    client = create_client
+    client.authenticate
+    client.delete_annotation(id)
+  end
+end
+
 def graph_is_empty(graph)
   expect(graph).to be_instance_of RDF::Graph
   expect(graph).to be_empty
@@ -94,11 +135,14 @@ def graph_contains_statements(graph)
   expect(graph.size).to be > 2
 end
 
-
 def jsonld_accept
   {:accept=>"application/ld+json"}
 end
 
 def jsonld_content
   {content_type: 'application/ld+json'}
+end
+
+def jsonld_oa
+  @oa_jsonld ||= '{"@context":"http://iiif.io/api/presentation/2/context.json","@graph":[{"@id":"_:g70349699654640","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I love this!","format":"text/plain","language":"en"},{"@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":"_:g70349699654640"}]}'
 end
