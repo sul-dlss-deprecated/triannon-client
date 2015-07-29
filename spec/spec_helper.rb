@@ -26,13 +26,13 @@ RSpec.configure do |config|
 end
 
 require 'vcr'
-cassette_ttl = 28 * 24 * 60 * 60  # 28 days, in seconds
+cassette_ttl = 7 * 24 * 60 * 60  # 7 days, in seconds
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   c.hook_into :webmock
-  c.allow_http_connections_when_no_cassette = true
+  c.allow_http_connections_when_no_cassette = false
   c.default_cassette_options = {
-    :record => :new_episodes,
+    :record => :new_episodes,  # :once is default
     :re_record_interval => cassette_ttl
   }
   c.configure_rspec_metadata!
@@ -63,11 +63,42 @@ def triannon_config_auth
       config.client_id = 'clientA'
       config.client_pass = 'secretA'
       config.container = '/annotations/bar'
-      config.container_user = 'rspec'
+      config.container_user = ''
       config.container_workgroups = 'org:wg-A, org:wg-B'
     end
     true
   rescue
     false
   end
+end
+
+def graph_is_empty(graph)
+  expect(graph).to be_instance_of RDF::Graph
+  expect(graph).to be_empty
+end
+
+def graph_contains_open_annotation(graph, uris)
+  expect(graph).to be_instance_of RDF::Graph
+  graph_contains_statements(graph)
+  expect(uris).to be_instance_of Array
+  expect(uris.first).to be_instance_of RDF::URI
+  result = graph.query([nil, RDF.type, RDF::Vocab::OA.Annotation])
+  expect(result.size).to be > 0
+  intersection = result.subjects.to_a & uris
+  expect(intersection).not_to be_empty
+end
+
+def graph_contains_statements(graph)
+  expect(graph).to be_instance_of RDF::Graph
+  expect(graph).not_to be_empty
+  expect(graph.size).to be > 2
+end
+
+
+def jsonld_accept
+  {:accept=>"application/ld+json"}
+end
+
+def jsonld_content
+  {content_type: 'application/ld+json'}
 end
