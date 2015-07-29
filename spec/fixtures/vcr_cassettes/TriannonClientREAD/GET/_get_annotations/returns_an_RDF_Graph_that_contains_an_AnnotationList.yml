@@ -33,13 +33,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 3fbf4de6-d4cc-48c4-9deb-463788cf7cf1
+      - 56d7f396-91f2-461c-8f03-4e9d56e030dc
       X-Runtime:
-      - '0.005131'
+      - '0.003413'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Wed, 29 Jul 2015 20:33:57 GMT
+      - Wed, 29 Jul 2015 22:38:54 GMT
       Content-Length:
       - '98'
       Connection:
@@ -48,7 +48,7 @@ http_interactions:
       encoding: UTF-8
       string: <html><body>You are being <a href="http://localhost:3000/bar/search">redirected</a>.</body></html>
     http_version: 
-  recorded_at: Wed, 29 Jul 2015 20:33:57 GMT
+  recorded_at: Wed, 29 Jul 2015 22:38:54 GMT
 - request:
     method: get
     uri: http://localhost:3000/bar/search
@@ -80,27 +80,27 @@ http_interactions:
       Content-Type:
       - application/ld+json; charset=utf-8
       Etag:
-      - W/"0d6ec86b1feed04aee298bd41c8e8b05"
+      - W/"707b532f7e342687d21a66cb9589a4ef"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b7868d27-aec6-4a90-b0fa-a21943e6cd8d
+      - ed914807-74de-417e-8b57-2fe612a95362
       X-Runtime:
-      - '1.169539'
+      - '1.419593'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Wed, 29 Jul 2015 20:33:59 GMT
+      - Wed, 29 Jul 2015 22:38:55 GMT
       Content-Length:
       - '520'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:AnnotationList","within":{"@type":"sc:Layer","total":1},"resources":[{"@id":"http://your.triannon-server.com/annotations/bar/f1/b7/33/9e/f1b7339e-723b-48ef-8921-ee98218bc6ee","@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":{"@id":"_:b0","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
+      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:AnnotationList","within":{"@type":"sc:Layer","total":1},"resources":[{"@id":"http://your.triannon-server.com/annotations/bar/94/51/69/73/94516973-a3dd-4920-ac6d-4504f25855e6","@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":{"@id":"_:b0","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
         love this!","format":"text/plain","language":"en"}}],"@id":"http://localhost:3000/bar/search"}'
     http_version: 
-  recorded_at: Wed, 29 Jul 2015 20:33:59 GMT
+  recorded_at: Wed, 29 Jul 2015 22:38:55 GMT
 - request:
     method: get
     uri: http://iiif.io/api/presentation/2/context.json
@@ -120,7 +120,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 29 Jul 2015 20:38:32 GMT
+      - Wed, 29 Jul 2015 22:43:29 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Last-Modified:
@@ -132,7 +132,7 @@ http_interactions:
       Cache-Control:
       - max-age=86400
       Expires:
-      - Thu, 30 Jul 2015 20:38:32 GMT
+      - Thu, 30 Jul 2015 22:43:29 GMT
       Content-Type:
       - application/ld+json
       Access-Control-Allow-Origin:
@@ -198,7 +198,7 @@ http_interactions:
         \   \"language\":    {\"@id\": \"dc:language\"},\n\t\t    \"value\":       {\"@id\":
         \"rdf:value\"},\n\t\t    \"label\":       {\"@id\": \"rdfs:label\"}\n\t\t}\n\t]\n}"
     http_version: 
-  recorded_at: Wed, 29 Jul 2015 20:33:59 GMT
+  recorded_at: Wed, 29 Jul 2015 22:38:55 GMT
 - request:
     method: get
     uri: http://iiif.io/api/presentation/2/context.json
@@ -218,7 +218,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 29 Jul 2015 20:38:32 GMT
+      - Wed, 29 Jul 2015 22:43:29 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Last-Modified:
@@ -230,7 +230,7 @@ http_interactions:
       Cache-Control:
       - max-age=86400
       Expires:
-      - Thu, 30 Jul 2015 20:38:32 GMT
+      - Thu, 30 Jul 2015 22:43:29 GMT
       Content-Type:
       - application/ld+json
       Access-Control-Allow-Origin:
@@ -296,5 +296,5 @@ http_interactions:
         \   \"language\":    {\"@id\": \"dc:language\"},\n\t\t    \"value\":       {\"@id\":
         \"rdf:value\"},\n\t\t    \"label\":       {\"@id\": \"rdfs:label\"}\n\t\t}\n\t]\n}"
     http_version: 
-  recorded_at: Wed, 29 Jul 2015 20:33:59 GMT
+  recorded_at: Wed, 29 Jul 2015 22:38:55 GMT
 recorded_with: VCR 2.9.3
