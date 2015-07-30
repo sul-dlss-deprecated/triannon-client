@@ -22,7 +22,7 @@ require 'triannon-client'
 
 require 'rspec'
 RSpec.configure do |config|
-  config.fail_fast = true
+  # config.fail_fast = true
 end
 
 require 'vcr'
