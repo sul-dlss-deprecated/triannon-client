@@ -227,14 +227,14 @@ describe 'TriannonClientREAD', :vcr do
         # "application/xhtml+xml"=> true,
 
         # content types that work
-        content_type_success = {
+        content_types = {
           "application/ld+json"=> true,
           "application/rdf+xml"=> true,
           "text/turtle"=> true,
           "application/x-turtle"=> true,
         }
         # content types that fail
-        content_type_success.merge!({
+        content_types.merge!({
           "application/x-ld+json"=> false,
           "application/rdf+json"=> false,
           "text/rdf+turtle"=> false,
@@ -253,34 +253,32 @@ describe 'TriannonClientREAD', :vcr do
           "text/tab-separated-values"=>false,
           "application/csvm+json"=>false,
           })
-        specs = ''
-        content_type_success.keys.each do |type|
-          spec = <<EOS
+        specs = content_types.map do |type,success|
+          request_spec = <<EOS
 it 'requests an open annotation by ID, with content type "#{type}"' do
   request_anno_with_content_type('#{type}')
 end
 EOS
-          specs << spec
-          if content_type_success[type]
-            spec = <<EOS
+          if success
+            get_spec = <<EOS
 it 'gets an open annotation by ID, with content type "#{type}"' do
   gets_anno_with_content_type('#{type}')
 end
 EOS
-            specs << spec
           else
-            spec = <<EOS
+            get_spec = <<EOS
 it 'cannot get an open annotation by ID, with content type "#{type}"' do
   cannot_get_anno_with_content_type('#{type}')
 end
 EOS
-            specs << spec
           end
+          request_spec + get_spec
         end
-        eval(specs)
+        eval(specs.join)
       end # using custom content type
 
     end # annotation by ID
   end # GET context
 
 end
+
