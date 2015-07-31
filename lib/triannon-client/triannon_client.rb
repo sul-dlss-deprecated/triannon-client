@@ -99,19 +99,20 @@ module TriannonClient
       tries = 0
       begin
         tries += 1
+        authenticate if tries == 2
         response = @container[id].delete
         # HTTP DELETE response codes: A successful response SHOULD be
         # 200 (OK) if the response includes an entity describing the status,
         # 202 (Accepted) if the action has not yet been enacted, or
         # 204 (No Content) if the action has been enacted but the response
         # does not include an entity.
-        [200, 202, 204].include?(response.code)
+        return [200, 202, 204].include?(response.code)
       rescue RestClient::Exception => e
         response = e.response
         if response.is_a?(RestClient::Response)
           case response.code
           when 401
-            retry if tries < 2 && authenticate!
+            retry if tries == 1
           when 403
             # pass through to false response; failure to authenticate with
             # message in response.body
@@ -125,12 +126,11 @@ module TriannonClient
         end
         @config.logger.error("Failed to DELETE annotation: #{id}, #{msg}")
         binding.pry if @config.debug
-        false
       rescue => e
         binding.pry if @config.debug
         @config.logger.error("Failed to DELETE annotation: #{id}, #{e.message}")
-        false
       end
+      false
     end
 
     # POST and open annotation to triannon; the response contains an ID
@@ -145,13 +145,14 @@ module TriannonClient
       tries = 0
       begin
         tries += 1
+        authenticate if tries == 2
         response = @container.post post_data
       rescue RestClient::Exception => e
         response = e.response
         if response.is_a?(RestClient::Response)
           case response.code
           when 401
-            retry if tries < 2 && authenticate!
+            retry if tries == 1
           when 403
             tries = 3  # do not retry
           end
@@ -159,16 +160,14 @@ module TriannonClient
         else
           msg = e.message
         end
-        if tries < 2
-          sleep 1*tries
-          retry
+        if tries == 1
+          sleep 1 and retry
         end
         binding.pry if @config.debug
         @config.logger.error(msg)
       rescue => e
-        if tries < 2
-          sleep 1*tries
-          retry
+        if tries == 1
+          sleep 1 and retry
         end
         binding.pry if @config.debug
         @config.logger.error("Failed to POST annotation: #{e.message}")
