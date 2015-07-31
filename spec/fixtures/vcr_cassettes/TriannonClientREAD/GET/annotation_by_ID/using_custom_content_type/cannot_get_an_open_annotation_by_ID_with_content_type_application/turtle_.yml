@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/annotations/bar/%2F93%2Ff9%2F75%2F01%2F93f97501-68d8-4acf-a2b0-07091ba079f4
+    uri: http://localhost:3000/annotations/bar/%2F72%2F72%2F7b%2F30%2F72727b30-91eb-4eef-b936-97dc05cb5893
     body:
       encoding: US-ASCII
       string: ''
@@ -25,13 +25,13 @@ http_interactions:
       Content-Length:
       - '99513'
       X-Request-Id:
-      - 4ccab8c2-dd0b-4c79-8406-bd2f680ccd8a
+      - af724768-3eb9-49ef-a1b9-c9256f0de2ae
       X-Runtime:
-      - '0.226624'
+      - '0.230318'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Fri, 31 Jul 2015 00:18:55 GMT
+      - Fri, 31 Jul 2015 20:48:09 GMT
       Connection:
       - Keep-Alive
     body:
@@ -1215,7 +1215,7 @@ http_interactions:
         = el.className.replace(\" hidden\", \"\");\n          currentSource = el;\n
         \       }\n      }\n    }\n  </script>\n</div>\n\n  \n\n<h2 style=\"margin-top:
         30px\">Request</h2>\n<p><b>Parameters</b>:</p> <pre>{&quot;anno_root&quot;=&gt;&quot;bar&quot;,\n
-        &quot;id&quot;=&gt;&quot;/93/f9/75/01/93f97501-68d8-4acf-a2b0-07091ba079f4&quot;}</pre>\n\n<div
+        &quot;id&quot;=&gt;&quot;/72/72/7b/30/72727b30-91eb-4eef-b936-97dc05cb5893&quot;}</pre>\n\n<div
         class=\"details\">\n  <div class=\"summary\"><a href=\"#\" onclick=\"return
         toggleSessionDump()\">Toggle session dump</a></div>\n  <div id=\"session_dump\"
         style=\"display:none\"><pre></pre></div>\n</div>\n\n<div class=\"details\">\n
@@ -1227,5 +1227,5 @@ http_interactions:
         &quot;HTTP/1.1&quot;</pre></div>\n</div>\n\n<h2 style=\"margin-top: 30px\">Response</h2>\n<p><b>Headers</b>:</p>
         <pre>None</pre>\n\n</div>\n\n\n</body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 00:18:55 GMT
+  recorded_at: Fri, 31 Jul 2015 20:48:09 GMT
 recorded_with: VCR 2.9.3

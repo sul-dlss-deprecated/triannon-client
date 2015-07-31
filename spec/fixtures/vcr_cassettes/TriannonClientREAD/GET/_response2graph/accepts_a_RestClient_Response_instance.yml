@@ -19,7 +19,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Fri, 31 Jul 2015 00:18:42 GMT
+      - Fri, 31 Jul 2015 20:47:58 GMT
       Server:
       - Apache/2
       Location:
@@ -27,7 +27,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 31 Jul 2015 06:18:42 GMT
+      - Sat, 01 Aug 2015 02:47:58 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -43,7 +43,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 00:18:42 GMT
+  recorded_at: Fri, 31 Jul 2015 20:47:58 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -65,7 +65,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 Jul 2015 00:18:43 GMT
+      - Fri, 31 Jul 2015 20:47:58 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -79,7 +79,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 31 Jul 2015 06:18:43 GMT
+      - Sat, 01 Aug 2015 02:47:58 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Access-Control-Allow-Origin:
@@ -1197,7 +1197,7 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 00:18:43 GMT
+  recorded_at: Fri, 31 Jul 2015 20:47:59 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -1217,7 +1217,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Fri, 31 Jul 2015 00:18:43 GMT
+      - Fri, 31 Jul 2015 20:47:59 GMT
       Server:
       - Apache/2
       Location:
@@ -1225,7 +1225,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 31 Jul 2015 06:18:43 GMT
+      - Sat, 01 Aug 2015 02:47:59 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -1241,7 +1241,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 00:18:43 GMT
+  recorded_at: Fri, 31 Jul 2015 20:47:59 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -1263,7 +1263,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 Jul 2015 00:18:44 GMT
+      - Fri, 31 Jul 2015 20:47:59 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -1277,7 +1277,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 31 Jul 2015 06:18:44 GMT
+      - Sat, 01 Aug 2015 02:47:59 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Access-Control-Allow-Origin:
@@ -2395,5 +2395,5 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 00:18:44 GMT
+  recorded_at: Fri, 31 Jul 2015 20:48:00 GMT
 recorded_with: VCR 2.9.3

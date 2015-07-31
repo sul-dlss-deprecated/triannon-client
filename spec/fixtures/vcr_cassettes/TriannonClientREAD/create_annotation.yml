@@ -31,33 +31,33 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"ebeb35548dbc26500fde8b59e1242a0b"
+      - W/"760713b8d448c63fc6754df42e21f4d5"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - dbef53ac-a119-4c15-a34f-9901bceed778
+      - e3e483dd-69d6-4396-abb4-d14426c8395d
       X-Runtime:
-      - '0.169130'
+      - '0.167429'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Fri, 31 Jul 2015 00:18:09 GMT
+      - Fri, 31 Jul 2015 20:47:34 GMT
       Content-Length:
       - '186'
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=eHg0KzFKK1oyblhwbXZubm16ZTJ1NHhjSlptYjVaZVMxSHlETjhNR3VENkx0aTk2K3ZISEwyWjlTWmpsQ2FpcTkyZWRXcllac29JajBSVC9vRnc4QUh0WkdoT3EyM0ZPUmQxeWdqWVloQlhkajEydHdOTkRSWDFORGdtN2VqSUtuVG9aTVBwMHNyNld0eEdVWUJjeUFtaVplcWE1b2p4dzB0Wms3dXhrNkFNNUUyUzRLakk5bjM1ZXF0OGJWdmkxTDJhYkNlMXRaZFpDUlA5MjAxYkQ2ZDRXSENHTkw5aXVIS0d3Y2tPdWhQMXZOUnFuODJWc0FNQjNOOFRTYnpMM2ZBdnVxSzMyOUdoK3FnSVdheGxmaHpkWnZOWTl3akR2TGp5c2V4enM3bWszdVZVaWdqZGxCSlF4Q2FmU2IyTkM5Tmo2YkluTWlVUlp6YVlkbWNiQXVXU2kwSUNqSTg3RTBkbTBneEUvMkpwYkducUVxS1c1WUl1MGdlZDRQbnh1S0w2ZmdQNnNmLzJJKzFvTGhQNjRiUEcrQ0xULzJrMmdzSHBNTGFhSGlHMTlpa1VSUDJHa3lVUnFYL0JJbmkxMHB6NnMxUjExU3RVTDdCbUZraDRSZ0ZjK0JqbTdmQTBQaUsyMk5lQUk2U2s9LS1ub2JYVlZsQnRkWlNmTGNyKzRDS2x3PT0%3D--e7208db15afceeda90d16a841a7c1049634545ff;
+      - _internal_session=MHlUMHhNUEV1Z1hzeE90SDdEdWlvTXU1a0NvekVqb0hOQnlmQUxOM0UzdjkrSHE4d2NrTHNiMEpLT09WRkpqR1VCVHAxcDNYZXBUNGVQdUJxNTY1WGtMWGdFQ24rUTFnRXJNbCs4NWYyRXJGR3dKcUptaGF2Q3k0cnQvMEc3Tk51ZHA5VC9QNnpkNWVtZ3IyZkRHTjR1MGY3dkF0YXU3dCtLVVd5TW9mZUtYOFBFdXFqOURFWG5ya0JrRjJEZGZCWWVnb205RGoydTJPU1NVMFdrUDkzWTdER2cyUm44U1ZBUmIzckZwOU0wUmF4aDluWFhZWE54SEdKK2ExYW9EbzJtTzdHU2RqRTZkdkw2eDMrUWcrVlhRWU1wNWtwQlJTc2VzcnVVZWxzWTVyZGRQemtsVWROaGdTbzZMcDNUSU1sV2h4V3hjZk9GM2tZMkJPNnhvNmY0NDFJa0JtS3hDOEZOeGJxNmw4ZVlRYWlVODFrR2lxL3kxbU9pZXRPT2hzK0Z4NjVQVmIwWElBNVBUWkFwRUttUmhpcXB0dWpJeDRWM1hJS055cG1iME1FL3MvR1hSNEk4akc3TUdzTUpNZnQ1ZWUxQjQvNGNkZVludG5pSWY4ZE9oaTBiNitIWm5HbDdtV0t5a0tIY1k9LS00Zy9IbWh2SHdnRGFhRlVjQU9KNkF3PT0%3D--75eb7a0459d26231bd3496e5ec130579409e22fc;
         path=/; HttpOnly
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"authorizationCode":"LzUycTNlRDNvbGVhNWx3dHJKMHFvV2I3cys5ME5Nc1JmZlpnZ1NZZTZGWVR5aTd3N2krRitFeVpYNmVhNExqdy0tay9qejF2VGhOZXdHejd0Y3FRUklJQT09--75b40d2cc06dbe1ea3dcd5dd95ecaa18f55d30be"}'
+      string: '{"authorizationCode":"RDFZaW5CTVBEVXA4d1FIRHRYS3paOG96WExRcXdqSE9KSGpyNmt2VW45YUdkOW1oTDBub3BmaldWRkhFZkJGay0teGV2S05lRG0zdW5za2hRaUVuQnQ3dz09--47c9961832eddbad6a51ad35a174b1ed12d4b13e"}'
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 00:18:09 GMT
+  recorded_at: Fri, 31 Jul 2015 20:47:34 GMT
 - request:
     method: post
-    uri: http://localhost:3000/auth/login?code=LzUycTNlRDNvbGVhNWx3dHJKMHFvV2I3cys5ME5Nc1JmZlpnZ1NZZTZGWVR5aTd3N2krRitFeVpYNmVhNExqdy0tay9qejF2VGhOZXdHejd0Y3FRUklJQT09--75b40d2cc06dbe1ea3dcd5dd95ecaa18f55d30be
+    uri: http://localhost:3000/auth/login?code=RDFZaW5CTVBEVXA4d1FIRHRYS3paOG96WExRcXdqSE9KSGpyNmt2VW45YUdkOW1oTDBub3BmaldWRkhFZkJGay0teGV2S05lRG0zdW5za2hRaUVuQnQ3dz09--47c9961832eddbad6a51ad35a174b1ed12d4b13e
     body:
       encoding: UTF-8
       string: '{"userId":"","workgroups":"org:wg-A, org:wg-B"}'
@@ -69,7 +69,7 @@ http_interactions:
       Content-Type:
       - application/json
       Cookie:
-      - _internal_session=eHg0KzFKK1oyblhwbXZubm16ZTJ1NHhjSlptYjVaZVMxSHlETjhNR3VENkx0aTk2K3ZISEwyWjlTWmpsQ2FpcTkyZWRXcllac29JajBSVC9vRnc4QUh0WkdoT3EyM0ZPUmQxeWdqWVloQlhkajEydHdOTkRSWDFORGdtN2VqSUtuVG9aTVBwMHNyNld0eEdVWUJjeUFtaVplcWE1b2p4dzB0Wms3dXhrNkFNNUUyUzRLakk5bjM1ZXF0OGJWdmkxTDJhYkNlMXRaZFpDUlA5MjAxYkQ2ZDRXSENHTkw5aXVIS0d3Y2tPdWhQMXZOUnFuODJWc0FNQjNOOFRTYnpMM2ZBdnVxSzMyOUdoK3FnSVdheGxmaHpkWnZOWTl3akR2TGp5c2V4enM3bWszdVZVaWdqZGxCSlF4Q2FmU2IyTkM5Tmo2YkluTWlVUlp6YVlkbWNiQXVXU2kwSUNqSTg3RTBkbTBneEUvMkpwYkducUVxS1c1WUl1MGdlZDRQbnh1S0w2ZmdQNnNmLzJJKzFvTGhQNjRiUEcrQ0xULzJrMmdzSHBNTGFhSGlHMTlpa1VSUDJHa3lVUnFYL0JJbmkxMHB6NnMxUjExU3RVTDdCbUZraDRSZ0ZjK0JqbTdmQTBQaUsyMk5lQUk2U2s9LS1ub2JYVlZsQnRkWlNmTGNyKzRDS2x3PT0%3D--e7208db15afceeda90d16a841a7c1049634545ff;
+      - _internal_session=MHlUMHhNUEV1Z1hzeE90SDdEdWlvTXU1a0NvekVqb0hOQnlmQUxOM0UzdjkrSHE4d2NrTHNiMEpLT09WRkpqR1VCVHAxcDNYZXBUNGVQdUJxNTY1WGtMWGdFQ24rUTFnRXJNbCs4NWYyRXJGR3dKcUptaGF2Q3k0cnQvMEc3Tk51ZHA5VC9QNnpkNWVtZ3IyZkRHTjR1MGY3dkF0YXU3dCtLVVd5TW9mZUtYOFBFdXFqOURFWG5ya0JrRjJEZGZCWWVnb205RGoydTJPU1NVMFdrUDkzWTdER2cyUm44U1ZBUmIzckZwOU0wUmF4aDluWFhZWE54SEdKK2ExYW9EbzJtTzdHU2RqRTZkdkw2eDMrUWcrVlhRWU1wNWtwQlJTc2VzcnVVZWxzWTVyZGRQemtsVWROaGdTbzZMcDNUSU1sV2h4V3hjZk9GM2tZMkJPNnhvNmY0NDFJa0JtS3hDOEZOeGJxNmw4ZVlRYWlVODFrR2lxL3kxbU9pZXRPT2hzK0Z4NjVQVmIwWElBNVBUWkFwRUttUmhpcXB0dWpJeDRWM1hJS055cG1iME1FL3MvR1hSNEk4akc3TUdzTUpNZnQ1ZWUxQjQvNGNkZVludG5pSWY4ZE9oaTBiNitIWm5HbDdtV0t5a0tIY1k9LS00Zy9IbWh2SHdnRGFhRlVjQU9KNkF3PT0%3D--75eb7a0459d26231bd3496e5ec130579409e22fc;
         request_method=POST
       Content-Length:
       - '47'
@@ -91,29 +91,29 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - f883e678-eafa-43b3-aaaa-7e2189f1caff
+      - 71665a18-c921-42d0-9c18-c6785b33e2cc
       X-Runtime:
-      - '0.161922'
+      - '0.164007'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Fri, 31 Jul 2015 00:18:09 GMT
+      - Fri, 31 Jul 2015 20:47:34 GMT
       Content-Length:
       - '0'
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=SWxodEUvUWJXL3NDeUNMdUc1WjVvNDh6TUJGVk9RZkhVdUJNKzVGWmQ4cjc3RzgzSWJvcGRtbzhjUnI3SVozeTQ0MStYRjAxbEd2ZmtDVzIxQWVKRFhTR1RjdFBock1JeGxLSWgzbUpqQVRtSzdXR25LZ2xmWW5zN1lad3JTYnc5a1ZsTHppYkJNbUloRElkS2JMMU8wbUlvOXdKelVkNGNzNnRwalFtS3YzTXhwanNTN1AxTnMwU1lRb1N4dkN1bEc0RWpvY1h5SitJNWJFdkxDVkJkbEN4RWVOOHo3L2g3dmxVRW1RRDRzQzh5Qngrc1E2VFFiUjdzZmNEa2RJY3g1cXlyWjNqVW9HZ0Vjd0c2aTVWRllVWlhSeFdhZklHbnAwK0QwSk4xV1ZGY2dtMmJWUnEzRGVZR21oVEdMQlN5dXJOV3N3WmlRS1Y3TnJlZlIzdnNEeTZ4SG05bklBVDV6NHlTWGVHZCtPaUxsWmMyNEpGY2FTYTJHaWExayttRkd3UlNSRHpzQmJNY05lMDMvcmYyRlE0eXVLZVEzZ3k1OVlaRnRlRzFIbE8xOUFoeENBNjlXcnB0bVR0NnJWK3hkOXpMbTdpOXE5NTNKWGFDaGpnM0FvcFp4b2xRcGhPaHJNSEhwOHdRWGpXRWxRRHJlQTRUUGdoL053QTR0bktFSW1ReFFJL0ROT1QwSzZBa21POE1hTnFBN1Q1Smc0NVBFdXBrTWlFeUxGWVJicFRZaUNib3c3dnRENVVKTnR2LS1LUGI4MzJWZFFWTzMzTFFMRVdTUmxBPT0%3D--dcc29213f59e4c25170250f9db57366bbd6c8555;
+      - _internal_session=V2M4RU9YUStHS1NwZ0pMRUJnWmliRVpEWTdtb2hKV0VYcVVqYytHTW94Z2pCMVZEdk5lUnp2VkpETkxpVWhVT0s0OHI2bENOYkVHcWc2eDZvNkUzeUtaT0dFK1Y4QlFkeENoVGVHSndrMzY1dFNvLzJnUWhVYjFQWWVIU2o3QzRBTUJHL2hDTVBMTWtuUDJZTXZiNzZ4WFFNdFBlZTA1bnRvS1ltaHZKbmwyWENsVW42YStWdGJBalVJbmpscEwxQVlZN1R3Ymh4SEVKNFQzR0Erclh0MTBuOU8yR1E0YkN0Z0FZL3RlNFRCTzZVZDloaEl6MkJNaksyUTA1U1pjbjVMODVSTFF5Sjh4WXlMSjNZMUVYWXBnSG1yWDdwQ1FuMyt0QVo3eGh6NHVvem1ZTlVFajdET3Bva1NwN0x4RVdERC9IUEk3T1FiUEpXT1FqVEhBRVVaNndFVXI5alJuT3ZmVDF6SGtLMGFMNkVNSUVxYno3YjZwYU1IbmZkTEVyeEs3dnIxelNVWTArUStUTlZMai9aVGdYbmtEemRSMW9UTHN3Tjh4Mys5dzJlcTJpVUNKbGJBNjgwUllaK2c0SUZqc3NkNEN6MFpvN3dqbkRtaURTVk1aazZUanR6SjFzY1NIRmY3a3R3WW81MlJkbFFWU2Y1UWZuSVRoNUpOS24zTnBsaUpUQ3E5OVRUSWVtN1FCRGsxQS9OTGNvQnJzM2NQQUZ3UC9GNm9MV0hVc1dPcGRpZHRzQUpCcmRKRWlMLS0yLzBaOVdRdHFZN1VvSmFnUWVYSEZnPT0%3D--b067e62a6cc45632b8c29449474c92d2c5659adb;
         path=/; HttpOnly
       - login_user=; path=/
     body:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 00:18:09 GMT
+  recorded_at: Fri, 31 Jul 2015 20:47:34 GMT
 - request:
     method: get
-    uri: http://localhost:3000/auth/access_token?code=LzUycTNlRDNvbGVhNWx3dHJKMHFvV2I3cys5ME5Nc1JmZlpnZ1NZZTZGWVR5aTd3N2krRitFeVpYNmVhNExqdy0tay9qejF2VGhOZXdHejd0Y3FRUklJQT09--75b40d2cc06dbe1ea3dcd5dd95ecaa18f55d30be
+    uri: http://localhost:3000/auth/access_token?code=RDFZaW5CTVBEVXA4d1FIRHRYS3paOG96WExRcXdqSE9KSGpyNmt2VW45YUdkOW1oTDBub3BmaldWRkhFZkJGay0teGV2S05lRG0zdW5za2hRaUVuQnQ3dz09--47c9961832eddbad6a51ad35a174b1ed12d4b13e
     body:
       encoding: US-ASCII
       string: ''
@@ -125,7 +125,7 @@ http_interactions:
       Content-Type:
       - application/ld+json
       Cookie:
-      - _internal_session=SWxodEUvUWJXL3NDeUNMdUc1WjVvNDh6TUJGVk9RZkhVdUJNKzVGWmQ4cjc3RzgzSWJvcGRtbzhjUnI3SVozeTQ0MStYRjAxbEd2ZmtDVzIxQWVKRFhTR1RjdFBock1JeGxLSWgzbUpqQVRtSzdXR25LZ2xmWW5zN1lad3JTYnc5a1ZsTHppYkJNbUloRElkS2JMMU8wbUlvOXdKelVkNGNzNnRwalFtS3YzTXhwanNTN1AxTnMwU1lRb1N4dkN1bEc0RWpvY1h5SitJNWJFdkxDVkJkbEN4RWVOOHo3L2g3dmxVRW1RRDRzQzh5Qngrc1E2VFFiUjdzZmNEa2RJY3g1cXlyWjNqVW9HZ0Vjd0c2aTVWRllVWlhSeFdhZklHbnAwK0QwSk4xV1ZGY2dtMmJWUnEzRGVZR21oVEdMQlN5dXJOV3N3WmlRS1Y3TnJlZlIzdnNEeTZ4SG05bklBVDV6NHlTWGVHZCtPaUxsWmMyNEpGY2FTYTJHaWExayttRkd3UlNSRHpzQmJNY05lMDMvcmYyRlE0eXVLZVEzZ3k1OVlaRnRlRzFIbE8xOUFoeENBNjlXcnB0bVR0NnJWK3hkOXpMbTdpOXE5NTNKWGFDaGpnM0FvcFp4b2xRcGhPaHJNSEhwOHdRWGpXRWxRRHJlQTRUUGdoL053QTR0bktFSW1ReFFJL0ROT1QwSzZBa21POE1hTnFBN1Q1Smc0NVBFdXBrTWlFeUxGWVJicFRZaUNib3c3dnRENVVKTnR2LS1LUGI4MzJWZFFWTzMzTFFMRVdTUmxBPT0%3D--dcc29213f59e4c25170250f9db57366bbd6c8555;
+      - _internal_session=V2M4RU9YUStHS1NwZ0pMRUJnWmliRVpEWTdtb2hKV0VYcVVqYytHTW94Z2pCMVZEdk5lUnp2VkpETkxpVWhVT0s0OHI2bENOYkVHcWc2eDZvNkUzeUtaT0dFK1Y4QlFkeENoVGVHSndrMzY1dFNvLzJnUWhVYjFQWWVIU2o3QzRBTUJHL2hDTVBMTWtuUDJZTXZiNzZ4WFFNdFBlZTA1bnRvS1ltaHZKbmwyWENsVW42YStWdGJBalVJbmpscEwxQVlZN1R3Ymh4SEVKNFQzR0Erclh0MTBuOU8yR1E0YkN0Z0FZL3RlNFRCTzZVZDloaEl6MkJNaksyUTA1U1pjbjVMODVSTFF5Sjh4WXlMSjNZMUVYWXBnSG1yWDdwQ1FuMyt0QVo3eGh6NHVvem1ZTlVFajdET3Bva1NwN0x4RVdERC9IUEk3T1FiUEpXT1FqVEhBRVVaNndFVXI5alJuT3ZmVDF6SGtLMGFMNkVNSUVxYno3YjZwYU1IbmZkTEVyeEs3dnIxelNVWTArUStUTlZMai9aVGdYbmtEemRSMW9UTHN3Tjh4Mys5dzJlcTJpVUNKbGJBNjgwUllaK2c0SUZqc3NkNEN6MFpvN3dqbkRtaURTVk1aazZUanR6SjFzY1NIRmY3a3R3WW81MlJkbFFWU2Y1UWZuSVRoNUpOS24zTnBsaUpUQ3E5OVRUSWVtN1FCRGsxQS9OTGNvQnJzM2NQQUZ3UC9GNm9MV0hVc1dPcGRpZHRzQUpCcmRKRWlMLS0yLzBaOVdRdHFZN1VvSmFnUWVYSEZnPT0%3D--b067e62a6cc45632b8c29449474c92d2c5659adb;
         login_user=
       User-Agent:
       - Ruby
@@ -143,30 +143,30 @@ http_interactions:
       Content-Type:
       - '["application/ld+json"]; charset=utf-8'
       Etag:
-      - W/"df7773378fb4ad8dd893a1aee334c16f"
+      - W/"a037ca0613987c614cbdeb53ba3111f5"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 4fb512e8-33c1-4f30-9564-b248246a5c24
+      - eb233634-2eb0-4fa5-9033-dad4e5860a69
       X-Runtime:
-      - '0.318862'
+      - '0.322355'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Fri, 31 Jul 2015 00:18:10 GMT
+      - Fri, 31 Jul 2015 20:47:34 GMT
       Content-Length:
       - '306'
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=emJqRDFtTTl5Nk1nbjA2Q1k2b2lFc0RIc3FpUU40bndwaDl0NWFDcWxBckNDL2QrbzE5cUlRU2Y1Y2g4V2dUZnBIbFRaVXRMZHEzRWtzSGhDMWt4UzJwV1ZPMU8wVmxONUZPR2RVajA0ZHVubWxZLzBMQnN4aFZWVU5Qb0ZiRVNmamExNWhBUDhsYlhKZ09oSE81TzliSkZLNG5IanpVQzFxQkpabzVWb0taRDhjbW5RZjRweXRiRjJyZ1kxbW9QOFFJeFRQYzBmY2xSMUhmTUJWOXN1QVVhd08yM2Z2WWttVlFZM1E0YWtiWGNvdW9IcngyOVNGUFR4Y3RneXlnVTVWdXUydER4REoxZWZaaWF3RWtCNWFVa0ZmYU1qQXQ2Ryt6YmJPa1pQb2dwamtTWkZIMXBGQStGb2dOVUsxeW1vUE9CaHNTb1JqYlByelVRT3l3aThweHdoQXhKK1FudzBHK3JQYUV2ZitYZFlKclovMmdUQitRSmIzUk9QeHhjZUV6bENpc1VhN3ZySDl3dzJ1aTIzdThSTlZBMVZ4eW1tTGE5aXVKeEZWV2lMSlEyTnVIYXd1LzhtOHJCU2RlNVFlcVAvaWRZVlBkbTJDNDIrVFYxNm5NL01JcDJpeWdNQldrQ3lWOCtYYVJYanRkcjhjNFdKYS9COVJ3a1BsK2psa0pqWklBWUx6WHZsUkE2YkJESkdTcDFIRTBrS0FkYlF0MzVHdEpxalVFNDZFNi9yaHNEeUlJRE9qZXhYL2Fvak5DcGFKRUFjU2xadWg0S3cwNHNoQU53dE9nYmp3cXV4RXN4M0lscm5iUnFBWkd5WkdZdndYUXNOZDJ6b3U2emNScDZ4M1JxNHFTOURnb0ViSVBXOUROVmF5WHUzVVVvQksrN200cW1EVnNOSlRPMk41T1ExWEs5dEx6ckFqVUZLL1RwTWhkZW44KzdrbDFGT0hNUGMwTXhvWWM1ckNKUENHV1hYUGhFbGFBT25ORDlQeVVDSWZvbWRoekdaVXNXWmMvcnlZSVdyZkJjR1ROaXdQaFp0YzBKVStTOWRIaFNvRUQvbEoyWDIzdVRPM3ZkaXFZL2RDMWtkSmtCS25CMU1KVTdWTHFJM0ZJcXArekNXaThrRGhvTTZvZXNzNzdZZTBybjFKYUNFcGJtY1RQa1ZBYTNYVjM5Skt1Q0VobFVqSHpKM2s3ZkgvVm9FL3MyZE5XTzJzM0xlaGN5SWtpRERRMFhnc0poYzVLQ0VScFF3ZldxdUN1RzQvMEFjQWVWNkZ1dE9hT3FqTjBldmZpQ2FmQjY3M2tiNWI4YVpranpFUTdONng4OGplWT0tLXdSdVVmeWZSeEVDbjZCNTBuV09JalE9PQ%3D%3D--8e161696ae04776c140166c673399e6ce4ebb5a5;
+      - _internal_session=aEFKUm9XQWFkN0dPbFg5OER4RTI3aXZIb1hIbFhQdnkzeUVnYmhrYks4anRqRzlKcGhha2hpeDdiMXJ1Umdvc2ZuTGFSUDZtSGFoVDV2MWlsa0lpSWdmc3JhREtFbTluY1ArRzdQeVFjbWpCai9jTFVvc29aOWY0aUwzakxQaUt4SHRTY3NleUoxcmUvOVZKMTFkdWZWRHYydkNzamJjeXd2UitFRlhDNnNmZEN4dXZka0hPQVlXYlYxWjZxWUowVGJFSDROcTFlSkRNeldMUlYvM3lFVTVkdEpiU21vTDQ5TE9HdGJMZFkwZ0d4V1RBMGR2TTg0eEV3WWttQlgvaGtFT3JtSk1URXF3MWtXNFBSU0JwWGpmN0ZkL2F0ZXBQdFpnMWdOL1h3cEpDeE9CYlVxTkRUaE1EN0V4eGFpMytpc3hIZTBaNjNtZVlXanNvRVoxQXF2VFdJS2tpSWczVSt6TG9VNThCV2JpcEoyeDY4MkkxeXIvOTMrbHppbkZvcUdTTlpER0JIc1NuWTNtbVFPZ0U3dzRQWXdia0hLd0twRFZiVEhNVFdaKzZjaWI0aW82Q04xVEoyeXZpelBESHFUZGxoS2hkS0pweGRBcmlVUDgxN0ZnN3Jvdk9aSDFrNnlXWFJycGFhOVdwdEJQczc5dFRiNHZnb3E2S3RsN1dEMTZ3RUR0a1lML2hIZHp5WmExcHFTOGVzekNTU2hlNjVMN2x2dkY2b0JEaGtJRm5aVjA5b0FGOXJ1ZXpDUm1oVkJJSTQyNmVGM3N6UHM4RkZCdDZGemk1SGt1N0I5MldtT1Qzb2UyVjZPWEZKeW02bElramxHQy9tZkNpTk1LT2NOYjRZTitWM0EyVC96dXQ2aHJYYTh4NExxMjltNlRoQ0FJN1hpZnhXY2hwK0lFSUxsd2hYNTd2YkhBb3JvVi9rTWpUeUJRYVBQVGxMOWxvbzhLcjlYcVpFMStoT0pNVGN6SEFTbHNtbDYzampDVXk0STBidnVQeWpaOTVQN0lMMU5Odmk3UlFwOWVCcWhOM1F3dTV4RXYzL21ZQS9NNFY5TWpkVW5OM1VhQStiQ3RQMjlHcmJlMmJKa2k4ZG1xUUtsTGpnYVJGbzI2OCticklzWFhjcFJ1eHVPaEN2OWM1VGxRRklPOVU2YlZQVFpsQS9ObEl6eVNwQXV5U0w3b3dyS0lqSXVUSjQ4dFRaaEtGOGluc3RIUjY2N1k1dWYwOXEyQnA4a3VrNjJXb3VGRGVzQjBCempYcnJhYzZ4cGwrbmtOOE0wTDRmdG1FVWlzK20vcHVGbkFRVTlTT2J5QjNNTXhxdzl6eitiMD0tLUsrWnpmS1ZWRzVMdmF2SVhvRFAvMUE9PQ%3D%3D--b917d93ebc4489c3e967220fa128331bf69d7c85;
         path=/; HttpOnly
       - login_user=; path=/; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 -0000
     body:
       encoding: UTF-8
-      string: '{"accessToken":"UDh2OU51bnk5WFN3cTFYS0dQTEYvK3RuRHN4cDZTaGZTdVF4RGdudENNOHR4QkVQT3E5QTBtZWhiSStXS2JxR205OWdyWGhmU0Vsc1J2alhUTkRUdEQrQWRDelkrVDlub1NCcWdzbGQwMjFTQlFpbjNSQU5RcDM2VVp5K01FVGYtLXpSWFdiRFlTZk5JWTd3OEt2Z1A5RGc9PQ==--cec568c09bf9df23b0bfe744d34b6ecb02a9c931","tokenType":"Bearer","expiresIn":3600}'
+      string: '{"accessToken":"bkZMY3Y3T1Z2YUgxeHJWY2hndVZ3SHh1ZzRoek5ld1A1clljTG5TNmpPNzFobm1pVUdSbUdYbTIvQ0E5VUZxejlURWhWclFSV2VDL1NqVkZRQnFhSWg1MmlobjlVVnpVaHUwWjhMdVpJeDA3cG0xR29pdjd6QUY3QUNaektZcG0tLUtLNkZUUmNMVVNrWno5TUFtQWJlNUE9PQ==--282b36d699703dba571be11c01a75e7b9503e505","tokenType":"Bearer","expiresIn":3600}'
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 00:18:10 GMT
+  recorded_at: Fri, 31 Jul 2015 20:47:34 GMT
 - request:
     method: post
     uri: http://localhost:3000/annotations/bar/
@@ -181,9 +181,9 @@ http_interactions:
       Content-Type:
       - application/x-www-form-urlencoded
       Authorization:
-      - Bearer UDh2OU51bnk5WFN3cTFYS0dQTEYvK3RuRHN4cDZTaGZTdVF4RGdudENNOHR4QkVQT3E5QTBtZWhiSStXS2JxR205OWdyWGhmU0Vsc1J2alhUTkRUdEQrQWRDelkrVDlub1NCcWdzbGQwMjFTQlFpbjNSQU5RcDM2VVp5K01FVGYtLXpSWFdiRFlTZk5JWTd3OEt2Z1A5RGc9PQ==--cec568c09bf9df23b0bfe744d34b6ecb02a9c931
+      - Bearer bkZMY3Y3T1Z2YUgxeHJWY2hndVZ3SHh1ZzRoek5ld1A1clljTG5TNmpPNzFobm1pVUdSbUdYbTIvQ0E5VUZxejlURWhWclFSV2VDL1NqVkZRQnFhSWg1MmlobjlVVnpVaHUwWjhMdVpJeDA3cG0xR29pdjd6QUY3QUNaektZcG0tLUtLNkZUUmNMVVNrWno5TUFtQWJlNUE9PQ==--282b36d699703dba571be11c01a75e7b9503e505
       Cookie:
-      - _internal_session=emJqRDFtTTl5Nk1nbjA2Q1k2b2lFc0RIc3FpUU40bndwaDl0NWFDcWxBckNDL2QrbzE5cUlRU2Y1Y2g4V2dUZnBIbFRaVXRMZHEzRWtzSGhDMWt4UzJwV1ZPMU8wVmxONUZPR2RVajA0ZHVubWxZLzBMQnN4aFZWVU5Qb0ZiRVNmamExNWhBUDhsYlhKZ09oSE81TzliSkZLNG5IanpVQzFxQkpabzVWb0taRDhjbW5RZjRweXRiRjJyZ1kxbW9QOFFJeFRQYzBmY2xSMUhmTUJWOXN1QVVhd08yM2Z2WWttVlFZM1E0YWtiWGNvdW9IcngyOVNGUFR4Y3RneXlnVTVWdXUydER4REoxZWZaaWF3RWtCNWFVa0ZmYU1qQXQ2Ryt6YmJPa1pQb2dwamtTWkZIMXBGQStGb2dOVUsxeW1vUE9CaHNTb1JqYlByelVRT3l3aThweHdoQXhKK1FudzBHK3JQYUV2ZitYZFlKclovMmdUQitRSmIzUk9QeHhjZUV6bENpc1VhN3ZySDl3dzJ1aTIzdThSTlZBMVZ4eW1tTGE5aXVKeEZWV2lMSlEyTnVIYXd1LzhtOHJCU2RlNVFlcVAvaWRZVlBkbTJDNDIrVFYxNm5NL01JcDJpeWdNQldrQ3lWOCtYYVJYanRkcjhjNFdKYS9COVJ3a1BsK2psa0pqWklBWUx6WHZsUkE2YkJESkdTcDFIRTBrS0FkYlF0MzVHdEpxalVFNDZFNi9yaHNEeUlJRE9qZXhYL2Fvak5DcGFKRUFjU2xadWg0S3cwNHNoQU53dE9nYmp3cXV4RXN4M0lscm5iUnFBWkd5WkdZdndYUXNOZDJ6b3U2emNScDZ4M1JxNHFTOURnb0ViSVBXOUROVmF5WHUzVVVvQksrN200cW1EVnNOSlRPMk41T1ExWEs5dEx6ckFqVUZLL1RwTWhkZW44KzdrbDFGT0hNUGMwTXhvWWM1ckNKUENHV1hYUGhFbGFBT25ORDlQeVVDSWZvbWRoekdaVXNXWmMvcnlZSVdyZkJjR1ROaXdQaFp0YzBKVStTOWRIaFNvRUQvbEoyWDIzdVRPM3ZkaXFZL2RDMWtkSmtCS25CMU1KVTdWTHFJM0ZJcXArekNXaThrRGhvTTZvZXNzNzdZZTBybjFKYUNFcGJtY1RQa1ZBYTNYVjM5Skt1Q0VobFVqSHpKM2s3ZkgvVm9FL3MyZE5XTzJzM0xlaGN5SWtpRERRMFhnc0poYzVLQ0VScFF3ZldxdUN1RzQvMEFjQWVWNkZ1dE9hT3FqTjBldmZpQ2FmQjY3M2tiNWI4YVpranpFUTdONng4OGplWT0tLXdSdVVmeWZSeEVDbjZCNTBuV09JalE9PQ%3D%3D--8e161696ae04776c140166c673399e6ce4ebb5a5
+      - _internal_session=aEFKUm9XQWFkN0dPbFg5OER4RTI3aXZIb1hIbFhQdnkzeUVnYmhrYks4anRqRzlKcGhha2hpeDdiMXJ1Umdvc2ZuTGFSUDZtSGFoVDV2MWlsa0lpSWdmc3JhREtFbTluY1ArRzdQeVFjbWpCai9jTFVvc29aOWY0aUwzakxQaUt4SHRTY3NleUoxcmUvOVZKMTFkdWZWRHYydkNzamJjeXd2UitFRlhDNnNmZEN4dXZka0hPQVlXYlYxWjZxWUowVGJFSDROcTFlSkRNeldMUlYvM3lFVTVkdEpiU21vTDQ5TE9HdGJMZFkwZ0d4V1RBMGR2TTg0eEV3WWttQlgvaGtFT3JtSk1URXF3MWtXNFBSU0JwWGpmN0ZkL2F0ZXBQdFpnMWdOL1h3cEpDeE9CYlVxTkRUaE1EN0V4eGFpMytpc3hIZTBaNjNtZVlXanNvRVoxQXF2VFdJS2tpSWczVSt6TG9VNThCV2JpcEoyeDY4MkkxeXIvOTMrbHppbkZvcUdTTlpER0JIc1NuWTNtbVFPZ0U3dzRQWXdia0hLd0twRFZiVEhNVFdaKzZjaWI0aW82Q04xVEoyeXZpelBESHFUZGxoS2hkS0pweGRBcmlVUDgxN0ZnN3Jvdk9aSDFrNnlXWFJycGFhOVdwdEJQczc5dFRiNHZnb3E2S3RsN1dEMTZ3RUR0a1lML2hIZHp5WmExcHFTOGVzekNTU2hlNjVMN2x2dkY2b0JEaGtJRm5aVjA5b0FGOXJ1ZXpDUm1oVkJJSTQyNmVGM3N6UHM4RkZCdDZGemk1SGt1N0I5MldtT1Qzb2UyVjZPWEZKeW02bElramxHQy9tZkNpTk1LT2NOYjRZTitWM0EyVC96dXQ2aHJYYTh4NExxMjltNlRoQ0FJN1hpZnhXY2hwK0lFSUxsd2hYNTd2YkhBb3JvVi9rTWpUeUJRYVBQVGxMOWxvbzhLcjlYcVpFMStoT0pNVGN6SEFTbHNtbDYzampDVXk0STBidnVQeWpaOTVQN0lMMU5Odmk3UlFwOWVCcWhOM1F3dTV4RXYzL21ZQS9NNFY5TWpkVW5OM1VhQStiQ3RQMjlHcmJlMmJKa2k4ZG1xUUtsTGpnYVJGbzI2OCticklzWFhjcFJ1eHVPaEN2OWM1VGxRRklPOVU2YlZQVFpsQS9ObEl6eVNwQXV5U0w3b3dyS0lqSXVUSjQ4dFRaaEtGOGluc3RIUjY2N1k1dWYwOXEyQnA4a3VrNjJXb3VGRGVzQjBCempYcnJhYzZ4cGwrbmtOOE0wTDRmdG1FVWlzK20vcHVGbkFRVTlTT2J5QjNNTXhxdzl6eitiMD0tLUsrWnpmS1ZWRzVMdmF2SVhvRFAvMUE9PQ%3D%3D--b917d93ebc4489c3e967220fa128331bf69d7c85
       Content-Length:
       - '580'
       User-Agent:
@@ -202,31 +202,31 @@ http_interactions:
       Content-Type:
       - application/ld+json; charset=utf-8
       Etag:
-      - W/"9807112e1487211f601de4ebfd2a6b78"
+      - W/"c4f4a8141163515dd8e018c98704b11c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - acc0068a-152b-457c-a686-36d83ebae0b9
+      - aafd257c-f663-4460-a1d4-08b3992bf92d
       X-Runtime:
-      - '2.496651'
+      - '1.924867'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Fri, 31 Jul 2015 00:18:12 GMT
+      - Fri, 31 Jul 2015 20:47:36 GMT
       Content-Length:
       - '447'
       Connection:
       - Keep-Alive
       Set-Cookie:
-      - _internal_session=QnZhbEFFZXBVOUsyQVlyRnhGeXEwUUhqSm1HU1VqOXZvVDNWemZ4ZnMzbW1FVmxPRWkwMituWjg2TlM2Um0xTVc0a2x0eXdXUU5tL0RjWkIyV0NRZk5SN091UE1SNFNDZVBDTnVOZXVKdjdQc1lTd1RkQVhXaTVrVWdoQTd3SnBzMHR0dStkbG96QXUvanJhcWIzVEhHdHdHY1BqYW1MS3ozdXJOdkwyOWI4MUJzVDFrazBYekFLaXhoU245ZlJuWnJmV3A1TWM3bkNpTDB4QzNnNE5RZ0xvVUNWQTkvVGs1M3ZQZjRSNng3MWJiS3NoZldoTWpOVHUwaUxCSy9NYnJENHJwMCt0UGx1N0RnWUVzdlA5TGxGRlJONmcyREc1UDNPNFdJRG1nZ1hHWXgyZ3NBMHZReE53dHpBNzArWkJwYXdMdS9PVnF1ZGtCaEF4bzB3OVJXNTI1bFVkNnBiTUZEaE1jcFhVZWFmVGJJbi9QL2FxcStoMFpXOWdRVE41ODBYMnpwWHJwbzM5THhSY1dGSU9UUWZCSHNobzFpVHdhRUphTmxmcnl3bUZMM3VBbnFxaHh3eDlEWTdvUWRmeWIzeGlqL0xpT0w1RTRDQWRocWZUTGdCQUc0dHFtTFhDdk1SOXJCeExyTXRxc2RxRjVnMGtCNGRSM1BkMndxcnUzcmJYKytibE1LTkJoZ0wvWmhic0FzeGY1NEl5cmFCQnArcWNucUtjM3MzWHpldmRqdnB6R3ZMU1c3bDY2V0hiY0hIcEROenNLUWNWSUlhYjdkVFZPVFV5c25JcWU0MDkwMjZsYk1XYSs3TzdVbzEzbFNiMWkwbjhSU09GZERGVHFra0l1YzZJV2p0c3Y5WWZPRGRuaEtrS2E2ZTJtWWpzYVZpb0xHNmZqa29XS3pvTzYrZ0FTOTgzbE9CSUVCYVY1c2ZKdnpIZ3l5a0hDNE1rNjduNTNMVE4wdjRReHNoL050d3VYZWlRdVN0NVEzaWoveVllWFNCaElMcHVGb2pjQW15dDluS0duRmZRUk5sWEhXRlFtU2RtS282allXQm9INC9YdG9HTm5jYzI5Qk0wSjZiMGZoZVFWSExjVE5mR0U0bWZDRlBsbnhBVlJyWEl0NGJWNlRVbFJENU8rQklSaGl2VWh6YmpLMXg4OW9XMEZJeit3d1p1U24yb1pacFgwa0xEbU42UXdOMFBZMnUwY1Bja2dYRnZpL0lnMXErVXFzYkFsSUY5UGdHOHlUeFZ2WW5nenB3TUFIOE50eEVibDNQaVFzVjFyWXJiQ2VQdnNXMXZDTEQwS1NKWVlJQTNYd1p3RERkWitabUNFejg2M3BBbER4ell2a2JHeGNzbk5qYXJJTTJZUnlhK3JVeEdadnR6WDY2ODNvNmNaUDNsSjlqZmU5RWx2MkY5ekJwUEZjaU5GMitMVFBhN1prQUs2dGZYcmo1MERzVHFXR3JPeng2S3NtL0hkbVBqbi9EL08wWFlrWXRZYUVYelVNZExwSkl4TVJ0dndXMnhLTWVvaFhzZHg0UjRseFVFV0loVi90NVkrQT09LS04MXphQmNlU3k2NCsrVnNLeVBIVlJRPT0%3D--8c158c74b07ce97ef1d31956c10134697b48d532;
+      - _internal_session=a0hNbnkybFlSVWFFWHp3ZWdiSFpQbEo0MUJpSFNZVkNFdWRYS1JreUxXQ25sa1YwTGgybVl1cGhJZ0ZLWlF4RFZEREs1K1lnSDR6MVdXYkJxV2Z1TDBmSTFpdHZsWmtRME43U1Y4elc0Y0p3ZTFkL0RKNW10L05oWUlFMGU3eU52bjV1SVpxbGMzY0ovbHVnTFV2bEdkTk9NZFZlVFA3M1lpV2V6Y0JXMmt2T09KcDE0N3lnaFc3S3dtSXRkVk5VRHJrc2M3dEhrUGpzYWZ3OC83SkNyTHdpZnRVOElPd3k2bW5XUVg1aVRiQUdleTJoaHRyU2FWM1FuV2VIN241OFZSa3R1MW1BSzhBZFU1cHNNOUVSbERRczVuTjI1WVBmWVBVdUxwS0g4Z1NIMk51YjhSTktOZ2tyVWVDRVBRdURJMWp6dXJ3V051cHFkNmR0NUpDU3VsMEwvQm9tc0dUZXIxNDMvUmV1RE8yY0l3a0NJbHVKSWluVjMzTFZnZ0dDUWl3ZTBUNy9pRnFtSTdhb1pOVE9yb0s3YzZYZ0pheEIwaEliUVVLQTJ2bjUzWllzVGpqenJ1U08vbUpxQUdwQmc3aXp5Zlh3aHZBUkc3bWlUVS9XQ2dYQTd4YnAvbTJTSTFVd2hvcUNLOWkrTFBTaDYyN3ZENXlqMzY1Qk84eFJNWnhUUUJ0VEgwZGZaU1ROL3pTRXNUYThlOU1halp3eHdlaGVnSURNVERUQ3ZqclZhVEZna2pJNUJvc1o2R2JFZmZlM092TERvWFU4LzN4MFhFUUxOZVhhWUlqMnJXb1JrMkJFR2F2MVFZNDYzWlJpSEhXNTFRRDNBZVJLWHpYTjVCQjh5YXpGc25adDBoek9xbnVGcUxGRk11bjl0R3FMM0VpVm96NlFGNXppWWlYNVd4YVhrTTRiMG5WQ3M0MmdTSDBRWTNDRExiSlNtdjZjRXVqV3FhcXByMUk2eUJrbGRYaTZ3UW9kK3NCVndlMzBSR3dMdk1LcWNab2ZlcU9FVUloV05CM3ZVVHROMEtFQXVTdkFvY1d6OVFXcHJxMk1WT05ocGVGRnpBZFdtdktsR0xlTmFpdlR3TGs2V2xqZmJvTmZEUnhXYUI2SmV1QUhOOVVROE5RVld2d2YxZ2liV3EyRUVhTmZsVTBmanI2aEIzbXN1eXhWamV0MEUrREppVGRMblhWUVdvdndUTk1wbCtkbDZGSFRQWDhGWG1ucll5NmwwMWd1V1p3eTlVUWdWMlU1QndockVxUEZvSytrMlBRekxZN2JUeGluL0NaZnhMRHppMTQxMTZVT2VLY3UyT2wzWG5QYUJxejJ2VldjazBROFRMaml1OERaamdlZkpyRkJZQlJSblFlWWNkNVhjeFdPaGVUcEZtL1pPQTNMVXhHSDRLeHR4dWVuNDFUaHYyZHBwUUtVSm9sT0tDbmljL080ZUdxNDVxdk5maVNybDFEby9nckQ4eC8yZW93Qnp3U0t6Rk5WeURnZFVUWnJIa1hDM2JPc0ZrY2drVlNxU2t3N3JVajY3MHVXdUR1SUo5RUEydz09LS1wTkJ5aGtmOEFiL3pJaWVtNitNSHhnPT0%3D--ecd7be37183b639c28528efe7397773644943df8;
         path=/; HttpOnly
       - request_method=POST; path=/
     body:
       encoding: UTF-8
-      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g70334086299080","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
-        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/bar/93/f9/75/01/93f97501-68d8-4acf-a2b0-07091ba079f4","@type":"oa:Annotation","hasBody":"_:g70334086299080","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
+      string: '{"@context":"http://www.w3.org/ns/oa-context-20130208.json","@graph":[{"@id":"_:g70067932539560","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
+        love this!","format":"text/plain","language":"en"},{"@id":"http://your.triannon-server.com/annotations/bar/72/72/7b/30/72727b30-91eb-4eef-b936-97dc05cb5893","@type":"oa:Annotation","hasBody":"_:g70067932539560","hasTarget":"http://purl.stanford.edu/kq131cs7229","motivatedBy":"oa:commenting"}]}'
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 00:18:12 GMT
+  recorded_at: Fri, 31 Jul 2015 20:47:36 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -246,7 +246,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Fri, 31 Jul 2015 00:18:12 GMT
+      - Fri, 31 Jul 2015 20:47:37 GMT
       Server:
       - Apache/2
       Location:
@@ -254,7 +254,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 31 Jul 2015 06:18:12 GMT
+      - Sat, 01 Aug 2015 02:47:37 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -270,7 +270,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 00:18:12 GMT
+  recorded_at: Fri, 31 Jul 2015 20:47:37 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -292,7 +292,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 Jul 2015 00:18:13 GMT
+      - Fri, 31 Jul 2015 20:47:37 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -306,7 +306,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 31 Jul 2015 06:18:13 GMT
+      - Sat, 01 Aug 2015 02:47:37 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Access-Control-Allow-Origin:
@@ -1424,7 +1424,7 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 00:18:13 GMT
+  recorded_at: Fri, 31 Jul 2015 20:47:37 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa-context-20130208.json
@@ -1444,7 +1444,7 @@ http_interactions:
       message: Temporary Redirect
     headers:
       Date:
-      - Fri, 31 Jul 2015 00:18:13 GMT
+      - Fri, 31 Jul 2015 20:47:37 GMT
       Server:
       - Apache/2
       Location:
@@ -1452,7 +1452,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 31 Jul 2015 06:18:13 GMT
+      - Sat, 01 Aug 2015 02:47:37 GMT
       Content-Length:
       - '240'
       Content-Type:
@@ -1468,7 +1468,7 @@ http_interactions:
         <p>The document has moved <a href="http://www.w3.org/ns/oa.jsonld">here</a>.</p>
         </body></html>
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 00:18:13 GMT
+  recorded_at: Fri, 31 Jul 2015 20:47:37 GMT
 - request:
     method: get
     uri: http://www.w3.org/ns/oa.jsonld
@@ -1490,7 +1490,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 Jul 2015 00:18:14 GMT
+      - Fri, 31 Jul 2015 20:47:38 GMT
       Server:
       - Apache/2
       Last-Modified:
@@ -1504,7 +1504,7 @@ http_interactions:
       Cache-Control:
       - max-age=21600
       Expires:
-      - Fri, 31 Jul 2015 06:18:14 GMT
+      - Sat, 01 Aug 2015 02:47:38 GMT
       P3p:
       - policyref="http://www.w3.org/2014/08/p3p.xml"
       Access-Control-Allow-Origin:
@@ -2622,5 +2622,5 @@ http_interactions:
 
 
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 00:18:14 GMT
+  recorded_at: Fri, 31 Jul 2015 20:47:38 GMT
 recorded_with: VCR 2.9.3
