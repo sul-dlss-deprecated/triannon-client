@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/annotations/bar/%2Ff3%2F43%2F7f%2F14%2Ff3437f14-1a0c-4a8e-8b0a-fc713786e6c9
+    uri: http://localhost:3000/annotations/bar/%2F93%2Ff9%2F75%2F01%2F93f97501-68d8-4acf-a2b0-07091ba079f4
     body:
       encoding: US-ASCII
       string: ''
@@ -29,17 +29,17 @@ http_interactions:
       Content-Type:
       - text/turtle; charset=utf-8
       Etag:
-      - W/"0f5d75df403cf740438f93dbab07c364"
+      - W/"568506f8a6e5b9ff582c962814270773"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - e9515844-d5ae-4524-b60d-65e9bca67ad5
+      - 868f85c6-665e-42d0-882e-6a652a110e50
       X-Runtime:
-      - '0.143895'
+      - '0.134499'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Thu, 30 Jul 2015 00:51:23 GMT
+      - Fri, 31 Jul 2015 00:18:53 GMT
       Content-Length:
       - '667'
       Connection:
@@ -54,7 +54,7 @@ http_interactions:
         @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
         @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-        <http://your.triannon-server.com/annotations/bar/f3/43/7f/14/f3437f14-1a0c-4a8e-8b0a-fc713786e6c9> a oa:Annotation;
+        <http://your.triannon-server.com/annotations/bar/93/f9/75/01/93f97501-68d8-4acf-a2b0-07091ba079f4> a oa:Annotation;
            oa:hasBody [
              a dcmitype:Text,
                cnt:ContentAsText;
@@ -65,5 +65,5 @@ http_interactions:
            oa:hasTarget <http://purl.stanford.edu/kq131cs7229>;
            oa:motivatedBy oa:commenting .
     http_version: 
-  recorded_at: Thu, 30 Jul 2015 00:51:23 GMT
+  recorded_at: Fri, 31 Jul 2015 00:18:53 GMT
 recorded_with: VCR 2.9.3

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/annotations/bar/%2Ff3%2F43%2F7f%2F14%2Ff3437f14-1a0c-4a8e-8b0a-fc713786e6c9
+    uri: http://localhost:3000/annotations/bar/%2F93%2Ff9%2F75%2F01%2F93f97501-68d8-4acf-a2b0-07091ba079f4
     body:
       encoding: US-ASCII
       string: ''
@@ -29,17 +29,17 @@ http_interactions:
       Content-Type:
       - application/rdf+xml; charset=utf-8
       Etag:
-      - W/"3cb9fa33293f768917a5e0c9de8b7a6e"
+      - W/"ecfcc3e2c36143dff40faa57d1fbf421"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 5dc27de8-49bf-4c91-abd4-1f263b0071bb
+      - 3acf6baf-f4ef-47ac-ac0b-e77dc5ca61c0
       X-Runtime:
-      - '0.158628'
+      - '0.157165'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Thu, 30 Jul 2015 00:51:23 GMT
+      - Fri, 31 Jul 2015 00:18:53 GMT
       Content-Length:
       - '913'
       Connection:
@@ -49,9 +49,9 @@ http_interactions:
       string: |
         <?xml version='1.0' encoding='utf-8' ?>
         <rdf:RDF xmlns:cnt='http://www.w3.org/2011/content#' xmlns:dc11='http://purl.org/dc/elements/1.1/' xmlns:dcmitype='http://purl.org/dc/dcmitype/' xmlns:oa='http://www.w3.org/ns/oa#' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
-          <oa:Annotation rdf:about='http://your.triannon-server.com/annotations/bar/f3/43/7f/14/f3437f14-1a0c-4a8e-8b0a-fc713786e6c9'>
+          <oa:Annotation rdf:about='http://your.triannon-server.com/annotations/bar/93/f9/75/01/93f97501-68d8-4acf-a2b0-07091ba079f4'>
             <oa:hasBody>
-              <dcmitype:Text rdf:nodeID='g70275208722500'>
+              <dcmitype:Text rdf:nodeID='g70334248974140'>
                 <rdf:type rdf:resource='http://www.w3.org/2011/content#ContentAsText'></rdf:type>
                 <dc11:format>text/plain</dc11:format>
                 <dc11:language>en</dc11:language>
@@ -64,5 +64,5 @@ http_interactions:
 
         </rdf:RDF>
     http_version: 
-  recorded_at: Thu, 30 Jul 2015 00:51:23 GMT
+  recorded_at: Fri, 31 Jul 2015 00:18:53 GMT
 recorded_with: VCR 2.9.3
