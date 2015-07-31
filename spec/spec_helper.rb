@@ -40,6 +40,7 @@ end
 
 def triannon_config_no_auth
   begin
+    ::TriannonClient.reset
     ::TriannonClient.configure do |config|
       config.debug = false
       config.host = 'http://localhost:3000'
@@ -57,6 +58,7 @@ end
 
 def triannon_config_auth
   begin
+    ::TriannonClient.reset
     ::TriannonClient.configure do |config|
       config.debug = false
       config.host = 'http://localhost:3000'
