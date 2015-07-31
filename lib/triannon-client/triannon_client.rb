@@ -147,7 +147,6 @@ module TriannonClient
         tries += 1
         response = @container.post post_data
       rescue RestClient::Exception => e
-        sleep 1*tries
         response = e.response
         if response.is_a?(RestClient::Response)
           case response.code
@@ -160,12 +159,17 @@ module TriannonClient
         else
           msg = e.message
         end
-        retry if tries < 2
+        if tries < 2
+          sleep 1*tries
+          retry
+        end
         binding.pry if @config.debug
         @config.logger.error(msg)
       rescue => e
-        sleep 1*tries
-        retry if tries < 2
+        if tries < 2
+          sleep 1*tries
+          retry
+        end
         binding.pry if @config.debug
         @config.logger.error("Failed to POST annotation: #{e.message}")
       end
