@@ -1,6 +1,7 @@
 require 'spec_helper'
 
-# ::TriannonClient::TriannonClient class specs
+# ::TriannonClient::TriannonClient GET specs
+# The GET requests do not require authentication.
 
 describe 'TriannonClientREAD', :vcr do
 
@@ -13,7 +14,10 @@ describe 'TriannonClientREAD', :vcr do
     clear_annotations('TriannonClientREAD/clear_annotations')
   end
 
-  let(:tc) { TriannonClient::TriannonClient.new }
+  let(:tc) {
+    # triannon_config_auth
+    TriannonClient::TriannonClient.new
+  }
 
   def request_anno_with_content_type(content_type)
     expect_any_instance_of(RestClient::Resource).to receive(:get).with(hash_including(:accept => content_type) )
@@ -56,13 +60,19 @@ describe 'TriannonClientREAD', :vcr do
         graph = tc.get_annotations
         graph_is_empty(graph)
       end
-      it 'logs exceptions' do
+      it 'logs exceptions for RestClient::Exception' do
         response = double
         allow(response).to receive(:is_a?).and_return(RestClient::Response)
         allow(response).to receive(:headers).and_return(jsonld_content)
         allow(response).to receive(:body).and_return('get_exception')
         allow(response).to receive(:code).and_return(500)
         exception = RestClient::Exception.new(response)
+        allow_any_instance_of(RestClient::Resource).to receive(:get).with(jsonld_accept).and_raise(exception)
+        expect(TriannonClient.configuration.logger).to receive(:error).with(/get_exception/)
+        tc.get_annotations
+      end
+      it 'logs exceptions' do
+        exception = RuntimeError.new('get_exception')
         allow_any_instance_of(RestClient::Resource).to receive(:get).with(jsonld_accept).and_raise(exception)
         expect(TriannonClient.configuration.logger).to receive(:error).with(/get_exception/)
         tc.get_annotations
