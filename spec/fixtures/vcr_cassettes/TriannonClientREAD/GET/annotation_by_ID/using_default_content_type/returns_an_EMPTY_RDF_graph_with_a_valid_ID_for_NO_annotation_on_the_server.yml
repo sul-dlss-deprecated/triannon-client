@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:3000/annotations/bar/19515c3c-3ab0-42d5-94ed-9dad0e6c0735
+    uri: http://localhost:3000/annotations/bar/df01ac59-66a2-45f4-a028-98ff156a4599
     body:
       encoding: US-ASCII
       string: ''
@@ -31,23 +31,23 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - b42fe723-cf13-460d-a52e-ea92b81109de
+      - d7695470-c9a2-4214-a295-5d36b02497b2
       X-Runtime:
-      - '0.022414'
+      - '0.015476'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Fri, 31 Jul 2015 20:48:05 GMT
+      - Fri, 31 Jul 2015 23:58:30 GMT
       Content-Length:
       - '1494'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: "<h2>error getting bar/19515c3c-3ab0-42d5-94ed-9dad0e6c0735 from LDP</h2><html>\n<head>\n<meta
+      string: "<h2>error getting bar/df01ac59-66a2-45f4-a028-98ff156a4599 from LDP</h2><html>\n<head>\n<meta
         http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\"/>\n<title>Error
         404 Not Found</title>\n</head>\n<body><h2>HTTP ERROR 404</h2>\n<p>Problem
-        accessing /fedora/rest/anno/bar/19515c3c-3ab0-42d5-94ed-9dad0e6c0735. Reason:\n<pre>
+        accessing /fedora/rest/anno/bar/df01ac59-66a2-45f4-a028-98ff156a4599. Reason:\n<pre>
         \   Not Found</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>
         \                                               \n<br/>                                                \n<br/>
         \                                               \n<br/>                                                \n<br/>
@@ -60,5 +60,5 @@ http_interactions:
         \                                               \n<br/>                                                \n<br/>
         \                                               \n<br/>                                                \n\n</body>\n</html>\n"
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 20:48:05 GMT
+  recorded_at: Fri, 31 Jul 2015 23:58:30 GMT
 recorded_with: VCR 2.9.3
