@@ -40,10 +40,7 @@ module TriannonClient
 
     # Reset authentication
     def authenticate!
-      @access_code = nil
       @access_expiry = nil
-      @site.options[:cookies] = {}
-      @site.headers.delete :Authorization
       authenticate
     end
 
@@ -83,11 +80,9 @@ module TriannonClient
         return false unless response.code == 200
         access = JSON.parse(response.body)
         return false if access['accessToken'].nil?
-        @access_code = access['accessToken']
+        @access_code = "Bearer #{access['accessToken']}"
         @access_expiry = Time.now.to_i + access['expiresIn'].to_i
-        @site.options[:cookies] = response.cookies  # save the cookie data
-        @site.headers[:Authorization] = "Bearer #{@access_code}"
-        true
+        @site.headers[:Authorization] = @access_code
       end
     end
 

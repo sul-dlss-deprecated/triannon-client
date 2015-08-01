@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 RSpec.shared_examples "create annotations" do |auth_required|
+
   let(:tc) {
     if auth_required
       triannon_config_auth
@@ -9,8 +10,18 @@ RSpec.shared_examples "create annotations" do |auth_required|
     end
     TriannonClient::TriannonClient.new
   }
+
+  def check_authentication(required)
+    auth = tc.authenticate
+    if required
+      expect(auth).to be_truthy
+    else
+      expect(auth).to be false
+    end
+  end
+
   it 'does not raise an error when submitting a valid open annotation' do
-    expect(tc.authenticate).to eql(auth_required)
+    check_authentication(auth_required)
     response = nil
     expect do
       response = tc.post_annotation(jsonld_oa)
@@ -26,7 +37,7 @@ RSpec.shared_examples "create annotations" do |auth_required|
     # The response behaves primarily as a String, so it can not be tested
     # as an instance of RestClient::Response, but it can be tested to respond
     # to RestClient::Response methods.
-    expect(tc.authenticate).to eql(auth_required)
+    check_authentication(auth_required)
     anno = create_annotation
     r = anno[:response]
     expect(r.is_a? RestClient::Response).to be true
@@ -35,7 +46,7 @@ RSpec.shared_examples "create annotations" do |auth_required|
     expect(r).to respond_to(:headers)
   end
   it 'logs exceptions for RestClient::Exception' do
-    expect(tc.authenticate).to eql(auth_required)
+    check_authentication(auth_required)
     response = double
     allow(response).to receive(:is_a?).and_return(RestClient::Response)
     allow(response).to receive(:headers).and_return(jsonld_content)
@@ -51,7 +62,7 @@ RSpec.shared_examples "create annotations" do |auth_required|
     tc.post_annotation('post_logs_exceptions')
   end
   it 'logs exceptions' do
-    expect(tc.authenticate).to eql(auth_required)
+    check_authentication(auth_required)
     exception = RuntimeError.new('post_logs_exceptions')
     data = {
       "commit"=>"Create Annotation",
