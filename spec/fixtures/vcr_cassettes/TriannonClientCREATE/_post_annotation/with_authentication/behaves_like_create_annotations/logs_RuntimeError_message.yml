@@ -1,0 +1,170 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:3000/auth/client_identity
+    body:
+      encoding: UTF-8
+      string: '{"clientId":"clientA","clientSecret":"secretA"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '47'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"ed4990b6f4d6ce1f2b39177d208d7650"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - a62af752-7f84-4cc9-b5f5-934da06d5dd2
+      X-Runtime:
+      - '0.165691'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Mon, 03 Aug 2015 22:11:56 GMT
+      Content-Length:
+      - '186'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - _internal_session=YjA4ekhoYWdLVzExcDEzaFFmWGZIcUhvUEllVTRQcTRpVU92dThNeEFGMmxpUC9iZHVJVnFidk9Kd05QL1RlR2wrNXVhaEtRbzQvOWxQN3dOTFQ3ek1pK0E1aE1JZzhNZGVrUGxpVXpBbzAycGNML2NvTnRZZ1V3ai9mYTE4N1FsNkUyNU11TTREQ2luMU45bTFmQVEwR0JzMWpVUmpxQlhmU2VYWk9nd3UvdEUrQUkwMVNBd2JzUWdrREJZU05HT3lEbUY3a3l2K2d2SE5lRlFRY0FDWVRjUVc1QWw2SUlBVStZMmVLeTF4aEk0TUJJUDdnTy9uVUZUeTRQY2dDa2NRcVhvNUQvWnQyU1ZTS2RGWHlEQTZudHJ4QzJPRnAwdktIRkllSXVFdERCTWJXMkJudlJ3eG5GbW16dUxNY2ZMQ0xxV2NhZlhCa0NFK0JVLzJIWjZCV1dHYWN0eVNLWDBuNjFFQWxJaDg0TEJrZHJ0RmFyYXdyakE3UGd0SGxSQmF5L0RjbzFPQ2VwN2xEMC9BZTcvMGRNSkNuQThsWkxxTlkvaGh2a2Q0WkxwK1VvRzI2QTBVNmM4ekV3WU5EY1JaOFloYkhEUXFENUZlWG5NQ2EydkUxNmpDbVFkRldFQlA3V2huUS9uS0U9LS13djY2SE5aK3JNVWp2K202aWZFejB3PT0%3D--6d018569d6c1a5ec650885ccfa19be3d49eca1cd;
+        path=/; HttpOnly
+      - request_method=POST; path=/
+    body:
+      encoding: UTF-8
+      string: '{"authorizationCode":"aE1TREZzVkhIMVNibUZWNGloNXFkUVl0ZDdMTm10RkFZU3B5Qnh5R0ZhZzV0ZmVhci9rRGxqY25aSlFqN2RIaS0tZU5VdmgvK2M4VHBGaklzNytvRzNsdz09--6b0821b5fb669037d0df4b2f7d7c289a0be6c3d2"}'
+    http_version: 
+  recorded_at: Mon, 03 Aug 2015 22:11:56 GMT
+- request:
+    method: post
+    uri: http://localhost:3000/auth/login?code=aE1TREZzVkhIMVNibUZWNGloNXFkUVl0ZDdMTm10RkFZU3B5Qnh5R0ZhZzV0ZmVhci9rRGxqY25aSlFqN2RIaS0tZU5VdmgvK2M4VHBGaklzNytvRzNsdz09--6b0821b5fb669037d0df4b2f7d7c289a0be6c3d2
+    body:
+      encoding: UTF-8
+      string: '{"userId":"","workgroups":"org:wg-A, org:wg-B"}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      Cookie:
+      - _internal_session=YjA4ekhoYWdLVzExcDEzaFFmWGZIcUhvUEllVTRQcTRpVU92dThNeEFGMmxpUC9iZHVJVnFidk9Kd05QL1RlR2wrNXVhaEtRbzQvOWxQN3dOTFQ3ek1pK0E1aE1JZzhNZGVrUGxpVXpBbzAycGNML2NvTnRZZ1V3ai9mYTE4N1FsNkUyNU11TTREQ2luMU45bTFmQVEwR0JzMWpVUmpxQlhmU2VYWk9nd3UvdEUrQUkwMVNBd2JzUWdrREJZU05HT3lEbUY3a3l2K2d2SE5lRlFRY0FDWVRjUVc1QWw2SUlBVStZMmVLeTF4aEk0TUJJUDdnTy9uVUZUeTRQY2dDa2NRcVhvNUQvWnQyU1ZTS2RGWHlEQTZudHJ4QzJPRnAwdktIRkllSXVFdERCTWJXMkJudlJ3eG5GbW16dUxNY2ZMQ0xxV2NhZlhCa0NFK0JVLzJIWjZCV1dHYWN0eVNLWDBuNjFFQWxJaDg0TEJrZHJ0RmFyYXdyakE3UGd0SGxSQmF5L0RjbzFPQ2VwN2xEMC9BZTcvMGRNSkNuQThsWkxxTlkvaGh2a2Q0WkxwK1VvRzI2QTBVNmM4ekV3WU5EY1JaOFloYkhEUXFENUZlWG5NQ2EydkUxNmpDbVFkRldFQlA3V2huUS9uS0U9LS13djY2SE5aK3JNVWp2K202aWZFejB3PT0%3D--6d018569d6c1a5ec650885ccfa19be3d49eca1cd;
+        request_method=POST
+      Content-Length:
+      - '47'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/plain; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - df385d2e-a636-4d22-ad98-a25f5166c2d7
+      X-Runtime:
+      - '0.167849'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Mon, 03 Aug 2015 22:11:56 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - _internal_session=aUNQMFQvdWp0bGNoQ01yTzBpa3pGQ2dNQVhpVFozTmJWUG1KUWxvZjhxY3lOUGdKaWVzeWNaaWtmbFJvcnlxalE2bEppeGZvZ1k0VW9jNkZNb2c5WmRTZG5qSDByRTNjL1VERTA0MzVaTE1McitpUVFyelpGWlhoSDUycXZuMFJVWEd0RVNWSzkwQnNJak15Qk8zMnlpbEV1aG94V21TZEVncmtVdFdTRkQvRlRlV0dXMDhrWnBsOEtFWG1DWDlIT253RXM0aFJSWnBFQ1pHczh0Q1dCN3pEaXI2bFNneHdDWTRhN1JZRE14WDNob3FPWmRIVWlaUHpKVDJLMlo3bkpudEZjcFJIUlRvQmdLazYvQkVaMXVINjBUcmk1WWRrVmlEWm8rU1NvZVVLcXRycVpuV3pLV0tZOFlMYmNkSGxrYVIzVERYcDc2dTRzMXBqeVhXR0hZbGg3eFFnc2lDNFl3R0FDQ21IdHhISkNoVWZQVVljNG53czRaQkYxSWczeVFua3d2U1pyTG9GcTN1dWVWTDR5eW4yVFlpdlJFbjJSVk5iWG5QUHZYTjBZR2VMWGZub081Y092aUVhSG5ySkFOZkhHWXhqSCtWNDVoSlFoSXFNeHBzcTF5OHJWOXpjTHcrVC9CV2gwQ3dGeHd3aW94dHBET2grRUVWQ1E0SDUzdFphMVhaT1BoZUJZeEcyOTZsUXRFNHhZSkxiUUsyT2RKcHJkZnNXNDhsb252b3BwTkdDVGx3RFB5UVB4ZkdNLS1LM2VyZlhhVUJ1VFBxRXlMWW5FV3pRPT0%3D--32748c55608f12c610d2c7e7e343f1b6733c29e5;
+        path=/; HttpOnly
+      - login_user=; path=/
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 03 Aug 2015 22:11:56 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/auth/access_token?code=aE1TREZzVkhIMVNibUZWNGloNXFkUVl0ZDdMTm10RkFZU3B5Qnh5R0ZhZzV0ZmVhci9rRGxqY25aSlFqN2RIaS0tZU5VdmgvK2M4VHBGaklzNytvRzNsdz09--6b0821b5fb669037d0df4b2f7d7c289a0be6c3d2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/ld+json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/ld+json
+      Cookie:
+      - _internal_session=aUNQMFQvdWp0bGNoQ01yTzBpa3pGQ2dNQVhpVFozTmJWUG1KUWxvZjhxY3lOUGdKaWVzeWNaaWtmbFJvcnlxalE2bEppeGZvZ1k0VW9jNkZNb2c5WmRTZG5qSDByRTNjL1VERTA0MzVaTE1McitpUVFyelpGWlhoSDUycXZuMFJVWEd0RVNWSzkwQnNJak15Qk8zMnlpbEV1aG94V21TZEVncmtVdFdTRkQvRlRlV0dXMDhrWnBsOEtFWG1DWDlIT253RXM0aFJSWnBFQ1pHczh0Q1dCN3pEaXI2bFNneHdDWTRhN1JZRE14WDNob3FPWmRIVWlaUHpKVDJLMlo3bkpudEZjcFJIUlRvQmdLazYvQkVaMXVINjBUcmk1WWRrVmlEWm8rU1NvZVVLcXRycVpuV3pLV0tZOFlMYmNkSGxrYVIzVERYcDc2dTRzMXBqeVhXR0hZbGg3eFFnc2lDNFl3R0FDQ21IdHhISkNoVWZQVVljNG53czRaQkYxSWczeVFua3d2U1pyTG9GcTN1dWVWTDR5eW4yVFlpdlJFbjJSVk5iWG5QUHZYTjBZR2VMWGZub081Y092aUVhSG5ySkFOZkhHWXhqSCtWNDVoSlFoSXFNeHBzcTF5OHJWOXpjTHcrVC9CV2gwQ3dGeHd3aW94dHBET2grRUVWQ1E0SDUzdFphMVhaT1BoZUJZeEcyOTZsUXRFNHhZSkxiUUsyT2RKcHJkZnNXNDhsb252b3BwTkdDVGx3RFB5UVB4ZkdNLS1LM2VyZlhhVUJ1VFBxRXlMWW5FV3pRPT0%3D--32748c55608f12c610d2c7e7e343f1b6733c29e5;
+        login_user=
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - '["application/ld+json"]; charset=utf-8'
+      Etag:
+      - W/"7177ff5bbaf94cae2ae5a81d715ed419"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9fb3e4f4-fcfc-4b1f-ab31-5c326d0cf7f5
+      X-Runtime:
+      - '0.323973'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Mon, 03 Aug 2015 22:11:56 GMT
+      Content-Length:
+      - '306'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - _internal_session=ak5vOWlaV01yUERBTmNRdWtKdGEydUxmKzRoaHBCdklmVkozWnVzZFNyQ0R5M2YzTnRUVU0wdzRHQmxhbTBISlFuRWZnS1crbXVZSHk3Z09TRTY2ajRPRlpNcExtZjBMankwa1dMK1Q2QWdma1ZlVGxubDFHSFlxaXF1MVNIMmZFYVM2anBRanZiNmQ0ckRReG1Wczg0aHpmek55RUJVc1l3bGg0TmhLOEttUWJUSTRETWpVMmZGWVVZUjhrc0xIN3dxVW84VTZLS2tyMHRRbDZFUnlONmRQNEZrVHhrNFhmT3REZ3E4Qlp0RkEyUjg0aE50MlRvMElQY2NjQ2Z1NUtMN1BSQ3lKTGcydzZTcHdEdzh1TS9VV3RaRFpuWTZmUDJJbDg0RlUxYXJxYlVReEs4ZVNxVmNvMC8wNUlJRGNtQmt5b3hJbGl0Z25vSXlPK2ZCbXZ5MlhNd0tkK0ZySm9zelhLT3hGNDdsOGFaN2pDU3R1ZERmdER0ZUxoRmZZTGhjWVFnR1YwMUtXUURaTXVsZkd4b3J5ZVk1azdnc000N2hSejUyVDVQa0E4dk9mV3hsVCtRN2J0V0lGaW82NTdwckZHQ0VSVFpLYTh3L2NrNUZxb2d3ZURud0ZMRzRnYk50QWFHQld4WXl4UUhHV0NxR2RHanpzQ2d3TUk0anFmdFBYTmVwTENrY01zb2FVam5wRDZDK0xHRjlpeHNCeGs1L25SUkdFcy9qeThWM290bm9GL2U2cHVjRFdCWTJiYnlGK1ZmMWRNZGpDMDMyaWtuOEZnclFIRGdkMmhTWWtTcXUrUjJaQXpTSUdSa0Qyb2tZc1BMcE02QnoyRVh4bW1DNXJCQlU0ZkZFcm1BOEdWcFhBVEdNcFdkM2JBSTQ3RmJHZTN3VUZHRjVsSjR6RUhHNTZqZlBaWHBFVXR5ZTJvd3c0dTBEL3lab2RBZFVtYTVpaGRXWDRwRFVMM2dXM2pnR3dYRFluRld0RmxHTTh4RHQ4b2NRTmVzdWNjZnQyaHEycCt6Q2UxN0VSenBUUFdJMTdtd2F0M0lNTVJRamZjNG5taGlVNzhQYUYySS9LVGJNb1VrQllKZ0VKZXIxUmFXYithWkY0S2JMR21OZmduekphR2RXdjhnbzBiNFdIbDc2eFViWXhraDI1SDVNeUtIRC8xTkZuT3dhT0FGNVFWelVQUnZoQkIyY0dTeVg2OUd2K1dFVzRJbHZxQ3NOdk9mT2hBNjdNbS8yWXgwTUJSb0tMbHpyNWhFcDFYeW4xY21FMmFrQlVSb1d0NHJwRWNvSjYrV1dBQlZYTHlkaGFkWm12ZUVKVXN6RT0tLW5jcWVPSyt1TlRDeWVnZnU1K1NhTEE9PQ%3D%3D--409de5823cb88ebb821f12a9c4a4edd6cad14b64;
+        path=/; HttpOnly
+      - login_user=; path=/; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 -0000
+    body:
+      encoding: UTF-8
+      string: '{"accessToken":"aGxxZEI2TXBQVVFoUlk1MnZLSGhDOUVlMmNhUTlKaFRJV3VaQVJPYUwrWWhGZ2NQZk9NQlRySFhTdHoraDdORElaL0kwWTZORjNsemJzSGNiMURZUDduY0JpYU1zMUczREZadUQvTzhYWml6SndoNDExeEkwNG5ZZ1lia3l0eEstLWJ0cUk4SnhDL3dNUG8wNUtEdVgyRVE9PQ==--2170cf9fca036a582a7cb2f98df8f0386599b5bd","tokenType":"Bearer","expiresIn":3600}'
+    http_version: 
+  recorded_at: Mon, 03 Aug 2015 22:11:56 GMT
+recorded_with: VCR 2.9.3

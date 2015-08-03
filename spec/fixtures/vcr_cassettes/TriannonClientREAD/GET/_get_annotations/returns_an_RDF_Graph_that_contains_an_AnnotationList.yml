@@ -33,13 +33,13 @@ http_interactions:
       Cache-Control:
       - no-cache
       X-Request-Id:
-      - 2c8e8df7-80a3-4028-9beb-6d1ccee6d0b9
+      - 9f4332cd-67d3-4296-9bd6-e8de4273acca
       X-Runtime:
-      - '0.003443'
+      - '0.003076'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Fri, 31 Jul 2015 23:58:09 GMT
+      - Mon, 03 Aug 2015 22:12:14 GMT
       Content-Length:
       - '98'
       Connection:
@@ -48,7 +48,7 @@ http_interactions:
       encoding: UTF-8
       string: <html><body>You are being <a href="http://localhost:3000/bar/search">redirected</a>.</body></html>
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 23:58:09 GMT
+  recorded_at: Mon, 03 Aug 2015 22:12:14 GMT
 - request:
     method: get
     uri: http://localhost:3000/bar/search
@@ -80,29 +80,29 @@ http_interactions:
       Content-Type:
       - application/ld+json; charset=utf-8
       Etag:
-      - W/"929bace3d8a8d061777e757d3b4104c8"
+      - W/"c9a494501dfac047a339e5a5cd6d7241"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cb6ea6b6-9888-41f0-9980-a86e9485b933
+      - af51f683-5a0c-431c-90d0-c29b4c0a62cc
       X-Runtime:
-      - '4.556827'
+      - '3.531760'
       Server:
       - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
       Date:
-      - Fri, 31 Jul 2015 23:58:14 GMT
+      - Mon, 03 Aug 2015 22:12:17 GMT
       Content-Length:
       - '1192'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:AnnotationList","within":{"@type":"sc:Layer","total":3},"resources":[{"@id":"http://your.triannon-server.com/annotations/bar/95/3d/87/42/953d8742-6b0d-464f-b2d2-3cafb5286aad","@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":{"@id":"_:b0","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
-        love this!","format":"text/plain","language":"en"}},{"@id":"http://your.triannon-server.com/annotations/bar/5a/5f/7d/8e/5a5f7d8e-7dd4-49df-b76b-bf81bd83ff78","@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":{"@id":"_:b0","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
-        love this!","format":"text/plain","language":"en"}},{"@id":"http://your.triannon-server.com/annotations/bar/48/84/25/42/48842542-1dec-404f-8381-aac4dbf8f3e1","@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":{"@id":"_:b0","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
+      string: '{"@context":"http://iiif.io/api/presentation/2/context.json","@type":"sc:AnnotationList","within":{"@type":"sc:Layer","total":3},"resources":[{"@id":"http://your.triannon-server.com/annotations/bar/44/88/5a/75/44885a75-6c5b-4da8-8871-bb60932e42f7","@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":{"@id":"_:b0","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
+        love this!","format":"text/plain","language":"en"}},{"@id":"http://your.triannon-server.com/annotations/bar/66/75/cc/61/6675cc61-4a6d-4959-ba09-8d64f5c5d03e","@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":{"@id":"_:b0","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
+        love this!","format":"text/plain","language":"en"}},{"@id":"http://your.triannon-server.com/annotations/bar/11/4f/9b/26/114f9b26-4b59-4e9b-a3a8-41b03318bc5f","@type":"oa:Annotation","motivation":"oa:commenting","on":"http://purl.stanford.edu/kq131cs7229","resource":{"@id":"_:b0","@type":["dctypes:Text","cnt:ContentAsText"],"chars":"I
         love this!","format":"text/plain","language":"en"}}],"@id":"http://localhost:3000/bar/search"}'
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 23:58:14 GMT
+  recorded_at: Mon, 03 Aug 2015 22:12:17 GMT
 - request:
     method: get
     uri: http://iiif.io/api/presentation/2/context.json
@@ -122,7 +122,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 01 Aug 2015 00:02:50 GMT
+      - Mon, 03 Aug 2015 22:16:58 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Last-Modified:
@@ -134,7 +134,7 @@ http_interactions:
       Cache-Control:
       - max-age=86400
       Expires:
-      - Sun, 02 Aug 2015 00:02:50 GMT
+      - Tue, 04 Aug 2015 22:16:58 GMT
       Content-Type:
       - application/ld+json
       Access-Control-Allow-Origin:
@@ -200,7 +200,7 @@ http_interactions:
         \   \"language\":    {\"@id\": \"dc:language\"},\n\t\t    \"value\":       {\"@id\":
         \"rdf:value\"},\n\t\t    \"label\":       {\"@id\": \"rdfs:label\"}\n\t\t}\n\t]\n}"
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 23:58:14 GMT
+  recorded_at: Mon, 03 Aug 2015 22:12:17 GMT
 - request:
     method: get
     uri: http://iiif.io/api/presentation/2/context.json
@@ -220,7 +220,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 01 Aug 2015 00:02:50 GMT
+      - Mon, 03 Aug 2015 22:16:58 GMT
       Server:
       - Apache/2.2.15 (Red Hat)
       Last-Modified:
@@ -232,7 +232,7 @@ http_interactions:
       Cache-Control:
       - max-age=86400
       Expires:
-      - Sun, 02 Aug 2015 00:02:50 GMT
+      - Tue, 04 Aug 2015 22:16:58 GMT
       Content-Type:
       - application/ld+json
       Access-Control-Allow-Origin:
@@ -298,5 +298,5 @@ http_interactions:
         \   \"language\":    {\"@id\": \"dc:language\"},\n\t\t    \"value\":       {\"@id\":
         \"rdf:value\"},\n\t\t    \"label\":       {\"@id\": \"rdfs:label\"}\n\t\t}\n\t]\n}"
     http_version: 
-  recorded_at: Fri, 31 Jul 2015 23:58:14 GMT
+  recorded_at: Mon, 03 Aug 2015 22:12:18 GMT
 recorded_with: VCR 2.9.3
