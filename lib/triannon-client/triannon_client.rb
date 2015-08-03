@@ -103,21 +103,19 @@ module TriannonClient
         # does not include an entity.
         return [200, 202, 204].include?(response.code)
       rescue RestClient::Exception => e
+        msg = e.message
         response = e.response
         if response.is_a?(RestClient::Response)
           case response.code
           when 401
             retry if tries == 1
           when 403
-            # pass through to false response; failure to authenticate with
-            # message in response.body
+            # DELETE is not authorized
           when 404, 410
             # If an annotation doesn't exist, consider it a 'success'
             return true
           end
           msg = response.body
-        else
-          msg = e.message
         end
         @config.logger.error("Failed to DELETE annotation: #{id}, #{msg}")
         binding.pry if @config.debug
@@ -143,27 +141,20 @@ module TriannonClient
         authenticate if tries == 2
         response = @container.post post_data
       rescue RestClient::Exception => e
+        msg = e.message
         response = e.response
         if response.is_a?(RestClient::Response)
           case response.code
           when 401
             retry if tries == 1
           when 403
-            tries = 3  # do not retry
+            # POST is not authorized
           end
           msg = "Failed to POST annotation: #{response.code}, #{response.body}"
-        else
-          msg = e.message
-        end
-        if tries == 1
-          sleep 1 and retry
         end
         binding.pry if @config.debug
         @config.logger.error(msg)
       rescue => e
-        if tries == 1
-          sleep 1 and retry
-        end
         binding.pry if @config.debug
         @config.logger.error("Failed to POST annotation: #{e.message}")
       end
@@ -180,6 +171,7 @@ module TriannonClient
         response = @container.get({:accept => content_type})
         g = response2graph(response)
       rescue => e
+        msg = e.message
         r = e.response rescue nil
         if r.is_a?(RestClient::Response)
           case r.code
@@ -188,8 +180,6 @@ module TriannonClient
           else
             msg = "Failed to GET annotations: #{r.code}, #{r.body}"
           end
-        else
-          msg = e.message
         end
         binding.pry if @config.debug
         @config.logger.error(msg)
@@ -209,6 +199,7 @@ module TriannonClient
         response = @container[id].get({:accept => content_type})
         g = response2graph(response)
       rescue => e
+        msg = e.message
         r = e.response rescue nil
         if r.is_a?(RestClient::Response)
           case r.code
@@ -217,8 +208,6 @@ module TriannonClient
           else
             msg = "Failed to GET annotation: #{id}, #{r.code}, #{r.body}"
           end
-        else
-          msg = e.message
         end
         binding.pry if @config.debug
         @config.logger.error(msg)
@@ -240,7 +229,9 @@ module TriannonClient
       get_annotation(id, CONTENT_TYPE_OA)
     end
 
-    # Parse a Triannon response into an RDF::Graph
+    # Parse a Triannon response into an RDF::Graph; the graph can be empty
+    # on failure to parse input.  The response must contain a content-type that
+    # is available in RDF::Format.content_types (see code specs for details).
     # @param response [RestClient::Response] A RestClient::Response from Triannon
     # @response graph [RDF::Graph] An RDF::Graph instance
     def response2graph(response)
@@ -249,20 +240,20 @@ module TriannonClient
       end
       content_type = response.headers[:content_type]
       content_type = check_content_type(content_type)
+      g = RDF::Graph.new
       begin
         case content_type
-        when /ld+json/
+        when /ld\+json/
           g = RDF::Graph.new.from_jsonld(response.body)
         when /turtle/
           g = RDF::Graph.new.from_ttl(response.body)
         else
-          g = RDF::Graph.new
           format = RDF::Format.for(:content_type => content_type)
           format.reader.new(response.body) do |reader|
             reader.each_statement {|s| g << s }
           end
         end
-      rescue
+      rescue => e
         binding.pry if @config.debug
         @config.logger.error("Failed to parse response into RDF::Graph: #{e.message}")
       end

@@ -23,13 +23,27 @@ describe 'TriannonClientREAD', :vcr do
     expect_any_instance_of(RestClient::Resource).to receive(:get).with(hash_including(:accept => content_type) )
     tc.get_annotation(@anno[:id], content_type)
   end
+
   def gets_anno_with_content_type(content_type)
     graph = tc.get_annotation(@anno[:id], content_type)
     graph_contains_open_annotation(graph, @anno[:uris])
   end
+
   def cannot_get_anno_with_content_type(content_type)
     graph = tc.get_annotation(@anno[:id], content_type)
     graph_is_empty(graph)
+  end
+
+
+  let(:exception_msg) { 'get_exception' }
+  def raise_restclient_exception(status)
+    response = double
+    allow(response).to receive(:is_a?).and_return(RestClient::Response)
+    allow(response).to receive(:headers).and_return(jsonld_content)
+    allow(response).to receive(:body).and_return(exception_msg)
+    allow(response).to receive(:code).and_return(status)
+    exception = RestClient::Exception.new(response)
+    allow_any_instance_of(RestClient::Resource).to receive(:get).with(jsonld_accept).and_raise(exception)
   end
 
   context 'GET' do
@@ -49,32 +63,25 @@ describe 'TriannonClientREAD', :vcr do
         graph = tc.get_annotations
         graph_contains_open_annotation(graph, @anno[:uris])
       end
-      it 'returns an EMPTY RDF graph for a 500 server response' do
-        response = double
-        allow(response).to receive(:is_a?).and_return(RestClient::Response)
-        allow(response).to receive(:headers).and_return(jsonld_content)
-        allow(response).to receive(:body).and_return(jsonld_oa)
-        allow(response).to receive(:code).and_return(500)
-        exception = RestClient::Exception.new(response)
-        allow_any_instance_of(RestClient::Resource).to receive(:get).with(jsonld_accept).and_raise(exception)
+      it '404 response logs exceptions for RestClient::Exception' do
+        raise_restclient_exception(404)
+        expect(tc.config.logger).to receive(:error).with(/404/)
+        tc.get_annotations
+      end
+      it '500 response returns an EMPTY RDF graph' do
+        raise_restclient_exception(500)
         graph = tc.get_annotations
         graph_is_empty(graph)
       end
-      it 'logs exceptions for RestClient::Exception' do
-        response = double
-        allow(response).to receive(:is_a?).and_return(RestClient::Response)
-        allow(response).to receive(:headers).and_return(jsonld_content)
-        allow(response).to receive(:body).and_return('get_exception')
-        allow(response).to receive(:code).and_return(500)
-        exception = RestClient::Exception.new(response)
-        allow_any_instance_of(RestClient::Resource).to receive(:get).with(jsonld_accept).and_raise(exception)
-        expect(TriannonClient.configuration.logger).to receive(:error).with(/get_exception/)
+      it '500 response logs exceptions for RestClient::Exception' do
+        raise_restclient_exception(500)
+        expect(tc.config.logger).to receive(:error).with(/#{exception_msg}/)
         tc.get_annotations
       end
-      it 'logs exceptions' do
+      it 'logs exceptions for RuntimeError' do
         exception = RuntimeError.new('get_exception')
         allow_any_instance_of(RestClient::Resource).to receive(:get).with(jsonld_accept).and_raise(exception)
-        expect(TriannonClient.configuration.logger).to receive(:error).with(/get_exception/)
+        expect(tc.config.logger).to receive(:error).with(/get_exception/)
         tc.get_annotations
       end
     end
@@ -114,15 +121,57 @@ describe 'TriannonClientREAD', :vcr do
         r = @anno[:response]
         expect{tc.response2graph(r)}.not_to raise_error
       end
+      it 'returns an RDF::Graph' do
+        expect(@anno[:graph]).to be_instance_of RDF::Graph
+        graph_contains_statements(@anno[:graph])
+      end
       it 'raises ArgumentError when given nil' do
         expect{tc.response2graph(nil)}.to raise_error(ArgumentError)
       end
       it 'raises ArgumentError when given an empty String' do
         expect{tc.response2graph('')}.to raise_error(ArgumentError)
       end
-      it 'returns an RDF::Graph' do
-        expect(@anno[:graph]).to be_instance_of RDF::Graph
+      it 'raises ArgumentError when response content-type is unacceptable' do
+        h = {content_type: 'unacceptable'}
+        r = double
+        allow(r).to receive(:is_a?).and_return(RestClient::Response)
+        allow(r).to receive(:headers).and_return(h)
+        expect{tc.response2graph('')}.to raise_error(ArgumentError)
       end
+      it 'returns an empty RDF::Graph for failure to parse input' do
+        r = double
+        allow(r).to receive(:is_a?).and_return(RestClient::Response)
+        allow(r).to receive(:code).and_return(200)
+        allow(r).to receive(:headers).and_return(jsonld_content)
+        allow(r).to receive(:body).and_return('malformed json')
+        g = tc.response2graph(r)
+        expect(g).to be_instance_of RDF::Graph
+        expect(g).to be_empty
+        h = {content_type: 'application/rdf+xml'}
+        allow(r).to receive(:headers).and_return(h)
+        allow(r).to receive(:body).and_return('malformed rdf+xml')
+        g = tc.response2graph(r)
+        expect(g).to be_instance_of RDF::Graph
+        expect(g).to be_empty
+        # h = {content_type: 'application/turtle'}
+        # allow(r).to receive(:headers).and_return(h)
+        # allow(r).to receive(:body).and_return('malformed turtle')
+        # g = tc.response2graph(r)
+        # expect(g).to be_instance_of RDF::Graph
+        # expect(g).to be_empty
+      end
+      it 'logs exceptions and returns an empty RDF::Graph' do
+        r = double
+        allow(r).to receive(:is_a?).and_return(RestClient::Response)
+        allow(r).to receive(:headers).and_return(jsonld_content)
+        allow(r).to receive(:body).and_raise(RuntimeError, 'oops!')
+        expect(tc.config.logger).to receive(:error).with(/oops!/)
+        g = tc.response2graph(r)
+        expect(g).to be_instance_of RDF::Graph
+        expect(g).to be_empty
+      end
+
+
     end
 
     describe "#annotation_uris" do
@@ -181,27 +230,26 @@ describe 'TriannonClientREAD', :vcr do
           graph = tc.get_annotation(id)
           graph_is_empty(graph)
         end
-        it 'returns an EMPTY RDF graph for a 500 server response' do
-          response = double
-          allow(response).to receive(:is_a?).and_return(RestClient::Response)
-          allow(response).to receive(:headers).and_return(jsonld_content)
-          allow(response).to receive(:body).and_return(jsonld_oa)
-          allow(response).to receive(:code).and_return(500)
-          exception = RestClient::Exception.new(response)
-          allow_any_instance_of(RestClient::Resource).to receive(:get).with(jsonld_accept).and_raise(exception)
+        it '404 response logs exceptions for RestClient::Exception' do
+          raise_restclient_exception(404)
+          expect(tc.config.logger).to receive(:error).with(/404/)
+          tc.get_annotation('raise_get_exception')
+        end
+        it '500 response returns an EMPTY RDF graph' do
+          raise_restclient_exception(500)
           graph = tc.get_annotation(@anno[:id])
           graph_is_empty(graph)
         end
-        it 'logs exceptions' do
-          response = double
-          allow(response).to receive(:is_a?).and_return(RestClient::Response)
-          allow(response).to receive(:headers).and_return(jsonld_content)
-          allow(response).to receive(:body).and_return('get_exception')
-          allow(response).to receive(:code).and_return(500)
-          exception = RestClient::Exception.new(response)
+        it '500 response logs exceptions for RestClient::Exception' do
+          raise_restclient_exception(500)
+          expect(tc.config.logger).to receive(:error).with(/#{exception_msg}/)
+          tc.get_annotation(@anno[:id])
+        end
+        it 'logs exceptions for RuntimeError' do
+          exception = RuntimeError.new('get_exception')
           allow_any_instance_of(RestClient::Resource).to receive(:get).with(jsonld_accept).and_raise(exception)
-          expect(TriannonClient.configuration.logger).to receive(:error).with(/get_exception/)
-          tc.get_annotation('raise_get_exception')
+          expect(tc.config.logger).to receive(:error).with(/get_exception/)
+          tc.get_annotation(@anno[:id])
         end
       end # using default content type
 

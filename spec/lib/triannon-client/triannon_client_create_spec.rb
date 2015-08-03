@@ -20,6 +20,30 @@ RSpec.shared_examples "create annotations" do |auth_required|
     end
   end
 
+  let(:exception_data) { 'post_exception' }
+  let(:exception_post) {
+    {
+      "commit"=>"Create Annotation",
+      "annotation"=>{"data"=>exception_data}
+    }
+  }
+  let(:exception_msg)  { 'create_exception' }
+
+  def raise_restclient_exception(status)
+    response = double
+    allow(response).to receive(:is_a?).and_return(RestClient::Response)
+    allow(response).to receive(:headers).and_return(jsonld_content)
+    allow(response).to receive(:body).and_return(exception_msg)
+    allow(response).to receive(:code).and_return(status)
+    exception = RestClient::Exception.new(response)
+    allow_any_instance_of(RestClient::Resource).to receive(:post).with(exception_post).and_raise(exception)
+    if status == 401
+      expect(tc).to receive(:authenticate).once # retry triggers authentication
+    else
+      expect(tc).not_to receive(:authenticate)  # no retry
+    end
+  end
+
   it 'does not raise an error when submitting a valid open annotation' do
     check_authentication(auth_required)
     response = nil
@@ -45,32 +69,30 @@ RSpec.shared_examples "create annotations" do |auth_required|
     expect(r).to respond_to(:body)
     expect(r).to respond_to(:headers)
   end
-  it 'logs exceptions for RestClient::Exception' do
+  it 'POST 401 response retries and logs RestClient::Exception message' do
     check_authentication(auth_required)
-    response = double
-    allow(response).to receive(:is_a?).and_return(RestClient::Response)
-    allow(response).to receive(:headers).and_return(jsonld_content)
-    allow(response).to receive(:body).and_return('post_logs_exceptions')
-    allow(response).to receive(:code).and_return(500)
-    exception = RestClient::Exception.new(response)
-    data = {
-      "commit"=>"Create Annotation",
-      "annotation"=>{"data"=>"post_logs_exceptions"}
-    }
-    allow_any_instance_of(RestClient::Resource).to receive(:post).with(data).and_raise(exception)
-    expect(TriannonClient.configuration.logger).to receive(:error).with(/post_logs_exceptions/)
-    tc.post_annotation('post_logs_exceptions')
+    raise_restclient_exception(401)
+    expect(TriannonClient.configuration.logger).to receive(:error).with(/#{exception_msg}/)
+    tc.post_annotation(exception_data)
   end
-  it 'logs exceptions' do
+  it 'POST 403 response does not retry and logs RestClient::Exception message' do
     check_authentication(auth_required)
-    exception = RuntimeError.new('post_logs_exceptions')
-    data = {
-      "commit"=>"Create Annotation",
-      "annotation"=>{"data"=>"post_logs_exceptions"}
-    }
-    allow_any_instance_of(RestClient::Resource).to receive(:post).with(data).and_raise(exception)
-    expect(TriannonClient.configuration.logger).to receive(:error).with(/post_logs_exceptions/)
-    tc.post_annotation('post_logs_exceptions')
+    raise_restclient_exception(403)
+    expect(TriannonClient.configuration.logger).to receive(:error).with(/#{exception_msg}/)
+    tc.post_annotation(exception_data)
+  end
+  it 'POST 500 response does not retry and logs RestClient::Exception message' do
+    check_authentication(auth_required)
+    raise_restclient_exception(500)
+    expect(TriannonClient.configuration.logger).to receive(:error).with(/#{exception_msg}/)
+    tc.post_annotation(exception_data)
+  end
+  it 'logs RuntimeError message' do
+    check_authentication(auth_required)
+    exception = RuntimeError.new(exception_msg)
+    allow_any_instance_of(RestClient::Resource).to receive(:post).with(exception_post).and_raise(exception)
+    expect(TriannonClient.configuration.logger).to receive(:error).with(/#{exception_msg}/)
+    tc.post_annotation(exception_data)
   end
 end
 

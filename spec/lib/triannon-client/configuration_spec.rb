@@ -5,9 +5,11 @@ module TriannonClient
   describe Configuration do
 
     before :each do
-      config_keys = ENV.keys.select {|k| k =~ /TRIANNON/ }
-      config_keys.each {|k| ENV.delete k }
-      ::TriannonClient.reset
+      triannon_reset
+    end
+
+    after :each do
+      triannon_reset
     end
 
     let(:config) { Configuration.new }
@@ -129,6 +131,11 @@ module TriannonClient
 
     describe '#logger' do
       it 'default value is a Logger' do
+        expect(config.logger).to be_instance_of(Logger)
+      end
+      it 'uses STDERR as a fallback for failure to create log file' do
+        ENV['TRIANNON_LOG_FILE'] = '/tmp.txt'  # permission denied
+        expect(config.log_file).to eql('STDERR')
         expect(config.logger).to be_instance_of(Logger)
       end
     end

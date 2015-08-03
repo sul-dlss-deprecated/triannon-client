@@ -5,6 +5,7 @@ module TriannonClient
 
     attr_accessor :debug
     attr_accessor :logger
+    attr_reader :log_file
 
     # Parameters for triannon server
     attr_accessor :host
@@ -38,12 +39,10 @@ module TriannonClient
       @container_workgroups = ENV['TRIANNON_CONTAINER_WORKGROUPS'] || ''
 
       # logger
-      log_file = ENV['TRIANNON_LOG_FILE'] || 'log/triannon_client.log'
-      log_file = File.absolute_path log_file
-      @log_file = log_file
-      log_path = File.dirname log_file
-      FileUtils.mkdir_p log_path rescue nil
       begin
+        log_file = ENV['TRIANNON_LOG_FILE'] || 'log/triannon_client.log'
+        @log_file = File.absolute_path log_file
+        FileUtils.mkdir_p File.dirname(@log_file) rescue nil
         log_dev = File.new(@log_file, 'w+')
       rescue
         log_dev = $stderr

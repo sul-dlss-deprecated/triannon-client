@@ -18,12 +18,13 @@ RSpec.shared_examples "delete annotations" do |auth_required|
     allow(response).to receive(:body).and_return('delete_annotation')
     allow(response).to receive(:code).and_return(status)
     exception = RestClient::Exception.new(response)
-    if status == 401
+    if [401, 404, 410, 500].include? status
       allow_any_instance_of(RestClient::Resource).to receive(:delete).and_raise(exception)
-      expect(tc).to receive(:authenticate).once # a retry triggers authentication
-    elsif [404, 410, 500].include? status
-      allow_any_instance_of(RestClient::Resource).to receive(:delete).and_raise(exception)
-      expect(tc).not_to receive(:authenticate)  # no retry
+      if status == 401
+        expect(tc).to receive(:authenticate).once # retry triggers auth
+      else
+        expect(tc).not_to receive(:authenticate)  # no retry
+      end
     else
       allow_any_instance_of(RestClient::Resource).to receive(:delete).and_return(response)
       expect(tc).not_to receive(:authenticate)  # no retry
