@@ -2,8 +2,6 @@ language: ruby
 
 install: ./bin/setup.sh
 
-script: ./bin/test.sh
-
 notifications:
   email: triannon-commits@lists.stanford.edu
 
@@ -11,4 +9,6 @@ rvm:
   - 2.0.0
   - 2.1.6
   - 2.2.2
+
+sudo: false
 

@@ -1,0 +1,186 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:3000/annotations/bar/f7676207-7d3a-4a97-aac8-d6c8fc2718eb
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/ld+json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/ld+json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: 'Not Found '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - fad9ddae-13d0-4679-9e68-2716d030a0cf
+      X-Runtime:
+      - '0.016328'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Mon, 03 Aug 2015 22:12:30 GMT
+      Content-Length:
+      - '1494'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: "<h2>error getting bar/f7676207-7d3a-4a97-aac8-d6c8fc2718eb from LDP</h2><html>\n<head>\n<meta
+        http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\"/>\n<title>Error
+        404 Not Found</title>\n</head>\n<body><h2>HTTP ERROR 404</h2>\n<p>Problem
+        accessing /fedora/rest/anno/bar/f7676207-7d3a-4a97-aac8-d6c8fc2718eb. Reason:\n<pre>
+        \   Not Found</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 03 Aug 2015 22:12:30 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/annotations/bar/b77ed9cf-010c-4585-9c4f-ad687a697112
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/ld+json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/ld+json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: 'Not Found '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 3023dd99-1aa9-481b-8cc4-e869b385869f
+      X-Runtime:
+      - '0.021862'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Mon, 03 Aug 2015 22:13:26 GMT
+      Content-Length:
+      - '1494'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: "<h2>error getting bar/b77ed9cf-010c-4585-9c4f-ad687a697112 from LDP</h2><html>\n<head>\n<meta
+        http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\"/>\n<title>Error
+        404 Not Found</title>\n</head>\n<body><h2>HTTP ERROR 404</h2>\n<p>Problem
+        accessing /fedora/rest/anno/bar/b77ed9cf-010c-4585-9c4f-ad687a697112. Reason:\n<pre>
+        \   Not Found</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 03 Aug 2015 22:13:26 GMT
+- request:
+    method: get
+    uri: http://localhost:3000/annotations/bar/a37555a3-4c35-403d-8016-25717856b1ae
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/ld+json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/ld+json
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: 'Not Found '
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/html; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 489b33dd-f63d-404a-9ba4-46aa1414d92b
+      X-Runtime:
+      - '0.020548'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Mon, 03 Aug 2015 22:16:15 GMT
+      Content-Length:
+      - '1494'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: "<h2>error getting bar/a37555a3-4c35-403d-8016-25717856b1ae from LDP</h2><html>\n<head>\n<meta
+        http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\"/>\n<title>Error
+        404 Not Found</title>\n</head>\n<body><h2>HTTP ERROR 404</h2>\n<p>Problem
+        accessing /fedora/rest/anno/bar/a37555a3-4c35-403d-8016-25717856b1ae. Reason:\n<pre>
+        \   Not Found</pre></p><hr /><i><small>Powered by Jetty://</small></i><br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n<br/>
+        \                                               \n<br/>                                                \n\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Mon, 03 Aug 2015 22:16:15 GMT
+recorded_with: VCR 2.9.3
