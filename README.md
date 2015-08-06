@@ -32,8 +32,11 @@ bundle
 
 Edit a `.env` file to configure the triannon server address etc.
 (see .env_example); or use a configure block.  The configuration
-for authentication depends on prior triannon server configuration.
-This example configuration may work with a triannon server running on localhost in the development environment (see below for details).
+for authentication depends on prior triannon server configuration, see
+ - https://github.com/sul-dlss/triannon#configuration
+
+This example configuration may work with a triannon server running
+on localhost in the development environment (see below for details).
 
 ```ruby
 require 'triannon-client'
