@@ -199,6 +199,12 @@ describe 'TriannonClientREAD', :vcr do
 
     describe "annotation by ID" do
 
+      def invalid_annotation_id(id)
+        expect(tc.config.logger).to receive(:error).with(/Invalid ID/)
+        g = tc.get_annotation(id)
+        graph_is_empty(g)
+      end
+
       context 'using default content type' do
 
         it 'checks the annotation ID' do
@@ -206,14 +212,14 @@ describe 'TriannonClientREAD', :vcr do
           graph = tc.get_annotation(@anno[:id])
           graph_contains_statements(graph)
         end
-        it 'raises an argument error with a nil ID' do
-          expect{tc.get_annotation(nil)}.to raise_error(ArgumentError)
+        it 'returns empty graph and logs exception with a nil ID' do
+          invalid_annotation_id(nil)
         end
-        it 'raises an argument error with an integer ID' do
-          expect{tc.get_annotation(0)}.to raise_error(ArgumentError)
+        it 'returns empty graph and logs exception with an integer ID' do
+          invalid_annotation_id(0)
         end
-        it 'raises an argument error with an empty string ID' do
-          expect{tc.get_annotation('')}.to raise_error(ArgumentError)
+        it 'returns empty graph and logs exception with an empty string ID' do
+          invalid_annotation_id('')
         end
         it 'requests an open annotation by ID, using JSON-LD content' do
           jsonld = TriannonClient::TriannonClient::JSONLD_TYPE
