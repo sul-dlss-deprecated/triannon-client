@@ -1,13 +1,6 @@
 require 'dotenv'
 Dotenv.load
 
-# pry must be available when the client is configured to run in debug mode,
-# where it will fall into a pry console for rescue blocks.
-if ENV['DEBUG']
-  require 'pry'
-  require 'pry-doc'
-end
-
 # require rest client prior to linkeddata, so the latter can use it.
 require 'rest-client'
 # If a proxy is present, RestClient needs explicit configuration to use it.

@@ -21,9 +21,22 @@ module TriannonClient
     end
 
     describe '#debug=' do
-      it 'can set value' do
+      it 'can set boolean value' do
         config.debug = true
         expect(config.debug).to be_truthy
+      end
+      it 'loads pry in debug mode' do
+        config.debug = true
+        defined?(Pry) == true
+      end
+      it 'does not load pry outside debug mode' do
+        config.debug = false
+        defined?(Pry) == false
+      end
+      it 'raises ArgumentError for non-boolean values' do
+        expect{config.debug='abc'}.to raise_error(ArgumentError)
+        expect{config.debug=nil}.to raise_error(ArgumentError)
+        expect{config.debug=0}.to raise_error(ArgumentError)
       end
     end
 

@@ -22,7 +22,7 @@ module TriannonClient
     attr_accessor :client_pass
 
     def initialize
-      @debug = env_boolean('DEBUG')
+      self.debug = env_boolean('DEBUG')
 
       @host = ENV['TRIANNON_HOST'] || 'http://localhost:3000'
       # @user = ENV['TRIANNON_USER'] || '' # triannon doesn't support basic auth
@@ -58,7 +58,17 @@ module TriannonClient
       ENV[var].to_s.upcase == 'TRUE' rescue false
     end
 
+    def debug=(bool)
+      raise ArgumentError unless [true, false].include?(bool)
+      @debug = bool
+      if @debug
+        # pry must be available when the client is configured to run in debug
+        # mode, where it will fall into a pry console for rescue blocks.
+        require 'pry'
+        require 'pry-doc'
+      end
+    end
+
   end
 
 end
-
