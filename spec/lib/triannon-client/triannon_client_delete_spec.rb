@@ -65,10 +65,12 @@ RSpec.shared_examples "delete annotations" do |auth_required|
     expect(tc).to receive(:check_id)
     tc.delete_annotation('checking_anno_id')
   end
-  it 'raises ArgumentError for an invalid annotation ID' do
+  it 'logs ArgumentError for an invalid annotation ID' do
     expect_any_instance_of(RestClient::Resource).not_to receive(:delete)
-    expect { tc.delete_annotation('')  }.to raise_error(ArgumentError)
-    expect { tc.delete_annotation(nil) }.to raise_error(ArgumentError)
+    expect(tc.config.logger).to receive(:error).with(/Invalid ID/).exactly(3).times
+    expect(tc.delete_annotation('')).to be false
+    expect(tc.delete_annotation(0)).to be false
+    expect(tc.delete_annotation(nil)).to be false
   end
   it 'uses RestClient::Resource.delete to DELETE a valid annotation ID' do
     expect_any_instance_of(RestClient::Resource).to receive(:delete)

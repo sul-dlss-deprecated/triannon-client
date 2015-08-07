@@ -30,6 +30,8 @@ describe 'TriannonClientREAD', :vcr do
   end
 
   def cannot_get_anno_with_content_type(content_type)
+    expect(tc).to receive(:check_content_type)
+    expect(tc).not_to receive(:response2graph)
     graph = tc.get_annotation(@anno[:id], content_type)
     graph_is_empty(graph)
   end
@@ -199,6 +201,12 @@ describe 'TriannonClientREAD', :vcr do
 
     describe "annotation by ID" do
 
+      def invalid_annotation_id(id)
+        expect(tc.config.logger).to receive(:error).with(/Invalid ID/)
+        g = tc.get_annotation(id)
+        graph_is_empty(g)
+      end
+
       context 'using default content type' do
 
         it 'checks the annotation ID' do
@@ -206,14 +214,14 @@ describe 'TriannonClientREAD', :vcr do
           graph = tc.get_annotation(@anno[:id])
           graph_contains_statements(graph)
         end
-        it 'raises an argument error with a nil ID' do
-          expect{tc.get_annotation(nil)}.to raise_error(ArgumentError)
+        it 'returns empty graph and logs exception with a nil ID' do
+          invalid_annotation_id(nil)
         end
-        it 'raises an argument error with an integer ID' do
-          expect{tc.get_annotation(0)}.to raise_error(ArgumentError)
+        it 'returns empty graph and logs exception with an integer ID' do
+          invalid_annotation_id(0)
         end
-        it 'raises an argument error with an empty string ID' do
-          expect{tc.get_annotation('')}.to raise_error(ArgumentError)
+        it 'returns empty graph and logs exception with an empty string ID' do
+          invalid_annotation_id('')
         end
         it 'requests an open annotation by ID, using JSON-LD content' do
           jsonld = TriannonClient::TriannonClient::JSONLD_TYPE
@@ -254,6 +262,10 @@ describe 'TriannonClientREAD', :vcr do
       end # using default content type
 
       context 'using custom content type' do
+        it 'raises ArgumentError for unsupported content types' do
+          expect{tc.send(:check_content_type,'abc')}.to raise_error(ArgumentError)
+        end
+
         # Content types could be supported for RDF::Format.content_types.keys,
         # but not all of them are supported.  The supported content types for
         # triannon are defined in
@@ -267,6 +279,7 @@ describe 'TriannonClientREAD', :vcr do
         # json as:    ["application/json", "text/x-json", "application/jsonrequest"]
         # xml as:     ["application/xml", "text/xml", "application/x-xml"]
         # html
+
 
         # The client supports any format in RDF::Format.content_types, so the
         # following are not included (as of July 2015):

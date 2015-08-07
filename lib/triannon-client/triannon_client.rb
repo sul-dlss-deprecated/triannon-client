@@ -3,7 +3,6 @@ module TriannonClient
     # Triannon may not support all content types in RDF::Format.content_types,
     # but the client code is more generic using this as a reasonable set; this
     # allows triannon to evolve support for anything supported by RDF::Format.
-    CONTENT_ERROR = 'content_type not found in RDF::Format.content_types'
     CONTENT_TYPES = RDF::Format.content_types.keys
 
     JSONLD_TYPE = 'application/ld+json'
@@ -90,10 +89,10 @@ module TriannonClient
     # @param id [String] an annotation ID
     # @response [true|false] true when successful
     def delete_annotation(id)
-      check_id(id)
       tries = 0
       begin
         tries += 1
+        check_id(id) if tries == 1
         authenticate if tries == 2
         response = @container[id].delete
         # HTTP DELETE response codes: A successful response SHOULD be
@@ -165,9 +164,9 @@ module TriannonClient
     # @param content_type [String] HTTP mime type (defaults to 'application/ld+json')
     # @response [RDF::Graph] RDF::Graph of open annotations (can be empty on failure)
     def get_annotations(content_type=JSONLD_TYPE)
-      content_type = check_content_type(content_type)
       g = RDF::Graph.new
       begin
+        content_type = check_content_type(content_type)
         response = @container.get({:accept => content_type})
         g = response2graph(response)
       rescue => e
@@ -192,10 +191,10 @@ module TriannonClient
     # @param content_type [String] HTTP mime type (defaults to 'application/ld+json')
     # @response [RDF::Graph] RDF::Graph of the annotation (can be empty on failure)
     def get_annotation(id, content_type=JSONLD_TYPE)
-      check_id(id)
-      content_type = check_content_type(content_type)
       g = RDF::Graph.new
       begin
+        check_id(id)
+        content_type = check_content_type(content_type)
         response = @container[id].get({:accept => content_type})
         g = response2graph(response)
       rescue => e
@@ -238,10 +237,10 @@ module TriannonClient
       unless response.is_a? RestClient::Response
         raise ArgumentError, 'response2graph only accepts a RestClient::Response'
       end
-      content_type = response.headers[:content_type]
-      content_type = check_content_type(content_type)
       g = RDF::Graph.new
       begin
+        content_type = response.headers[:content_type]
+        content_type = check_content_type(content_type)
         case content_type
         when /ld\+json/
           g = RDF::Graph.new.from_jsonld(response.body)
@@ -283,13 +282,16 @@ module TriannonClient
 
     def check_content_type(content_type)
       type = content_type.split(';').first # strip off any parameters
-      raise ArgumentError, CONTENT_ERROR unless CONTENT_TYPES.include? type
+      unless CONTENT_TYPES.include? type
+        msg = "#{type} not found in RDF::Format.content_types"
+        raise ArgumentError, msg
+      end
       type
     end
 
     def check_id(id)
-      raise ArgumentError, 'ID must be a String' unless id.instance_of? String
-      raise ArgumentError, 'Invalid ID' if id.nil? || id.empty?
+      invalid =  ! id.instance_of?(String) || id.empty?
+      raise ArgumentError, "Invalid ID: #{id}" if invalid
     end
 
     def json_payloads
